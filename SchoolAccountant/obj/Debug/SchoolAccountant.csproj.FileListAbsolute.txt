@@ -16,3 +16,5 @@ C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\School
 C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\SchoolAccountant\bin\Debug\SchoolAccountant.exe.config
 C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\SchoolAccountant\bin\Debug\SchoolAccountant.pdb
 C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.DashBoard.resources
+C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\SchoolAccountant\bin\Debug\log4net.dll
+C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\SchoolAccountant\bin\Debug\log4net.xml

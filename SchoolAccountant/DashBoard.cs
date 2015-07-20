@@ -19,7 +19,6 @@ namespace SchoolAccountant
         private readonly IUserRepository _userRepository = new UserRepository();
         private readonly IStudentRepository _studentRepository = new StudentRepository();
 
-
         public DashBoard()
         {
             InitializeComponent();

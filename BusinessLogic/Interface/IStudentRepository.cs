@@ -7,5 +7,6 @@ namespace BusinessLogic.Interface
     {
         IList<Student> GetActiveStudents();
         bool AddStudent(Student student);
+        bool Delete(Student student);
     }
 }
