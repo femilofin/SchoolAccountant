@@ -1,0 +1,77 @@
+
+
+
+2015-07-19 21:30:16,473 [1] ERROR SchoolAccountant.DashBoard.cs  - Others
+
+MongoDB.Driver.MongoConnectionException: Unable to connect to server localhost:27017: No connection could be made because the target machine actively refused it 127.0.0.1:27017. ---> System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:27017
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Net.Sockets.TcpClient.Connect(IPEndPoint remoteEP)
+   at MongoDB.Driver.Internal.MongoConnection.Open()
+   at MongoDB.Driver.Internal.MongoConnection.SendMessage(BsonBuffer buffer, Int32 requestId)
+   at MongoDB.Driver.Internal.MongoConnection.SendMessage(MongoRequestMessage message)
+   at MongoDB.Driver.Operations.CommandOperation`1.Execute(MongoConnection connection)
+   at MongoDB.Driver.MongoServerInstance.RunCommandAs[TCommandResult](MongoConnection connection, String databaseName, IMongoCommand command)
+   at MongoDB.Driver.MongoServerInstance.Ping(MongoConnection connection)
+   at MongoDB.Driver.MongoServerInstance.Connect()
+   at MongoDB.Driver.Internal.DirectMongoServerProxy.Connect(TimeSpan timeout, ReadPreference readPreference)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Internal.DirectMongoServerProxy.Connect(TimeSpan timeout, ReadPreference readPreference)
+   at MongoDB.Driver.Internal.DirectMongoServerProxy.ChooseServerInstance(ReadPreference readPreference)
+   at MongoDB.Driver.MongoServer.AcquireConnection(ReadPreference readPreference)
+   at MongoDB.Driver.MongoCollection.InsertBatch(Type nominalType, IEnumerable documents, MongoInsertOptions options)
+   at MongoDB.Driver.MongoCollection.Insert(Type nominalType, Object document, MongoInsertOptions options)
+   at MongoDB.Driver.MongoCollection.Insert(Type nominalType, Object document)
+   at MongoDB.Driver.MongoCollection.Insert[TNominalType](TNominalType document)
+   at MongoRepository.MongoRepository`2.Add(T entity)
+   at BusinessLogic.Repositories.StudentRepository.AddStudent(Student student) in c:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\BusinessLogic\Repositories\StudentRepository.cs:line 35
+
+
+
+2015-07-19 21:32:43,015 [1] ERROR SchoolAccountant.DashBoard.cs  - Mongodb
+
+MongoDB.Driver.MongoConnectionException: Unable to connect to server localhost:27017: No connection could be made because the target machine actively refused it 127.0.0.1:27017. ---> System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:27017
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Net.Sockets.TcpClient.Connect(IPEndPoint remoteEP)
+   at MongoDB.Driver.Internal.MongoConnection.Open()
+   at MongoDB.Driver.Internal.MongoConnection.SendMessage(BsonBuffer buffer, Int32 requestId)
+   at MongoDB.Driver.Internal.MongoConnection.SendMessage(MongoRequestMessage message)
+   at MongoDB.Driver.Operations.CommandOperation`1.Execute(MongoConnection connection)
+   at MongoDB.Driver.MongoServerInstance.RunCommandAs[TCommandResult](MongoConnection connection, String databaseName, IMongoCommand command)
+   at MongoDB.Driver.MongoServerInstance.Ping(MongoConnection connection)
+   at MongoDB.Driver.MongoServerInstance.Connect()
+   at MongoDB.Driver.Internal.DirectMongoServerProxy.Connect(TimeSpan timeout, ReadPreference readPreference)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Internal.DirectMongoServerProxy.Connect(TimeSpan timeout, ReadPreference readPreference)
+   at MongoDB.Driver.Internal.DirectMongoServerProxy.ChooseServerInstance(ReadPreference readPreference)
+   at MongoDB.Driver.MongoServer.AcquireConnection(ReadPreference readPreference)
+   at MongoDB.Driver.MongoCollection.InsertBatch(Type nominalType, IEnumerable documents, MongoInsertOptions options)
+   at MongoDB.Driver.MongoCollection.Insert(Type nominalType, Object document, MongoInsertOptions options)
+   at MongoDB.Driver.MongoCollection.Insert(Type nominalType, Object document)
+   at MongoDB.Driver.MongoCollection.Insert[TNominalType](TNominalType document)
+   at MongoRepository.MongoRepository`2.Add(T entity)
+   at BusinessLogic.Repositories.StudentRepository.AddStudent(Student student) in c:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\BusinessLogic\Repositories\StudentRepository.cs:line 35
+2015-07-19 21:36:12,035 [1] ERROR SchoolAccountant.DashBoard.cs - Mongodb
+MongoDB.Driver.MongoConnectionException: Unable to connect to server localhost:27017: No connection could be made because the target machine actively refused it 127.0.0.1:27017. ---> System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:27017
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Net.Sockets.TcpClient.Connect(IPEndPoint remoteEP)
+   at MongoDB.Driver.Internal.MongoConnection.Open()
+   at MongoDB.Driver.Internal.MongoConnection.SendMessage(BsonBuffer buffer, Int32 requestId)
+   at MongoDB.Driver.Internal.MongoConnection.SendMessage(MongoRequestMessage message)
+   at MongoDB.Driver.Operations.CommandOperation`1.Execute(MongoConnection connection)
+   at MongoDB.Driver.MongoServerInstance.RunCommandAs[TCommandResult](MongoConnection connection, String databaseName, IMongoCommand command)
+   at MongoDB.Driver.MongoServerInstance.Ping(MongoConnection connection)
+   at MongoDB.Driver.MongoServerInstance.Connect()
+   at MongoDB.Driver.Internal.DirectMongoServerProxy.Connect(TimeSpan timeout, ReadPreference readPreference)
+   --- End of inner exception stack trace ---
+   at MongoDB.Driver.Internal.DirectMongoServerProxy.Connect(TimeSpan timeout, ReadPreference readPreference)
+   at MongoDB.Driver.Internal.DirectMongoServerProxy.ChooseServerInstance(ReadPreference readPreference)
+   at MongoDB.Driver.MongoServer.AcquireConnection(ReadPreference readPreference)
+   at MongoDB.Driver.MongoCollection.InsertBatch(Type nominalType, IEnumerable documents, MongoInsertOptions options)
+   at MongoDB.Driver.MongoCollection.Insert(Type nominalType, Object document, MongoInsertOptions options)
+   at MongoDB.Driver.MongoCollection.Insert(Type nominalType, Object document)
+   at MongoDB.Driver.MongoCollection.Insert[TNominalType](TNominalType document)
+   at MongoRepository.MongoRepository`2.Add(T entity)
+   at BusinessLogic.Repositories.StudentRepository.AddStudent(Student student) in c:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\BusinessLogic\Repositories\StudentRepository.cs:line 35
