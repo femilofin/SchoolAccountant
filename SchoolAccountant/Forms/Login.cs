@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic.Interface;
 using BusinessLogic.Repositories;
 
-namespace SchoolAccountant
+namespace SchoolAccountant.Forms
 {
     public partial class Login : Form
     {

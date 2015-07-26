@@ -12,3 +12,4 @@ C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\Busine
 C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
 C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\BusinessLogic\bin\Debug\log4net.dll
 C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\BusinessLogic\bin\Debug\log4net.xml
+C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\BusinessLogic\bin\Debug\BusinessLogic.XML

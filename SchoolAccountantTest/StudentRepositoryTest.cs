@@ -24,14 +24,22 @@ namespace SchoolAccountantTest
         }
 
         [Test]
-        public void AddStudentShouldRetunNull()
+        public void AddUpdateAndDeleteShouldReturnTrue()
         {
+            // Add
             var student = Builder<Student>.CreateNew().With(x => x.Id = null).Build();
-            var addSuccess = _studentRepository.AddStudent(student);
+            var addSuccess = _studentRepository.Add(student);
             Assert.AreEqual(true, addSuccess);
 
+            // Update
+            student.LastName = "TestLastName";
+            var updateSuccess = _studentRepository.Update(student);
+            Assert.AreEqual(true, updateSuccess);
+
+            // Delete
             var deleteSuccess = _studentRepository.Delete(student);
             Assert.AreEqual(true, deleteSuccess);
         }
+
     }
 }

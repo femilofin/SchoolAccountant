@@ -75,3 +75,28 @@ MongoDB.Driver.MongoConnectionException: Unable to connect to server localhost:2
    at MongoDB.Driver.MongoCollection.Insert[TNominalType](TNominalType document)
    at MongoRepository.MongoRepository`2.Add(T entity)
    at BusinessLogic.Repositories.StudentRepository.AddStudent(Student student) in c:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\BusinessLogic\Repositories\StudentRepository.cs:line 35
+
+
+
+2015-07-25 18:49:44,037 [1] INFO  BusinessLogic.StudentRepository.cs  - Student "Femi" "Olofintuyi"  Added
+
+
+
+
+2015-07-25 19:26:19,138 [1] INFO  BusinessLogic.StudentRepository.cs  - Student "Faith" "Olofintuyi"  Added
+
+
+
+
+2015-07-25 19:27:22,488 [1] INFO  BusinessLogic.StudentRepository.cs  - Student "Susanna" "Olofintuuyi"  Added
+
+
+
+
+2015-07-25 19:27:56,265 [1] INFO  BusinessLogic.StudentRepository.cs  - Student "MaryJane" "Olofintuyi"  Added
+
+
+
+
+2015-07-25 19:28:44,905 [1] INFO  BusinessLogic.StudentRepository.cs  - Student "Folake" "Olofintuyi"  Added
+

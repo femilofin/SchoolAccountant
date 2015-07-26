@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\BusinessLogic.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -51,13 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\ArmEnum.cs" />
     <Compile Include="Constants\ClassEnum.cs" />
-    <Compile Include="Entities\ClassArm.cs" />
     <Compile Include="Entities\ClassArmTermFee.cs" />
     <Compile Include="Entities\FeePayment.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Constants\TermEnum.cs" />
-    <Compile Include="Entities\StudentAggregateAccount.cs" />
+    <Compile Include="Entities\StudentView.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Interface\IService.cs" />
     <Compile Include="Interface\IStudentRepository.cs" />

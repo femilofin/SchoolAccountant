@@ -17,3 +17,4 @@ C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\School
 C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\SchoolAccountantTest\bin\Debug\log4net.xml
 C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\SchoolAccountantTest\obj\Debug\SchoolAccountantTest.dll
 C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\SchoolAccountantTest\obj\Debug\SchoolAccountantTest.pdb
+C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\SchoolAccountantTest\bin\Debug\BusinessLogic.xml

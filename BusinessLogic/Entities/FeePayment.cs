@@ -8,9 +8,8 @@ using MongoRepository;
 
 namespace BusinessLogic.Entities
 {
-    public class FeePayment : Entity
+    public class FeePayment
     {
-        public string StudentId { get; set; }
         public string ClassArmTermFeeId { get; set; }
         public decimal Amount { get; set; }
         public DateTime PaidDate { get; set; }

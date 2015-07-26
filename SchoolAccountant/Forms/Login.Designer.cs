@@ -1,4 +1,4 @@
-﻿namespace SchoolAccountant
+﻿namespace SchoolAccountant.Forms
 {
     partial class Login
     {

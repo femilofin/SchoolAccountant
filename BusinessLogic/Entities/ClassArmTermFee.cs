@@ -11,7 +11,7 @@ namespace BusinessLogic.Entities
     public class ClassArmTermFee : Entity
     {
         public ClassEnum ClassEnum { get; set; }
-        public string ClassArmId { get; set; }
+        public ArmEnum ArmEnum { get; set; }
         public TermEnum TermEnum { get; set; }
         public decimal Fee { get; set; }
         public bool Active { get; set; }
