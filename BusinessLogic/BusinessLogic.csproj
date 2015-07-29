@@ -20,7 +20,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\BusinessLogic.XML</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -53,7 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\ArmEnum.cs" />
+    <Compile Include="Constants\AuditActionEnum.cs" />
     <Compile Include="Constants\ClassEnum.cs" />
+    <Compile Include="Entities\AuditTrail.cs" />
     <Compile Include="Entities\ClassArmTermFee.cs" />
     <Compile Include="Entities\FeePayment.cs" />
     <Compile Include="Entities\Student.cs" />

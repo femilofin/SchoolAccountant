@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolAccountant", "SchoolA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{DD73AD3B-8F55-4D2F-A16F-00FFBB7649D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoLogic", "MongoLogic\MongoLogic.csproj", "{0CDF979D-C540-4281-8865-5586608DFD9B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolAccountantTest", "SchoolAccountantTest\SchoolAccountantTest.csproj", "{DE32B46C-A999-422F-8F9D-C1177770C6C5}"
 EndProject
 Global
@@ -25,10 +23,6 @@ Global
 		{DD73AD3B-8F55-4D2F-A16F-00FFBB7649D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD73AD3B-8F55-4D2F-A16F-00FFBB7649D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD73AD3B-8F55-4D2F-A16F-00FFBB7649D2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0CDF979D-C540-4281-8865-5586608DFD9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0CDF979D-C540-4281-8865-5586608DFD9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0CDF979D-C540-4281-8865-5586608DFD9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0CDF979D-C540-4281-8865-5586608DFD9B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DE32B46C-A999-422F-8F9D-C1177770C6C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DE32B46C-A999-422F-8F9D-C1177770C6C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE32B46C-A999-422F-8F9D-C1177770C6C5}.Release|Any CPU.ActiveCfg = Release|Any CPU

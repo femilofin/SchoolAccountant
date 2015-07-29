@@ -62,8 +62,7 @@ namespace SchoolAccountant.Forms
             object dataSource;
 
             var activeStudents = _studentRepository.GetActiveStudents();
-
-
+            
             // If default i.e no search and no combo box was selected
 
             if (filter == "" && classEnum == -1 && armEnum == -1 && feeStatus == -1)
@@ -181,6 +180,8 @@ namespace SchoolAccountant.Forms
 
                     return dataSource;
                 }
+
+
             }
 
             // else if class and fee status and search
@@ -425,6 +426,19 @@ namespace SchoolAccountant.Forms
                         activeStudents[i].OutstandingFee > 0
                             ? string.Format("NGN {0}", activeStudents[i].OutstandingFee)
                             : "Cleared",
+                    PaidFee = string.Format("NGN {0}", activeStudents[i].PaidFee),
+                    FirstName = activeStudents[i].FirstName,
+                    LastName = activeStudents[i].LastName,
+                    BirthDate = activeStudents[i].BirthDate,
+                    MiddleName = activeStudents[i].MiddleName,
+                    Active = activeStudents[i].Active,
+                    PresentArm = activeStudents[i].PresentArm,
+                    PresentTerm = activeStudents[i].PresentTerm,
+                    StartClass = activeStudents[i].StartClass,
+                    StartDate = activeStudents[i].StartDate,
+                    StartTerm = activeStudents[i].StartTerm,
+
+                    
                 }
                     );
 
@@ -605,7 +619,7 @@ namespace SchoolAccountant.Forms
         private void tboSearchMS_TextChanged(object sender, EventArgs e)
         {
             RefreshDgv();
-        }
+        } 
 
         private void cboClassMS_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -614,7 +628,11 @@ namespace SchoolAccountant.Forms
 
         private void cboArmMS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ClearAllComboBoxesInMS();
+            if ((int)cboClassMS.SelectedValue == -1)
+            {
+                ClearAllComboBoxesInMS();
+            }
+
             RefreshDgv();
         }
 

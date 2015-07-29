@@ -18,3 +18,23 @@ C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\School
 C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\SchoolAccountantTest\obj\Debug\SchoolAccountantTest.dll
 C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\SchoolAccountantTest\obj\Debug\SchoolAccountantTest.pdb
 C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\SchoolAccountantTest\bin\Debug\BusinessLogic.xml
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\SchoolAccountantTest.dll.config
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\SchoolAccountantTest.dll
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\SchoolAccountantTest.pdb
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\BusinessLogic.dll
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\FizzWare.NBuilder.dll
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\MongoDB.Bson.dll
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\MongoDB.Driver.dll
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\MongoRepository.Net45.dll
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\nunit.framework.dll
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\log4net.dll
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\BusinessLogic.pdb
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\BusinessLogic.xml
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\MongoDB.Bson.xml
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\MongoDB.Driver.xml
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\MongoRepository.Net45.xml
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\nunit.framework.xml
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\log4net.xml
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\obj\Debug\SchoolAccountantTest.csprojResolveAssemblyReference.cache
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\obj\Debug\SchoolAccountantTest.dll
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\obj\Debug\SchoolAccountantTest.pdb

@@ -241,3 +241,13 @@ System.FormatException: 'Id1' is not a valid 24 digit hex string.
 
 2015-07-25 10:20:47,003 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student "FirstName1" "LastName1"  Added
 
+
+
+
+2015-07-28 18:11:04,978 [TestRunnerThread] INFO  BusinessLogic.StudentRepository.cs  - Student "FirstName1" "LastName1"  Added
+
+
+
+
+2015-07-28 18:12:21,143 [TestRunnerThread] INFO  BusinessLogic.StudentRepository.cs  - Student "FirstName1" "LastName1"  Added
+

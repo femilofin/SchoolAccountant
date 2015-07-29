@@ -58,7 +58,7 @@ namespace BusinessLogic.Repositories
             try
             {
                 _studentRepository.Add(student);
-                _log.Info(String.Format("Student \"{0}\" \"{1}\"  Added", student.FirstName, student.LastName));
+                _log.Info(string.Format("Student \"{0}\" \"{1}\"  Added", student.FirstName, student.LastName));
                 return true;
             }
             catch (MongoConnectionException ex)
