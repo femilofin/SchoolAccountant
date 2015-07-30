@@ -9,6 +9,7 @@ namespace BusinessLogic.Entities
     /// </summary>
     public class StudentView
     {
+        public string Id { get; set; }
         public int Index { get; set; }
         public string FullName { get; set; }
         public string PresentClass { get; set; }

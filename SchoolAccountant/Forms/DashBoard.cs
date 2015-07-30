@@ -437,7 +437,7 @@ namespace SchoolAccountant.Forms
                     StartClass = activeStudents[i].StartClass,
                     StartDate = activeStudents[i].StartDate,
                     StartTerm = activeStudents[i].StartTerm,
-
+                    Id = activeStudents[i].Id
                     
                 }
                     );
@@ -696,5 +696,10 @@ namespace SchoolAccountant.Forms
             }
         }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            ClearAllComboBoxesInMS();
+            RefreshDgv();
+        }
     }
 }

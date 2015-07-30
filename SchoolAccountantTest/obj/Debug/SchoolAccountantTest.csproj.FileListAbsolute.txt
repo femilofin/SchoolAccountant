@@ -29,7 +29,6 @@ C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\MongoRepository.Net
 C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\nunit.framework.dll
 C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\log4net.dll
 C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\BusinessLogic.pdb
-C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\BusinessLogic.xml
 C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\MongoDB.Bson.xml
 C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\MongoDB.Driver.xml
 C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\MongoRepository.Net45.xml

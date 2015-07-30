@@ -76,6 +76,7 @@
             this.tboUsernameAU = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tboFullNameAU = new System.Windows.Forms.TextBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -97,6 +98,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btnRefresh);
             this.tabPage3.Controls.Add(this.statusStrip1);
             this.tabPage3.Controls.Add(this.btnPrint);
             this.tabPage3.Controls.Add(this.dgvViewStudent);
@@ -141,7 +143,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(254, 538);
+            this.btnPrint.Location = new System.Drawing.Point(388, 549);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(75, 23);
             this.btnPrint.TabIndex = 9;
@@ -574,6 +576,16 @@
             this.tboFullNameAU.Size = new System.Drawing.Size(163, 20);
             this.tboFullNameAU.TabIndex = 1;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(251, 549);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 1;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -647,6 +659,6 @@
         private System.Windows.Forms.TextBox tboOutstandingFeeAS;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ToolStripStatusLabel tsslShowAll;
-
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

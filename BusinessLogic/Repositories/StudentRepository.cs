@@ -106,7 +106,18 @@ namespace BusinessLogic.Repositories
         {
             try
             {
-                _studentRepository.Update(student);
+                var studentFromDb = _studentRepository.GetById(student.Id);
+
+                // Update items
+                studentFromDb.MiddleName = student.MiddleName;
+                studentFromDb.FirstName = student.FirstName;
+                studentFromDb.LastName = student.LastName;
+                studentFromDb.BirthDate = student.BirthDate;
+                studentFromDb.StartDate = student.StartDate;
+                studentFromDb.PresentArm = student.PresentArm;
+
+                _studentRepository.Update(studentFromDb);
+
                 return true;
             }
             catch (MongoConnectionException ex)
