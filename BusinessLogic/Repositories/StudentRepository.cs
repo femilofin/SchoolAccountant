@@ -51,38 +51,14 @@ namespace BusinessLogic.Repositories
         /// <summary>
         /// Add new student into the student collection
         /// </summary>
-        /// <param name="student">Loaded student class</param>
+        /// <param name="model">Loaded student class</param>
         /// <returns>Whether the method is successful</returns>
-        public bool Add(Student student)
+        public bool Create(Student model)
         {
             try
             {
-                _studentRepository.Add(student);
-                _log.Info(string.Format("Student \"{0}\" \"{1}\"  Added", student.FirstName, student.LastName));
-                return true;
-            }
-            catch (MongoConnectionException ex)
-            {
-                _log.Error("Mongodb", ex);
-                return false;
-            }
-            catch (Exception ex)
-            {
-                _log.Error("Others", ex);
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Delete Student from the student collection
-        /// </summary>
-        /// <param name="student">Instance of student class</param>
-        /// <returns>Whether the method is successful</returns>
-        public bool Delete(Student student)
-        {
-            try
-            {
-                _studentRepository.Delete(student);
+                _studentRepository.Add(model);
+                _log.Info(string.Format("Student \"{0}\" \"{1}\"  Added", model.FirstName, model.LastName));
                 return true;
             }
             catch (MongoConnectionException ex)
@@ -100,24 +76,55 @@ namespace BusinessLogic.Repositories
         /// <summary>
         /// Updates the student collection.
         /// </summary>
-        /// <param name="student">Instance of student class</param>
+        /// <param name="model">Instance of student class</param>
         /// <returns>True if success, else false</returns>
-        public bool Update(Student student)
+        public bool Edit(Student model)
         {
             try
             {
-                var studentFromDb = _studentRepository.GetById(student.Id);
+                var studentFromDb = _studentRepository.GetById(model.Id);
 
                 // Update items
-                studentFromDb.MiddleName = student.MiddleName;
-                studentFromDb.FirstName = student.FirstName;
-                studentFromDb.LastName = student.LastName;
-                studentFromDb.BirthDate = student.BirthDate;
-                studentFromDb.StartDate = student.StartDate;
-                studentFromDb.PresentArm = student.PresentArm;
+                studentFromDb.MiddleName = model.MiddleName;
+                studentFromDb.FirstName = model.FirstName;
+                studentFromDb.LastName = model.LastName;
+                studentFromDb.BirthDate = model.BirthDate;
+                studentFromDb.StartDate = model.StartDate;
+                studentFromDb.PresentArm = model.PresentArm;
 
                 _studentRepository.Update(studentFromDb);
 
+                return true;
+            }
+            catch (MongoConnectionException ex)
+            {
+                _log.Error("Mongodb", ex);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Others", ex);
+                return false;
+            }
+        }
+
+        public IEnumerable<Student> Query(int page, int count, string orderByExpression = null, string whereCondition = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Delete Student from the student collection
+        /// </summary>
+        /// <param name="id">Student Id</param>
+        /// <returns>Whether the method is successful</returns>
+        public bool Delete(string id)
+        {
+            try
+            {
+                var student = _studentRepository.GetById(id);
+
+                _studentRepository.Delete(student);
                 return true;
             }
             catch (MongoConnectionException ex)

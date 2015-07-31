@@ -26,3 +26,4 @@ C:\Freelance\SchoolAccountant\BusinessLogic\bin\Debug\MongoDB.Driver.xml
 C:\Freelance\SchoolAccountant\BusinessLogic\bin\Debug\MongoRepository.Net45.xml
 C:\Freelance\SchoolAccountant\BusinessLogic\obj\Debug\BusinessLogic.dll
 C:\Freelance\SchoolAccountant\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Freelance\SchoolAccountant\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache

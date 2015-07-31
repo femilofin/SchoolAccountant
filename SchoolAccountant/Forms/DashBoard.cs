@@ -512,7 +512,7 @@ namespace SchoolAccountant.Forms
                     TimeStamp = DateTime.UtcNow
                 };
 
-                var success = _userRepository.Register(user);
+                var success = _userRepository.Create(user);
 
                 if (success)
                 {
@@ -567,7 +567,7 @@ namespace SchoolAccountant.Forms
 
                 };
 
-                var success = _studentRepository.Add(student);
+                var success = _studentRepository.Create(student);
 
                 if (success)
                 {

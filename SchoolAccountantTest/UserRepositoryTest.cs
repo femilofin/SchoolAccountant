@@ -27,10 +27,10 @@ namespace SchoolAccountantTest
         public void RegisterAndDeleteShouldReturnTrue()
         {
             var user = Builder<User>.CreateNew().With(x => x.Id = null).Build();
-            var registerSuccess = _userRepository.Register(user);
+            var registerSuccess = _userRepository.Create(user);
             Assert.AreEqual(true, registerSuccess);
 
-            var deleteSuccess = _userRepository.Delete(user);
+            var deleteSuccess = _userRepository.Delete(user.Id);
             Assert.AreEqual(true, deleteSuccess);
         }
     }

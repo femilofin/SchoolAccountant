@@ -28,16 +28,16 @@ namespace SchoolAccountantTest
         {
             // Add
             var student = Builder<Student>.CreateNew().With(x => x.Id = null).Build();
-            var addSuccess = _studentRepository.Add(student);
+            var addSuccess = _studentRepository.Create(student);
             Assert.AreEqual(true, addSuccess);
 
             // Update
             student.LastName = "TestLastName";
-            var updateSuccess = _studentRepository.Update(student);
+            var updateSuccess = _studentRepository.Edit(student);
             Assert.AreEqual(true, updateSuccess);
 
             // Delete
-            var deleteSuccess = _studentRepository.Delete(student);
+            var deleteSuccess = _studentRepository.Delete(student.Id);
             Assert.AreEqual(true, deleteSuccess);
         }
 

@@ -52,7 +52,9 @@ namespace SchoolAccountant.Forms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            var response = MessageBox.Show( @"You made some changes, Do you want to save the changes for this student?", @"Update Student", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            var response = MessageBox.Show(@"You made some changes, Do you want to save the changes for this student?",
+                @"Update Student", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
 
             if (response == DialogResult.Yes)
             {
@@ -68,7 +70,7 @@ namespace SchoolAccountant.Forms
 
                 };
 
-                var success = _studentRepository.Update(student);
+                var success = _studentRepository.Edit(student);
                 if (success)
                 {
                     MessageBox.Show(string.Format("Student has been updated"));

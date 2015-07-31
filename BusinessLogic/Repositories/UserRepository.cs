@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using BusinessLogic.Entities;
 using BusinessLogic.Interface;
@@ -51,13 +52,13 @@ namespace BusinessLogic.Repositories
         /// <summary>
         ///     Add user to the user collection.
         /// </summary>
-        /// <param name="user">An instance of the user class.</param>
+        /// <param name="model">An instance of the user class.</param>
         /// <returns>True if the registration succeeds; otherwise, false.</returns>
-        public bool Register(User user)
+        public bool Create(User model)
         {
             try
             {
-                _userRepository.Add(user);
+                _userRepository.Add(model);
                 return true;
             }
             catch (MongoConnectionException ex)
@@ -72,15 +73,27 @@ namespace BusinessLogic.Repositories
             }
         }
 
+        public bool Edit(User model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<User> Query(int page, int count, string orderByExpression = null, string whereCondition = null)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         ///     Delete User from the user collection.
         /// </summary>
-        /// <param name="user">An instance of the user class.</param>
+        /// <param name="id">An instance of the user class.</param>
         /// <returns>True if the registration succeeds; otherwise, false.</returns>
-        public bool Delete(User user)
+        public bool Delete(string id)
         {
             try
             {
+                var user = _userRepository.GetById(id);
+
                 _userRepository.Delete(user);
                 return true;
             }

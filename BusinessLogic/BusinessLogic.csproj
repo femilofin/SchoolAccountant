@@ -63,10 +63,12 @@
     <Compile Include="Constants\TermEnum.cs" />
     <Compile Include="Entities\StudentView.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Interface\IAuditTrailRepository.cs" />
     <Compile Include="Interface\IService.cs" />
     <Compile Include="Interface\IStudentRepository.cs" />
     <Compile Include="Interface\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AuditTrailRepository.cs" />
     <Compile Include="Repositories\StudentRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
