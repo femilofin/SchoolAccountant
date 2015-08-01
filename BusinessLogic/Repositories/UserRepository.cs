@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using BusinessLogic.Constants;
 using BusinessLogic.Entities;
 using BusinessLogic.Interface;
 using log4net;
@@ -17,6 +18,7 @@ namespace BusinessLogic.Repositories
     {
         private readonly ILog _log = LogManager.GetLogger("BusinessLogic.UserRepository.cs");
         private readonly MongoRepository<User> _userRepository = new MongoRepository<User>();
+        private readonly IAuditTrailRepository _auditTrailRepository = new AuditTrailRepository();
 
         public UserRepository()
         {
@@ -35,6 +37,11 @@ namespace BusinessLogic.Repositories
             try
             {
                 bool isARegisteredUser = _userRepository.Any(x => x.Username == username && x.PasswordHash == password);
+
+                _auditTrailRepository.Log(string.Format("Login: {username}"), AuditActionEnum.Login);
+
+                _log.Info("Login");
+
                 return isARegisteredUser;
             }
             catch (MongoConnectionException ex)
@@ -59,6 +66,11 @@ namespace BusinessLogic.Repositories
             try
             {
                 _userRepository.Add(model);
+
+                _auditTrailRepository.Log(string.Format("Registered: {model.username}"), AuditActionEnum.Create);
+
+                _log.Info("Registered user");
+
                 return true;
             }
             catch (MongoConnectionException ex)
@@ -95,6 +107,9 @@ namespace BusinessLogic.Repositories
                 var user = _userRepository.GetById(id);
 
                 _userRepository.Delete(user);
+
+                _auditTrailRepository.Log(string.Format("Deleted: {user.username}"), AuditActionEnum.Delete);
+
                 return true;
             }
             catch (MongoConnectionException ex)

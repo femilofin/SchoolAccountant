@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BusinessLogic.Constants;
 using BusinessLogic.Entities;
 using BusinessLogic.Interface;
 using log4net;
@@ -20,6 +21,7 @@ namespace BusinessLogic.Repositories
     {
         private readonly ILog _log = LogManager.GetLogger("BusinessLogic.StudentRepository.cs");
         private readonly MongoRepository<Student> _studentRepository = new MongoRepository<Student>();
+        readonly IAuditTrailRepository _auditTrailRepository = new AuditTrailRepository();
 
         public StudentRepository()
         {
@@ -58,7 +60,11 @@ namespace BusinessLogic.Repositories
             try
             {
                 _studentRepository.Add(model);
-                _log.Info(string.Format("Student \"{0}\" \"{1}\"  Added", model.FirstName, model.LastName));
+
+                _auditTrailRepository.Log(string.Format("Created Student {model.FirstName} {model.LastName}"), AuditActionEnum.Create);
+
+                _log.Info("Student Added");
+
                 return true;
             }
             catch (MongoConnectionException ex)
@@ -94,6 +100,10 @@ namespace BusinessLogic.Repositories
 
                 _studentRepository.Update(studentFromDb);
 
+                _auditTrailRepository.Log(string.Format("Edited Student {model.FirstName} {model.LastName}"), AuditActionEnum.Update);
+
+                _log.Info("Student Edited");
+
                 return true;
             }
             catch (MongoConnectionException ex)
@@ -125,6 +135,9 @@ namespace BusinessLogic.Repositories
                 var student = _studentRepository.GetById(id);
 
                 _studentRepository.Delete(student);
+
+                _auditTrailRepository.Log(string.Format("Deleted Student {model.FirstName} {model.LastName}"), AuditActionEnum.Delete);
+
                 return true;
             }
             catch (MongoConnectionException ex)

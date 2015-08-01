@@ -10,10 +10,6 @@ namespace BusinessLogic.Entities
 {
     public class Student : Entity
     {
-        public Student()
-        {
-            FeePayments = new List<FeePayment>();
-        }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
@@ -27,7 +23,8 @@ namespace BusinessLogic.Entities
         public ClassEnum PresentClass { get; set; }
         public TermEnum PresentTerm { get; set; }
         public ArmEnum PresentArm { get; set; }
+        public IList<FeePayment> FeePayments { get; set; } = new List<FeePayment>();
 
-        public IList<FeePayment> FeePayments { get; set; }
+
     }
 }
