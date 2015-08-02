@@ -1,22 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿#region
+
+using System;
 using BusinessLogic.Constants;
 using BusinessLogic.Entities;
 using BusinessLogic.Interface;
 using log4net;
 using log4net.Config;
-using MongoDB.Driver;
 using MongoRepository;
+
+#endregion
 
 namespace BusinessLogic.Repositories
 {
     public class AuditTrailRepository : IAuditTrailRepository
     {
-        readonly MongoRepository<AuditTrail> _auditTrailRepository = new MongoRepository<AuditTrail>();
+        private readonly MongoRepository<AuditTrail> _auditTrailRepository = new MongoRepository<AuditTrail>();
         private readonly ILog _log = LogManager.GetLogger("BusinessLogic.AuditTrailRepository.cs");
 
         public AuditTrailRepository()
@@ -33,9 +31,9 @@ namespace BusinessLogic.Repositories
         {
             try
             {
-                var audit = new AuditTrail()
+                var audit = new AuditTrail
                 {
-                    Details = string.Format("{0} {1}", Enum.GetName(typeof (AuditActionEnum), actionEnum), detail),
+                    Details = string.Format("{0}: {1}", Enum.GetName(typeof (AuditActionEnum), actionEnum), detail),
                     TimeStamp = DateTime.Now,
                     AuditAction = actionEnum
                 };
@@ -45,8 +43,6 @@ namespace BusinessLogic.Repositories
                 _log.Info("Audit trail created");
 
                 return auditTrail;
-
-
             }
             catch (Exception ex)
             {
@@ -71,6 +67,5 @@ namespace BusinessLogic.Repositories
                 return false;
             }
         }
-     
     }
 }

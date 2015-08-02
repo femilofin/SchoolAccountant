@@ -548,7 +548,7 @@ namespace SchoolAccountant.Forms
             var presentArm = cboPresentArmAS.SelectedValue;
 
             if (!string.IsNullOrWhiteSpace(lastName) && !string.IsNullOrWhiteSpace(firstName) &&
-                !string.IsNullOrWhiteSpace(middleName) && !string.IsNullOrWhiteSpace(outstandingFee))
+                !string.IsNullOrWhiteSpace(middleName))
             {
                 var student = new Student
                 {
@@ -560,7 +560,7 @@ namespace SchoolAccountant.Forms
                     StartClass = (ClassEnum)startClass,
                     StartTerm = (TermEnum)startTerm,
                     StartDate = DateTime.Parse(startDate),
-                    OutstandingFee = Convert.ToDecimal(outstandingFee),
+                    OutstandingFee = Convert.ToDecimal(outstandingFee == "" ? "0" : outstandingFee),
                     PresentClass = (ClassEnum)presentClass,
                     PresentTerm = (TermEnum)presentTerm,
                     PresentArm = (ArmEnum)presentArm
@@ -610,8 +610,9 @@ namespace SchoolAccountant.Forms
             tboMiddleNameAS.Clear();
             tboFirstNameAS.Clear();
             tboOutstandingFeeAS.Clear();
-            cboStartTermAS.SelectedIndex = 0;
-            cboStartClassAS.SelectedIndex = 0;
+            cboStartTermAS.SelectedIndex = -1;
+            cboStartClassAS.SelectedIndex = -1;
+            cboPresentArmAS.SelectedIndex = -1;
             dtpStartDateAS.Value = DateTime.Now;
             dtpBirthDateAS.Value = DateTime.Now;
         }

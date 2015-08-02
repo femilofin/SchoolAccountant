@@ -61,7 +61,7 @@ namespace BusinessLogic.Repositories
             {
                 _studentRepository.Add(model);
 
-                _auditTrailRepository.Log(string.Format("Created Student {model.FirstName} {model.LastName}"), AuditActionEnum.Create);
+                _auditTrailRepository.Log(string.Format("Created Student {0} {1}", model.FirstName, model.LastName), AuditActionEnum.Created);
 
                 _log.Info("Student Added");
 
@@ -100,11 +100,12 @@ namespace BusinessLogic.Repositories
 
                 _studentRepository.Update(studentFromDb);
 
-                _auditTrailRepository.Log(string.Format("Edited Student {model.FirstName} {model.LastName}"), AuditActionEnum.Update);
+                _auditTrailRepository.Log(string.Format("Student {0} {1}", model.FirstName, model.LastName), AuditActionEnum.Updated);
 
                 _log.Info("Student Edited");
 
                 return true;
+
             }
             catch (MongoConnectionException ex)
             {
@@ -136,8 +137,8 @@ namespace BusinessLogic.Repositories
 
                 _studentRepository.Delete(student);
 
-                _auditTrailRepository.Log(string.Format("Deleted Student {model.FirstName} {model.LastName}"), AuditActionEnum.Delete);
-
+                _auditTrailRepository.Log(string.Format("Student {0} {1}", student.FirstName, student.LastName), AuditActionEnum.Deleted);
+                
                 return true;
             }
             catch (MongoConnectionException ex)

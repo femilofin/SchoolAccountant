@@ -100,3 +100,63 @@ MongoDB.Driver.MongoConnectionException: Unable to connect to server localhost:2
 
 2015-07-25 19:28:44,905 [1] INFO  BusinessLogic.StudentRepository.cs  - Student "Folake" "Olofintuyi"  Added
 
+
+
+
+2015-08-02 13:31:06,583 [1] ERROR BusinessLogic.StudentRepository.cs  - Others
+
+System.FormatException: Input string was not in a correct format.
+   at System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.Format(String format, Object[] args)
+   at BusinessLogic.Repositories.StudentRepository.Create(Student model) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\StudentRepository.cs:line 64
+
+
+
+2015-08-02 13:31:15,662 [1] ERROR BusinessLogic.StudentRepository.cs  - Others
+
+System.FormatException: Input string was not in a correct format.
+   at System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.Format(String format, Object[] args)
+   at BusinessLogic.Repositories.StudentRepository.Create(Student model) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\StudentRepository.cs:line 64
+
+
+
+2015-08-02 13:32:50,020 [1] ERROR BusinessLogic.StudentRepository.cs  - Others
+
+System.FormatException: Input string was not in a correct format.
+   at System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.Format(String format, Object[] args)
+   at BusinessLogic.Repositories.StudentRepository.Create(Student model) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\StudentRepository.cs:line 64
+
+
+
+2015-08-02 13:42:17,719 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-02 13:42:25,083 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
+
+
+
+2015-08-02 14:05:25,971 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-02 14:05:25,976 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
+
+
+
+2015-08-02 14:19:39,808 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-02 14:19:39,814 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+

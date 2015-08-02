@@ -18,7 +18,7 @@ namespace SchoolAccountantTest
         [Test]
         public void LogDoesNotReturnNullAndDeleteLogReturnsTrue()
         {
-            var auditTrail = _auditTrailRepository.Log("Test", AuditActionEnum.Create);
+            var auditTrail = _auditTrailRepository.Log("Test", AuditActionEnum.Created);
 
             Assert.AreNotEqual(null, auditTrail);
 

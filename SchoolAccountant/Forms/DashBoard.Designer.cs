@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsslTableStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslShowAll = new System.Windows.Forms.ToolStripStatusLabel();
@@ -76,7 +77,6 @@
             this.tboUsernameAU = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tboFullNameAU = new System.Windows.Forms.TextBox();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -116,6 +116,16 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Manage Students";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(251, 549);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 1;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // statusStrip1
             // 
@@ -365,7 +375,6 @@
             // 
             // cboPresentClassAS
             // 
-            this.cboPresentClassAS.DisplayMember = "1";
             this.cboPresentClassAS.DropDownHeight = 120;
             this.cboPresentClassAS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPresentClassAS.DropDownWidth = 78;
@@ -457,7 +466,6 @@
             // 
             // cboStartClassAS
             // 
-            this.cboStartClassAS.DisplayMember = "1";
             this.cboStartClassAS.DropDownHeight = 120;
             this.cboStartClassAS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStartClassAS.DropDownWidth = 78;
@@ -575,16 +583,6 @@
             this.tboFullNameAU.Name = "tboFullNameAU";
             this.tboFullNameAU.Size = new System.Drawing.Size(163, 20);
             this.tboFullNameAU.TabIndex = 1;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(251, 549);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 1;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // DashBoard
             // 
