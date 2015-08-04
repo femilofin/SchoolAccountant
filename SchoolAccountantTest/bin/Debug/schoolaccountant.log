@@ -281,3 +281,8 @@ System.FormatException: 'Id1' is not a valid 24 digit hex string.
 
 2015-08-01 23:57:45,613 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
 
+
+
+
+2015-08-02 16:08:14,648 [TestRunnerThread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+

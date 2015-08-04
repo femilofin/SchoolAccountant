@@ -57,29 +57,30 @@
     <Compile Include="Constants\AuditActionEnum.cs" />
     <Compile Include="Constants\ClassEnum.cs" />
     <Compile Include="Entities\AuditTrail.cs" />
-    <Compile Include="Entities\ClassArmTermFee.cs" />
+    <Compile Include="Entities\ClassTermFee.cs" />
     <Compile Include="Entities\FeePayment.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Constants\TermEnum.cs" />
     <Compile Include="Entities\StudentView.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Interface\IAuditTrailRepository.cs" />
+    <Compile Include="Interface\IClassTermFeeRepository.cs" />
     <Compile Include="Interface\IService.cs" />
     <Compile Include="Interface\IStudentRepository.cs" />
     <Compile Include="Interface\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AuditTrailRepository.cs" />
+    <Compile Include="Repositories\ClassTermFeeRepository.cs" />
     <Compile Include="Repositories\StudentRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Utility\ActivatedAndDeactivatedId.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="MongoRepository.chm" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utility\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

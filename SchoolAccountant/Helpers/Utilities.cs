@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
@@ -108,5 +109,29 @@ namespace SchoolAccountant.Helpers
             }
 
         }
+
+        /// <summary>
+        /// Initialize the session combo boxes
+        /// </summary>
+        /// <param name="comboBoxes">A list of combo boxes</param>
+        public static void InitializeSessionCombo(IEnumerable<ComboBox> comboBoxes)
+        {
+            foreach (var comboBox in comboBoxes)
+            {
+                var nameAndValues = new BindingList<NameAndValueString>();
+                var names = new[] {"", $"{DateTime.Now.Year}/{DateTime.Now.AddYears(1).Year}", $"{DateTime.Now.AddYears(-1).Year}/{DateTime.Now.Year}"};
+                var values = new[] {"", $"{DateTime.Now.Year}/{DateTime.Now.AddYears(1).Year}", $"{DateTime.Now.AddYears(-1).Year}/{DateTime.Now.Year}"};
+
+                for (int i = 0; i < names.Length; i++)
+                {
+                    nameAndValues.Add(new NameAndValueString(names[i], values[i]));
+                }
+
+                comboBox.DataSource = nameAndValues;
+                comboBox.DisplayMember = "Name";
+                comboBox.ValueMember = "Value";
+            }
+        }
+
     }
 }

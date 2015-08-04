@@ -7,6 +7,8 @@
         JSS3,
         SSS1,
         SSS2,
-        SSS3
+        SSS3,
+        JSS,
+        SSS
     }
 }

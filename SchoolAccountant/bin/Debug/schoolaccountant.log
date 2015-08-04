@@ -160,3 +160,123 @@ System.FormatException: Input string was not in a correct format.
 
 2015-08-02 14:19:39,814 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
 
+
+
+
+2015-08-04 22:29:02,577 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-04 22:29:03,926 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-04 22:42:42,524 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-04 22:42:42,524 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-04 22:42:42,524 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-04 22:42:42,524 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-04 22:42:42,524 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-04 22:42:42,524 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-04 22:42:42,525 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-04 22:42:42,525 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-04 22:42:42,525 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-04 22:42:42,525 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-05 00:21:06,450 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-05 00:21:06,456 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-05 00:21:11,918 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-05 00:21:11,918 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees reactivated
+
+
+
+
+2015-08-05 00:21:11,922 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-05 00:21:11,922 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-05 00:21:11,922 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-05 00:21:11,922 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-05 00:21:11,922 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-05 00:21:11,922 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-05 00:21:11,923 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-05 00:21:11,923 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+

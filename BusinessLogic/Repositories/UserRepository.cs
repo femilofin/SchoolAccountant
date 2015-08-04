@@ -38,7 +38,7 @@ namespace BusinessLogic.Repositories
             {
                 bool isARegisteredUser = _userRepository.Any(x => x.Username == username && x.PasswordHash == password);
 
-                _auditTrailRepository.Log(string.Format("{0}", username), AuditActionEnum.LoggedIn);
+                _auditTrailRepository.Log($"{username}", AuditActionEnum.LoggedIn);
 
                 _log.Info("Login");
 
@@ -67,7 +67,7 @@ namespace BusinessLogic.Repositories
             {
                 _userRepository.Add(model);
 
-                _auditTrailRepository.Log(string.Format("{0}", model.Username), AuditActionEnum.Created);
+                _auditTrailRepository.Log($"{model.Username}", AuditActionEnum.Created);
 
                 _log.Info("Registered user");
 
@@ -108,7 +108,7 @@ namespace BusinessLogic.Repositories
 
                 _userRepository.Delete(user);
 
-                _auditTrailRepository.Log(string.Format("{0}", user.Username), AuditActionEnum.Deleted);
+                _auditTrailRepository.Log($"{user.Username}", AuditActionEnum.Deleted);
 
                 return true;
             }

@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BusinessLogic.Constants;
 using BusinessLogic.Entities;
 using BusinessLogic.Interface;
 using log4net;
+using log4net.Config;
 using MongoDB.Driver;
 using MongoRepository;
-
 
 namespace BusinessLogic.Repositories
 {
@@ -25,7 +22,7 @@ namespace BusinessLogic.Repositories
 
         public StudentRepository()
         {
-            log4net.Config.XmlConfigurator.Configure();
+            XmlConfigurator.Configure();
         }
 
         /// <summary>
@@ -61,7 +58,7 @@ namespace BusinessLogic.Repositories
             {
                 _studentRepository.Add(model);
 
-                _auditTrailRepository.Log(string.Format("Created Student {0} {1}", model.FirstName, model.LastName), AuditActionEnum.Created);
+                _auditTrailRepository.Log($"Created Student {model.FirstName} {model.LastName}", AuditActionEnum.Created);
 
                 _log.Info("Student Added");
 
@@ -100,7 +97,7 @@ namespace BusinessLogic.Repositories
 
                 _studentRepository.Update(studentFromDb);
 
-                _auditTrailRepository.Log(string.Format("Student {0} {1}", model.FirstName, model.LastName), AuditActionEnum.Updated);
+                _auditTrailRepository.Log($"Student {model.FirstName} {model.LastName}", AuditActionEnum.Updated);
 
                 _log.Info("Student Edited");
 
@@ -137,7 +134,7 @@ namespace BusinessLogic.Repositories
 
                 _studentRepository.Delete(student);
 
-                _auditTrailRepository.Log(string.Format("Student {0} {1}", student.FirstName, student.LastName), AuditActionEnum.Deleted);
+                _auditTrailRepository.Log($"Student {student.FirstName} {student.LastName}", AuditActionEnum.Deleted);
                 
                 return true;
             }

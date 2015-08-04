@@ -10,6 +10,7 @@ using BusinessLogic.Constants;
 using BusinessLogic.Entities;
 using BusinessLogic.Interface;
 using BusinessLogic.Repositories;
+using BusinessLogic.Utility;
 using SchoolAccountant.Helpers;
 
 #endregion
@@ -19,20 +20,27 @@ namespace SchoolAccountant.Forms
     {
         private readonly IStudentRepository _studentRepository = new StudentRepository();
         private readonly IUserRepository _userRepository = new UserRepository();
+        private readonly IClassTermFeeRepository _classTermFeeRepository = new ClassTermFeeRepository();
+
+
         readonly DataGridViewButtonColumn _btnViewInfo = new DataGridViewButtonColumn();
         readonly DataGridViewButtonColumn _btnViewPaymentHistory = new DataGridViewButtonColumn();
         readonly DataGridViewButtonColumn _btnPayFee = new DataGridViewButtonColumn();
         readonly DataGridViewButtonColumn _btnDeactivateStudent = new DataGridViewButtonColumn();
-
+        private ActivatedAndDeactivatedId _activatedAndDeactivatedId;
 
 
         public DashBoard()
         {
             InitializeComponent();
             Utilities.InitialiizeClassCombo(new[] { cboStartClassAS, cboPresentClassAS, cboClassMS });
-            Utilities.InitialiizeTermCombo(new[] { cboStartTermAS, cboPresentTermAS });
+            Utilities.InitialiizeTermCombo(new[] { cboStartTermAS, cboPresentTermAS, cboTermANT });
             Utilities.InitialiizeArmCombo(new[] { cboArmMS, cboPresentArmAS });
             Utilities.InitialiizeFeeStatusCombo(new[] { cboFeeStatusMS });
+            Utilities.InitializeSessionCombo(new[] { cboSessionANT });
+
+            // Disable the undo save button
+            btnUndoLastAddFeesANT.Enabled = false;
         }
 
         private void DashBoard_Load(object sender, EventArgs e)
@@ -62,7 +70,7 @@ namespace SchoolAccountant.Forms
             object dataSource;
 
             var activeStudents = _studentRepository.GetActiveStudents();
-            
+
             // If default i.e no search and no combo box was selected
 
             if (filter == "" && classEnum == -1 && armEnum == -1 && feeStatus == -1)
@@ -70,7 +78,7 @@ namespace SchoolAccountant.Forms
                 dataSource = GetStudentView(activeStudents);
 
                 // Update Status Label
-                tsslTableStatus.Text = string.Format("{0} records found", activeStudents.Count);
+                tsslTableStatus.Text = $"{activeStudents.Count} records found";
 
                 return dataSource;
             }
@@ -402,7 +410,7 @@ namespace SchoolAccountant.Forms
             dataSource = GetStudentView(activeStudents);
 
             // Update Status Label
-            tsslTableStatus.Text = string.Format("{0} records found", activeStudents.Count);
+            tsslTableStatus.Text = $"{activeStudents.Count} records found";
 
             return dataSource;
         }
@@ -418,15 +426,14 @@ namespace SchoolAccountant.Forms
                 {
                     Index = indexes[i],
                     FullName =
-                        string.Format("{0} {1} {2}", activeStudents[i].LastName.ToUpper(), activeStudents[i].FirstName,
-                            activeStudents[i].MiddleName),
+                        $"{activeStudents[i].LastName.ToUpper()} {activeStudents[i].FirstName} {activeStudents[i].MiddleName}",
                     PresentClass =
-                        string.Format("{0} {1}", activeStudents[i].PresentClass, activeStudents[i].PresentArm),
+                        $"{activeStudents[i].PresentClass} {activeStudents[i].PresentArm}",
                     OutstandingFee =
                         activeStudents[i].OutstandingFee > 0
-                            ? string.Format("NGN {0}", activeStudents[i].OutstandingFee)
+                            ? $"NGN {activeStudents[i].OutstandingFee}"
                             : "Cleared",
-                    PaidFee = string.Format("NGN {0}", activeStudents[i].PaidFee),
+                    PaidFee = $"NGN {activeStudents[i].PaidFee}",
                     FirstName = activeStudents[i].FirstName,
                     LastName = activeStudents[i].LastName,
                     BirthDate = activeStudents[i].BirthDate,
@@ -438,7 +445,7 @@ namespace SchoolAccountant.Forms
                     StartDate = activeStudents[i].StartDate,
                     StartTerm = activeStudents[i].StartTerm,
                     Id = activeStudents[i].Id
-                    
+
                 }
                     );
 
@@ -449,8 +456,8 @@ namespace SchoolAccountant.Forms
 
         private void UpdateStatusLabel(IReadOnlyCollection<Student> filteredActiveStudentsByClass, ICollection<Student> activeStudents)
         {
-            tsslTableStatus.Text = string.Format("{0} record(s) found out of {1} records available.",
-                filteredActiveStudentsByClass.Count, activeStudents.Count);
+            tsslTableStatus.Text =
+                $"{filteredActiveStudentsByClass.Count} record(s) found out of {activeStudents.Count} records available.";
         }
 
         /// <summary>
@@ -459,14 +466,27 @@ namespace SchoolAccountant.Forms
         /// <param name="dataSource">Data source for the datagridview</param>
         private void FillDgv(object dataSource)
         {
-           
+
             var dgvHelper = new DgvHelper(dgvViewStudent, dataSource);
             dgvHelper.Properties(borderStyle: BorderStyle.Fixed3D, font: "Arial", fontSize: 8)
                 .Header(fontSize: 8, font: "Arial")
                 .Add(0, "Index", "", width: 20, readOnly: true)
                 .Add(1, "FullName", "FullName", foreColor: Color.Red, width: 234, readOnly: true)
                 .Add(2, "PresentClass", "Class", width: 50, readOnly: true)
-                .Add(3, "OutstandingFee", "Debt", foreColor: Color.Red, width: 80, readOnly: true);
+                .Add(3, "OutstandingFee", "Debt", foreColor: Color.Red, width: 80, readOnly: true)
+                .Add(8, "PaidFee", "PaidFee", visible: false)
+                .Add(9, "LastName", "LastName", visible: false)
+                .Add(10, "BirthDate", "BirthDate", visible: false)
+                .Add(11, "MiddleName", "MiddleName", visible: false)
+                .Add(12, "Active", "Active", visible: false)
+                .Add(13, "PresentArm", "PresentArm", visible: false)
+                .Add(14, "PresentTerm", "PresentTerm", visible: false)
+                .Add(15, "StartClass", "StartClass", visible: false)
+                .Add(15, "StartDate", "StartDate", visible: false)
+                .Add(15, "StartTerm", "StartTerm", visible: false)
+                .Add(15, "Id", "Id", visible: false)
+                .Add(15, "FirstName", "FirstName", visible: false);
+
 
             // Add "Pay Fee" button
             _btnPayFee.Text = "Pay Fee";
@@ -516,7 +536,7 @@ namespace SchoolAccountant.Forms
 
                 if (success)
                 {
-                    MessageBox.Show(string.Format("User \"{0}\" has been registered", username));
+                    MessageBox.Show($"User \"{username}\" has been registered");
                     ClearTextBoxesAU();
                 }
                 else
@@ -527,6 +547,7 @@ namespace SchoolAccountant.Forms
 
             else
             {
+
                 MessageBox.Show(@"Please, all information are required");
             }
         }
@@ -548,7 +569,9 @@ namespace SchoolAccountant.Forms
             var presentArm = cboPresentArmAS.SelectedValue;
 
             if (!string.IsNullOrWhiteSpace(lastName) && !string.IsNullOrWhiteSpace(firstName) &&
-                !string.IsNullOrWhiteSpace(middleName))
+                !string.IsNullOrWhiteSpace(middleName) && (int)startClass != -1
+                && (int)startTerm != -1 && (int)presentClass != -1 && (int)presentTerm != -1
+                && (int)presentArm != -1)
             {
                 var student = new Student
                 {
@@ -564,14 +587,13 @@ namespace SchoolAccountant.Forms
                     PresentClass = (ClassEnum)presentClass,
                     PresentTerm = (TermEnum)presentTerm,
                     PresentArm = (ArmEnum)presentArm
-
                 };
 
                 var success = _studentRepository.Create(student);
 
                 if (success)
                 {
-                    MessageBox.Show(string.Format("Student \"{0} {1}\" has been registered", firstName, lastName));
+                    MessageBox.Show($"Student \"{firstName} {lastName}\" has been registered");
                     ClearTextBoxesAS();
                 }
                 else
@@ -620,7 +642,7 @@ namespace SchoolAccountant.Forms
         private void tboSearchMS_TextChanged(object sender, EventArgs e)
         {
             RefreshDgv();
-        } 
+        }
 
         private void cboClassMS_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -672,7 +694,6 @@ namespace SchoolAccountant.Forms
             {
                 var row = dgvViewStudent.Rows[e.RowIndex];
                 new PayFee(row).ShowDialog();
-
             }
 
 
@@ -683,17 +704,17 @@ namespace SchoolAccountant.Forms
                 new ViewInfo(row).ShowDialog();
             }
 
-             // if view fee history
+            // if view fee history
             else if (e.ColumnIndex == (int)ButtonColumnIndex.FeeHistory)
             {
                 var row = dgvViewStudent.Rows[e.RowIndex];
                 new FeeHistory(row).ShowDialog();
             }
 
-             // if deactivate student
+            // if deactivate student
             else if (e.ColumnIndex == (int)ButtonColumnIndex.Deactivate)
             {
-                MessageBox.Show("Deactivated");
+                MessageBox.Show(@"Deactivated");
             }
         }
 
@@ -702,5 +723,119 @@ namespace SchoolAccountant.Forms
             ClearAllComboBoxesInMS();
             RefreshDgv();
         }
+
+        private void llPromoteStudents_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new PromoteStudents().ShowDialog();
+        }
+
+        private void btnSaveSchoolFeesANT_Click(object sender, EventArgs e)
+        {
+            // ANT - Add New Term
+
+            var session = cboSessionANT.SelectedValue;
+            var term = cboTermANT.SelectedValue;
+            var jss1 = tboJss1ANT.Text;
+            var jss2 = tboJss2ANT.Text;
+            var jss3 = tboJss3ANT.Text;
+            var sss1 = tboSss1ANT.Text;
+            var sss2 = tboSss2ANT.Text;
+            var sss3 = tboSss3ANT.Text;
+            var jss = tboJssANT.Text;
+            var sss = tboSssANT.Text;
+
+            if ( session != "" && term != "" && !string.IsNullOrWhiteSpace(jss1) && !string.IsNullOrWhiteSpace(jss2) &&
+                !string.IsNullOrWhiteSpace(jss3) && !string.IsNullOrWhiteSpace(sss1) && !string.IsNullOrWhiteSpace(sss2) &&
+                !string.IsNullOrWhiteSpace(sss3) && !string.IsNullOrWhiteSpace(jss) && !string.IsNullOrWhiteSpace(sss))
+            {
+                // Check to see if it's a number
+
+                decimal result;
+               
+                if (decimal.TryParse(jss1, out result) && decimal.TryParse(jss2, out result) &&
+                    decimal.TryParse(jss3, out result) && decimal.TryParse(sss1, out result) &&
+                    decimal.TryParse(sss2, out result) && decimal.TryParse(sss3, out result) &&
+                    decimal.TryParse(jss, out result) && decimal.TryParse(sss, out result))
+                {
+
+                    var classEnums = new List<ClassEnum>()
+                    {
+                        ClassEnum.JSS1,
+                        ClassEnum.JSS2,
+                        ClassEnum.JSS3,
+                        ClassEnum.SSS1,
+                        ClassEnum.SSS2,
+                        ClassEnum.SSS3,
+                        ClassEnum.JSS,
+                        ClassEnum.SSS
+                    };
+
+                    var schoolFees = new List<decimal>()
+                    {
+                        Convert.ToDecimal(jss1),
+                        Convert.ToDecimal(jss2),
+                        Convert.ToDecimal(jss3),
+                        Convert.ToDecimal(sss1),
+                        Convert.ToDecimal(sss2),
+                        Convert.ToDecimal(sss3),
+                        Convert.ToDecimal(jss),
+                        Convert.ToDecimal(sss)
+                    };
+
+                    var classTermFees = new List<ClassTermFee>();
+
+                    for (var i = 0; i < schoolFees[i]; i++)
+                    {
+                        var classTermFee = new ClassTermFee()
+                        {
+                            ClassEnum = classEnums[i],
+                            Session = session.ToString(),
+                            StartDate = DateTime.Now,
+                            EndDate = null,
+                            Active = true,
+                            Fee = schoolFees[i],
+                            TermEnum = (TermEnum) term
+                        };
+
+                        classTermFees.Add(classTermFee);
+                    }
+
+                    // todo: replace with the real user name
+                    _activatedAndDeactivatedId = _classTermFeeRepository.AddClassTermFees(classTermFees, "Femi");
+
+                    MessageBox.Show(_activatedAndDeactivatedId.ActivatedIds != null
+                        ? @"Fees added, click the 'undo' button to delete"
+                        : @"Something went wrong, please try again");
+                    
+                    // Enable the undo button
+                    btnUndoLastAddFeesANT.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show(@"Please, enter only numbers to fees");
+                }
+            }
+            else
+            {
+                MessageBox.Show(@"Please, all information are required");
+            }
+        }
+
+        private void btnUndoLastAddFeesANT_Click(object sender, EventArgs e)
+        {
+            if (_activatedAndDeactivatedId.ActivatedIds != null)
+            {
+                // todo: replace with the real user name
+                var success = _classTermFeeRepository.DeleteClassTermFees(_activatedAndDeactivatedId, "Femi");
+
+                MessageBox.Show(success ? @"Fees deleted successfully" : @"Something went wrong, please try again");
+                tsslAddNewTerm.Text = @"Fees deleted successfully, ";
+            }
+            else
+            {
+                MessageBox.Show(@"No recent fee was added");
+            }
+        }
+
     }
 }
