@@ -48,6 +48,36 @@ namespace BusinessLogic.Repositories
         }
 
         /// <summary>
+        /// Deactivates the student
+        /// </summary>
+        /// <param name="id">Student id</param>
+        /// <returns>if success, true, else false</returns>
+        public bool DeactivateStudent(string id)
+        {
+            try
+            {
+                var student = _studentRepository.GetById(id);
+
+                student.Active = false;
+                student.DeactivatedDate = DateTime.Now;
+
+                _studentRepository.Update(student);
+
+                _auditTrailRepository.Log($"Deactivated Student {student.FirstName} {student.LastName}", AuditActionEnum.Deactivated);
+
+                _log.Info("Student Deactivated");
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Error", ex);
+                return false;
+            }
+
+        }
+
+        /// <summary>
         /// Add new student into the student collection
         /// </summary>
         /// <param name="model">Loaded student class</param>
@@ -64,14 +94,9 @@ namespace BusinessLogic.Repositories
 
                 return true;
             }
-            catch (MongoConnectionException ex)
-            {
-                _log.Error("Mongodb", ex);
-                return false;
-            }
             catch (Exception ex)
             {
-                _log.Error("Others", ex);
+                _log.Error("Error", ex);
                 return false;
             }
         }
@@ -104,14 +129,9 @@ namespace BusinessLogic.Repositories
                 return true;
 
             }
-            catch (MongoConnectionException ex)
-            {
-                _log.Error("Mongodb", ex);
-                return false;
-            }
             catch (Exception ex)
             {
-                _log.Error("Others", ex);
+                _log.Error("Error", ex);
                 return false;
             }
         }
@@ -138,14 +158,9 @@ namespace BusinessLogic.Repositories
                 
                 return true;
             }
-            catch (MongoConnectionException ex)
-            {
-                _log.Error("Mongodb", ex);
-                return false;
-            }
             catch (Exception ex)
             {
-                _log.Error("Others", ex);
+                _log.Error("Error", ex);
                 return false;
             }
         }

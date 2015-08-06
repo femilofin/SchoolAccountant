@@ -1,11 +1,14 @@
-﻿namespace SchoolAccountant.Forms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace SchoolAccountant.Forms
 {
     partial class PayFee
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -186,18 +189,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblFullName;
-        private System.Windows.Forms.Label lblClass;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cboSession;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cboTerm;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox cboAmount;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox cboPrintReceipt;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox rtboComment;
-        private System.Windows.Forms.Button btnSubmit;
+        private Label lblFullName;
+        private Label lblClass;
+        private Label label3;
+        private ComboBox cboSession;
+        private Label label4;
+        private ComboBox cboTerm;
+        private Label label5;
+        private TextBox cboAmount;
+        private Label label6;
+        private CheckBox cboPrintReceipt;
+        private Label label1;
+        private RichTextBox rtboComment;
+        private Button btnSubmit;
     }
 }

@@ -34,7 +34,7 @@ namespace BusinessLogic.Repositories
             {
                 var audit = new AuditTrail
                 {
-                    Details = $"{Enum.GetName(typeof (AuditActionEnum), actionEnum)}: {detail}",
+                    Details = $"{detail}",
                     TimeStamp = DateTime.Now,
                     AuditAction = actionEnum
                 };

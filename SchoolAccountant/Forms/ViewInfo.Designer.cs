@@ -1,11 +1,14 @@
-﻿namespace SchoolAccountant.Forms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace SchoolAccountant.Forms
 {
     partial class ViewInfo
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -332,32 +335,32 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblClasStarted;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label lblFeesPaid;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label lblTermStarted;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label lblPresentClass;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label lblPresentSession;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox tboFirstName;
-        private System.Windows.Forms.TextBox tboLastName;
-        private System.Windows.Forms.TextBox tboMiddleName;
-        private System.Windows.Forms.DateTimePicker dtpBirthDate;
-        private System.Windows.Forms.DateTimePicker dtpDateStarted;
-        private System.Windows.Forms.Label lblOutstandingFees;
-        private System.Windows.Forms.ComboBox cboPresentArm;
+        private Label label1;
+        private Label label4;
+        private Label label8;
+        private Label lblClasStarted;
+        private Label label9;
+        private Label lblFeesPaid;
+        private Label label10;
+        private Label label11;
+        private Label label13;
+        private Label label15;
+        private Label label17;
+        private Label lblTermStarted;
+        private Label label19;
+        private Label lblPresentClass;
+        private Button btnEdit;
+        private Button btnClose;
+        private Label label21;
+        private Label lblPresentSession;
+        private Label label24;
+        private Label label25;
+        private TextBox tboFirstName;
+        private TextBox tboLastName;
+        private TextBox tboMiddleName;
+        private DateTimePicker dtpBirthDate;
+        private DateTimePicker dtpDateStarted;
+        private Label lblOutstandingFees;
+        private ComboBox cboPresentArm;
     }
 }

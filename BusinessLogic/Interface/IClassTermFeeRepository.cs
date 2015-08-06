@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using BusinessLogic.Entities;
 using BusinessLogic.Utility;
-using MongoRepository;
 
 namespace BusinessLogic.Interface
 {

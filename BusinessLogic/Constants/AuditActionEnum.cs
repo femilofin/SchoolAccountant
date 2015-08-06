@@ -6,6 +6,7 @@
         Updated,
         Deleted,
         Payment,
-        LoggedIn
+        LoggedIn,
+        Deactivated
     }
 }

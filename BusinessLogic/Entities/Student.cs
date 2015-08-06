@@ -21,7 +21,7 @@ namespace BusinessLogic.Entities
         public TermEnum PresentTerm { get; set; }
         public ArmEnum PresentArm { get; set; }
         public IList<FeePayment> FeePayments { get; set; } = new List<FeePayment>();
-
+        public DateTime DeactivatedDate { get; set; }
 
     }
 }

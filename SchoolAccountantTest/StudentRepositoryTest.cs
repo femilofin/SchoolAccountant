@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BusinessLogic.Entities;
+﻿using BusinessLogic.Entities;
 using BusinessLogic.Interface;
 using BusinessLogic.Repositories;
 using FizzWare.NBuilder;
@@ -24,7 +19,7 @@ namespace SchoolAccountantTest
         }
 
         [Test]
-        public void AddUpdateAndDeleteShouldReturnTrue()
+        public void AddUpdateDeactivateAndDeleteShouldReturnTrue()
         {
             // Add
             var student = Builder<Student>.CreateNew().With(x => x.Id = null).Build();
@@ -35,6 +30,10 @@ namespace SchoolAccountantTest
             student.LastName = "TestLastName";
             var updateSuccess = _studentRepository.Edit(student);
             Assert.AreEqual(true, updateSuccess);
+
+            // Deactivate
+            var deactivated = _studentRepository.DeactivateStudent(student.Id);
+            Assert.AreEqual(true, deactivated);
 
             // Delete
             var deleteSuccess = _studentRepository.Delete(student.Id);

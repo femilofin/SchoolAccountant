@@ -723,3 +723,38 @@ System.FormatException: 'Id1' is not a valid 24 digit hex string.
 
 2015-08-06 01:16:49,164 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
 
+
+
+
+2015-08-07 00:27:16,331 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-07 00:27:16,369 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
+
+
+
+2015-08-07 00:27:16,479 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-07 00:27:16,480 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-07 00:27:16,480 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-07 00:27:16,480 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Deactivated
+
+
+
+
+2015-08-07 00:27:16,503 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+

@@ -1,11 +1,14 @@
-﻿namespace SchoolAccountant.Forms
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace SchoolAccountant.Forms
 {
     partial class DashBoard
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -928,83 +931,83 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button btnAddUser;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tboPasswordAU;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tboUsernameAU;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tboFullNameAU;
-        private System.Windows.Forms.TextBox tboMiddleNameAS;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tboLastNameAS;
-        private System.Windows.Forms.TextBox tboFirstNameAS;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox cboStartTermAS;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cboStartClassAS;
-        private System.Windows.Forms.Button btnAddStudent;
-        private System.Windows.Forms.Button btnClearTextBoxes;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dtpStartDateAS;
-        private System.Windows.Forms.DataGridView dgvViewStudent;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox tboSearchMS;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox cboFeeStatusMS;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox cboArmMS;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox cboClassMS;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel tsslTableStatus;
-        private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dtpBirthDateAS;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox cboPresentArmAS;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox cboPresentTermAS;
-        private System.Windows.Forms.ComboBox cboPresentClassAS;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox tboOutstandingFeeAS;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ToolStripStatusLabel tsslShowAll;
-        private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button btnUndoLastAddFeesANT;
-        private System.Windows.Forms.Button btnSaveSchoolFeesANT;
-        private System.Windows.Forms.TextBox tboSss3ANT;
-        private System.Windows.Forms.TextBox tboJss3ANT;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox tboSss2ANT;
-        private System.Windows.Forms.TextBox tboJss2ANT;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox tboSss1ANT;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox tboJss1ANT;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.LinkLabel llPromoteStudents;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox cboTermANT;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox cboSessionANT;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox tboSssANT;
-        private System.Windows.Forms.TextBox tboJssANT;
-        private System.Windows.Forms.StatusStrip statusStrip2;
-        private System.Windows.Forms.ToolStripStatusLabel tsslAddNewTerm;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private Button btnAddUser;
+        private Label label3;
+        private TextBox tboPasswordAU;
+        private Label label2;
+        private TextBox tboUsernameAU;
+        private Label label1;
+        private TextBox tboFullNameAU;
+        private TextBox tboMiddleNameAS;
+        private Label label6;
+        private TextBox tboLastNameAS;
+        private TextBox tboFirstNameAS;
+        private Label label12;
+        private ComboBox cboStartTermAS;
+        private Label label8;
+        private ComboBox cboStartClassAS;
+        private Button btnAddStudent;
+        private Button btnClearTextBoxes;
+        private TabPage tabPage3;
+        private Label label7;
+        private DateTimePicker dtpStartDateAS;
+        private DataGridView dgvViewStudent;
+        private Label label19;
+        private TextBox tboSearchMS;
+        private Label label18;
+        private ComboBox cboFeeStatusMS;
+        private Label label17;
+        private ComboBox cboArmMS;
+        private Label label16;
+        private ComboBox cboClassMS;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel tsslTableStatus;
+        private Button btnPrint;
+        private Label label4;
+        private Label label5;
+        private Label label9;
+        private DateTimePicker dtpBirthDateAS;
+        private Label label20;
+        private ComboBox cboPresentArmAS;
+        private Label label15;
+        private ComboBox cboPresentTermAS;
+        private ComboBox cboPresentClassAS;
+        private Label label14;
+        private TextBox tboOutstandingFeeAS;
+        private Label label10;
+        private ToolStripStatusLabel tsslShowAll;
+        private Button btnRefresh;
+        private TabPage tabPage4;
+        private Button btnUndoLastAddFeesANT;
+        private Button btnSaveSchoolFeesANT;
+        private TextBox tboSss3ANT;
+        private TextBox tboJss3ANT;
+        private Label label27;
+        private Label label24;
+        private TextBox tboSss2ANT;
+        private TextBox tboJss2ANT;
+        private Label label26;
+        private Label label23;
+        private TextBox tboSss1ANT;
+        private Label label25;
+        private TextBox tboJss1ANT;
+        private Label label22;
+        private LinkLabel llPromoteStudents;
+        private Label label13;
+        private ComboBox cboTermANT;
+        private Label label21;
+        private ComboBox cboSessionANT;
+        private Label label11;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private Label label29;
+        private Label label28;
+        private TextBox tboSssANT;
+        private TextBox tboJssANT;
+        private StatusStrip statusStrip2;
+        private ToolStripStatusLabel tsslAddNewTerm;
     }
 }

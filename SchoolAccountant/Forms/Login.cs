@@ -24,7 +24,8 @@ namespace SchoolAccountant.Forms
             if (success)
             {
                 Hide();
-                new DashBoard().Show();
+
+                new DashBoard(username).Show();
             }
             else
             {

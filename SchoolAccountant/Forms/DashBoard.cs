@@ -29,8 +29,11 @@ namespace SchoolAccountant.Forms
         readonly DataGridViewButtonColumn _btnDeactivateStudent = new DataGridViewButtonColumn();
         private ActivatedAndDeactivatedId _activatedAndDeactivatedId;
 
+        private readonly string _username;
 
-        public DashBoard()
+
+
+        public DashBoard(string username)
         {
             InitializeComponent();
             Utilities.InitialiizeClassCombo(new[] { cboStartClassAS, cboPresentClassAS, cboClassMS });
@@ -41,6 +44,11 @@ namespace SchoolAccountant.Forms
 
             // Disable the undo save button
             btnUndoLastAddFeesANT.Enabled = false;
+
+            _username = username;
+
+            SetCurrentFeesInAddNewTermTab();
+
         }
 
         private void DashBoard_Load(object sender, EventArgs e)
@@ -688,33 +696,45 @@ namespace SchoolAccountant.Forms
 
         private void dgvViewStudent_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
             // if pay fee
-            if (e.ColumnIndex == (int)ButtonColumnIndex.PayFee)
+            switch (e.ColumnIndex)
             {
-                var row = dgvViewStudent.Rows[e.RowIndex];
-                new PayFee(row).ShowDialog();
-            }
+                case (int)ButtonColumnIndex.PayFee:
+                    {
+                        var row = dgvViewStudent.Rows[e.RowIndex];
+                        new PayFee(row).ShowDialog();
+                    }
+                    break;
+                case (int)ButtonColumnIndex.ViewInfo:
+                    {
+                        var row = dgvViewStudent.Rows[e.RowIndex];
+                        new ViewInfo(row).ShowDialog();
+                    }
+                    break;
+                case (int)ButtonColumnIndex.FeeHistory:
+                    {
+                        var row = dgvViewStudent.Rows[e.RowIndex];
+                        new FeeHistory(row).ShowDialog();
+                    }
+                    break;
+                case (int)ButtonColumnIndex.Deactivate:
+                    {
+                        var row = dgvViewStudent.Rows[e.RowIndex];
 
+                        var response = MessageBox.Show($"Are you sure you want to deactivate {row.Cells["FullName"].Value} ?", ActiveForm.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question,MessageBoxDefaultButton.Button2);
 
-            // if view info
-            else if (e.ColumnIndex == (int)ButtonColumnIndex.ViewInfo)
-            {
-                var row = dgvViewStudent.Rows[e.RowIndex];
-                new ViewInfo(row).ShowDialog();
-            }
+                        if (response == DialogResult.Yes)
+                        {
+                            var success = _studentRepository.DeactivateStudent(row.Cells["Id"].Value.ToString());
 
-            // if view fee history
-            else if (e.ColumnIndex == (int)ButtonColumnIndex.FeeHistory)
-            {
-                var row = dgvViewStudent.Rows[e.RowIndex];
-                new FeeHistory(row).ShowDialog();
-            }
+                            if (success)
+                            {
+                                MessageBox.Show(@"Student Deactivated");
+                            }
+                        }
 
-            // if deactivate student
-            else if (e.ColumnIndex == (int)ButtonColumnIndex.Deactivate)
-            {
-                MessageBox.Show(@"Deactivated");
+                    }
+                    break;
             }
         }
 
@@ -744,19 +764,20 @@ namespace SchoolAccountant.Forms
             var jss = tboJssANT.Text;
             var sss = tboSssANT.Text;
 
-            if ( session != "" && term != "" && !string.IsNullOrWhiteSpace(jss1) && !string.IsNullOrWhiteSpace(jss2) &&
+            if (session != "" && term != "" && !string.IsNullOrWhiteSpace(jss1) && !string.IsNullOrWhiteSpace(jss2) &&
                 !string.IsNullOrWhiteSpace(jss3) && !string.IsNullOrWhiteSpace(sss1) && !string.IsNullOrWhiteSpace(sss2) &&
                 !string.IsNullOrWhiteSpace(sss3) && !string.IsNullOrWhiteSpace(jss) && !string.IsNullOrWhiteSpace(sss))
             {
                 // Check to see if it's a number
 
                 decimal result;
-               
+
                 if (decimal.TryParse(jss1, out result) && decimal.TryParse(jss2, out result) &&
                     decimal.TryParse(jss3, out result) && decimal.TryParse(sss1, out result) &&
                     decimal.TryParse(sss2, out result) && decimal.TryParse(sss3, out result) &&
                     decimal.TryParse(jss, out result) && decimal.TryParse(sss, out result))
                 {
+                    //todo: if first term and students have not been promoted, promote students first before adding fees
 
                     var classEnums = new List<ClassEnum>()
                     {
@@ -782,26 +803,18 @@ namespace SchoolAccountant.Forms
                         Convert.ToDecimal(sss)
                     };
 
-                    var classTermFees = new List<ClassTermFee>();
-
-                    for (var i = 0; i < schoolFees[i]; i++)
+                    var classTermFees = schoolFees.Select((fee, i) => new ClassTermFee()
                     {
-                        var classTermFee = new ClassTermFee()
-                        {
-                            ClassEnum = classEnums[i],
-                            Session = session.ToString(),
-                            StartDate = DateTime.Now,
-                            EndDate = null,
-                            Active = true,
-                            Fee = schoolFees[i],
-                            TermEnum = (TermEnum) term
-                        };
+                        ClassEnum = classEnums[i],
+                        Session = session.ToString(),
+                        StartDate = DateTime.Now,
+                        EndDate = null,
+                        Active = true,
+                        Fee = fee,
+                        TermEnum = (TermEnum) term
+                    }).ToList();
 
-                        classTermFees.Add(classTermFee);
-                    }
-
-                    // todo: replace with the real user name
-                    _activatedAndDeactivatedId = _classTermFeeRepository.AddClassTermFees(classTermFees, "Femi");
+                    _activatedAndDeactivatedId = _classTermFeeRepository.AddClassTermFees(classTermFees, _username);
 
                     if (_activatedAndDeactivatedId == null)
                     {
@@ -809,9 +822,11 @@ namespace SchoolAccountant.Forms
                     }
 
                     MessageBox.Show(@"Fees added, click the 'undo' button to delete");
-                    
+
                     // Enable the undo button
                     btnUndoLastAddFeesANT.Enabled = true;
+
+                    // todo: add new fee to all students and undo deletes the fee
                 }
                 else
                 {
@@ -828,16 +843,31 @@ namespace SchoolAccountant.Forms
         {
             if (_activatedAndDeactivatedId.ActivatedIds != null)
             {
-                // todo: replace with the real user name
-                var success = _classTermFeeRepository.DeleteCurrentFeesAndActivatePreviousFees(_activatedAndDeactivatedId, "Femi");
+                var success = _classTermFeeRepository.DeleteCurrentFeesAndActivatePreviousFees(_activatedAndDeactivatedId, _username);
 
                 MessageBox.Show(success ? @"Fees deleted successfully" : @"Something went wrong, please try again");
                 tsslAddNewTerm.Text = @"Fees deleted successfully";
+
+                SetCurrentFeesInAddNewTermTab();
+
             }
             else
             {
                 MessageBox.Show(@"No recent fee was added");
             }
+        }
+
+        private void SetCurrentFeesInAddNewTermTab()
+        {
+            var currentFees = _classTermFeeRepository.GetCurrentFees();
+            tboJss1ANT.Text = currentFees.Where(x => x.ClassEnum == ClassEnum.JSS1).Select(x => x.Fee).FirstOrDefault().ToString();
+            tboJss2ANT.Text = currentFees.Where(x => x.ClassEnum == ClassEnum.JSS2).Select(x => x.Fee).FirstOrDefault().ToString();
+            tboJss3ANT.Text = currentFees.Where(x => x.ClassEnum == ClassEnum.JSS3).Select(x => x.Fee).FirstOrDefault().ToString();
+            tboSss1ANT.Text = currentFees.Where(x => x.ClassEnum == ClassEnum.SSS1).Select(x => x.Fee).FirstOrDefault().ToString();
+            tboSss2ANT.Text = currentFees.Where(x => x.ClassEnum == ClassEnum.SSS2).Select(x => x.Fee).FirstOrDefault().ToString();
+            tboSss3ANT.Text = currentFees.Where(x => x.ClassEnum == ClassEnum.SSS3).Select(x => x.Fee).FirstOrDefault().ToString();
+            tboJssANT.Text = currentFees.Where(x => x.ClassEnum == ClassEnum.JSS).Select(x => x.Fee).FirstOrDefault().ToString();
+            tboSssANT.Text = currentFees.Where(x => x.ClassEnum == ClassEnum.SSS).Select(x => x.Fee).FirstOrDefault().ToString();
         }
 
     }
