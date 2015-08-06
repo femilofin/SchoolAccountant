@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuditTrailRepositoryTest.cs" />
+    <Compile Include="ClassTermFeeRepositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentRepositoryTest.cs" />
     <Compile Include="UserRepositoryTest.cs" />

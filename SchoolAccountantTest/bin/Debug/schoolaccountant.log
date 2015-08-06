@@ -286,3 +286,440 @@ System.FormatException: 'Id1' is not a valid 24 digit hex string.
 
 2015-08-02 16:08:14,648 [TestRunnerThread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
 
+
+
+
+2015-08-06 00:48:53,171 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 00:49:06,204 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 00:49:33,930 [Runner thread] ERROR BusinessLogic.ClassTermFeeRepository.cs  - Error
+
+System.FormatException: 'Id1' is not a valid 24 digit hex string.
+   at MongoDB.Bson.ObjectId.Parse(String s)
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.SerializeMember(BsonWriter bsonWriter, Object obj, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Driver.Operations.BulkInsertOperation.InsertBatchSerializer.SerializeRequest(BsonBinaryWriter bsonWriter, WriteRequest request)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.BatchSerializer.AddRequest(BsonBinaryWriter bsonBinaryWriter, WriteRequest request)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.BatchSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentWrapperSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonArraySerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoQueryMessage.WriteBodyTo(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoRequestMessage.WriteTo(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoConnection.SendMessage(MongoRequestMessage message)
+   at MongoDB.Driver.Operations.CommandOperation`1.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.ExecuteBatch(MongoConnection connection, Batch`1 batch, Int32 originalIndex)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.InsertOpcodeOperationEmulator.Execute(MongoConnection connection)
+   at MongoDB.Driver.MongoCollection.InsertBatch(Type nominalType, IEnumerable documents, MongoInsertOptions options)
+   at MongoDB.Driver.MongoCollection.Insert(Type nominalType, Object document, MongoInsertOptions options)
+   at MongoRepository.MongoRepository`2.Add(T entity)
+   at BusinessLogic.Repositories.ClassTermFeeRepository.<AddClassTermFees>b__5_0(ClassTermFee x) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\ClassTermFeeRepository.cs:line 66
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.Repositories.ClassTermFeeRepository.AddClassTermFees(IList`1 classTermFees, String username) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\ClassTermFeeRepository.cs:line 66
+
+
+
+2015-08-06 00:53:19,306 [Runner thread] ERROR BusinessLogic.ClassTermFeeRepository.cs  - Error
+
+System.FormatException: 'Id1' is not a valid 24 digit hex string.
+   at MongoDB.Bson.ObjectId.Parse(String s)
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.SerializeMember(BsonWriter bsonWriter, Object obj, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Driver.Operations.BulkInsertOperation.InsertBatchSerializer.SerializeRequest(BsonBinaryWriter bsonWriter, WriteRequest request)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.BatchSerializer.AddRequest(BsonBinaryWriter bsonBinaryWriter, WriteRequest request)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.BatchSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentWrapperSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonValueSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonArraySerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonValueSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoQueryMessage.WriteBodyTo(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoRequestMessage.WriteTo(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoConnection.SendMessage(MongoRequestMessage message)
+   at MongoDB.Driver.Operations.CommandOperation`1.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.ExecuteBatch(MongoConnection connection, Batch`1 batch, Int32 originalIndex)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.BulkInsertOperation.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.InsertOpcodeOperationEmulator.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.InsertOpcodeOperation.Execute(MongoConnection connection)
+   at MongoDB.Driver.MongoCollection.InsertBatch(Type nominalType, IEnumerable documents, MongoInsertOptions options)
+   at MongoDB.Driver.MongoCollection.Insert(Type nominalType, Object document, MongoInsertOptions options)
+   at MongoDB.Driver.MongoCollection.Insert(Type nominalType, Object document)
+   at MongoDB.Driver.MongoCollection.Insert[TNominalType](TNominalType document)
+   at MongoRepository.MongoRepository`2.Add(T entity)
+   at BusinessLogic.Repositories.ClassTermFeeRepository.<AddClassTermFees>b__5_0(ClassTermFee x) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\ClassTermFeeRepository.cs:line 66
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.Repositories.ClassTermFeeRepository.AddClassTermFees(IList`1 classTermFees, String username) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\ClassTermFeeRepository.cs:line 66
+
+
+
+2015-08-06 00:53:38,345 [Runner thread] ERROR BusinessLogic.ClassTermFeeRepository.cs  - Error
+
+System.FormatException: 'Id1' is not a valid 24 digit hex string.
+   at MongoDB.Bson.ObjectId.Parse(String s)
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.SerializeMember(BsonWriter bsonWriter, Object obj, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Driver.Operations.BulkInsertOperation.InsertBatchSerializer.SerializeRequest(BsonBinaryWriter bsonWriter, WriteRequest request)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.BatchSerializer.AddRequest(BsonBinaryWriter bsonBinaryWriter, WriteRequest request)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.BatchSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentWrapperSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonValueSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonArraySerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonValueSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoQueryMessage.WriteBodyTo(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoRequestMessage.WriteTo(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoConnection.SendMessage(MongoRequestMessage message)
+   at MongoDB.Driver.Operations.CommandOperation`1.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.ExecuteBatch(MongoConnection connection, Batch`1 batch, Int32 originalIndex)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.BulkInsertOperation.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.InsertOpcodeOperationEmulator.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.InsertOpcodeOperation.Execute(MongoConnection connection)
+   at MongoDB.Driver.MongoCollection.InsertBatch(Type nominalType, IEnumerable documents, MongoInsertOptions options)
+   at MongoDB.Driver.MongoCollection.Insert(Type nominalType, Object document, MongoInsertOptions options)
+   at MongoDB.Driver.MongoCollection.Insert(Type nominalType, Object document)
+   at MongoDB.Driver.MongoCollection.Insert[TNominalType](TNominalType document)
+   at MongoRepository.MongoRepository`2.Add(T entity)
+   at BusinessLogic.Repositories.ClassTermFeeRepository.<AddClassTermFees>b__5_0(ClassTermFee x) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\ClassTermFeeRepository.cs:line 66
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.Repositories.ClassTermFeeRepository.AddClassTermFees(IList`1 classTermFees, String username) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\ClassTermFeeRepository.cs:line 66
+
+
+
+2015-08-06 00:54:21,327 [Runner thread] ERROR BusinessLogic.ClassTermFeeRepository.cs  - Error
+
+System.FormatException: 'Id1' is not a valid 24 digit hex string.
+   at MongoDB.Bson.ObjectId.Parse(String s)
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.SerializeMember(BsonWriter bsonWriter, Object obj, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Driver.Operations.BulkInsertOperation.InsertBatchSerializer.SerializeRequest(BsonBinaryWriter bsonWriter, WriteRequest request)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.BatchSerializer.AddRequest(BsonBinaryWriter bsonBinaryWriter, WriteRequest request)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.BatchSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentWrapperSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonValueSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonArraySerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonValueSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoQueryMessage.WriteBodyTo(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoRequestMessage.WriteTo(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoConnection.SendMessage(MongoRequestMessage message)
+   at MongoDB.Driver.Operations.CommandOperation`1.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.ExecuteBatch(MongoConnection connection, Batch`1 batch, Int32 originalIndex)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.BulkInsertOperation.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.InsertOpcodeOperationEmulator.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.InsertOpcodeOperation.Execute(MongoConnection connection)
+   at MongoDB.Driver.MongoCollection.InsertBatch(Type nominalType, IEnumerable documents, MongoInsertOptions options)
+   at MongoDB.Driver.MongoCollection.Insert(Type nominalType, Object document, MongoInsertOptions options)
+   at MongoDB.Driver.MongoCollection.Insert(Type nominalType, Object document)
+   at MongoDB.Driver.MongoCollection.Insert[TNominalType](TNominalType document)
+   at MongoRepository.MongoRepository`2.Add(T entity)
+   at BusinessLogic.Repositories.ClassTermFeeRepository.<AddClassTermFees>b__5_0(ClassTermFee x) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\ClassTermFeeRepository.cs:line 66
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.Repositories.ClassTermFeeRepository.AddClassTermFees(IList`1 classTermFees, String username) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\ClassTermFeeRepository.cs:line 66
+
+
+
+2015-08-06 00:55:13,870 [Runner thread] ERROR BusinessLogic.ClassTermFeeRepository.cs  - Error
+
+System.FormatException: 'Id1' is not a valid 24 digit hex string.
+   at MongoDB.Bson.ObjectId.Parse(String s)
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.SerializeMember(BsonWriter bsonWriter, Object obj, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Driver.Operations.BulkInsertOperation.InsertBatchSerializer.SerializeRequest(BsonBinaryWriter bsonWriter, WriteRequest request)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.BatchSerializer.AddRequest(BsonBinaryWriter bsonBinaryWriter, WriteRequest request)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.BatchSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentWrapperSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonValueSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonArraySerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonValueSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoQueryMessage.WriteBodyTo(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoRequestMessage.WriteTo(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoConnection.SendMessage(MongoRequestMessage message)
+   at MongoDB.Driver.Operations.CommandOperation`1.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.ExecuteBatch(MongoConnection connection, Batch`1 batch, Int32 originalIndex)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.BulkInsertOperation.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.InsertOpcodeOperationEmulator.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.InsertOpcodeOperation.Execute(MongoConnection connection)
+   at MongoDB.Driver.MongoCollection.InsertBatch(Type nominalType, IEnumerable documents, MongoInsertOptions options)
+   at MongoDB.Driver.MongoCollection.Insert(Type nominalType, Object document, MongoInsertOptions options)
+   at MongoDB.Driver.MongoCollection.Insert(Type nominalType, Object document)
+   at MongoDB.Driver.MongoCollection.Insert[TNominalType](TNominalType document)
+   at MongoRepository.MongoRepository`2.Add(T entity)
+   at BusinessLogic.Repositories.ClassTermFeeRepository.<AddClassTermFees>b__5_0(ClassTermFee x) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\ClassTermFeeRepository.cs:line 66
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.Repositories.ClassTermFeeRepository.AddClassTermFees(IList`1 classTermFees, String username) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\ClassTermFeeRepository.cs:line 66
+
+
+
+2015-08-06 00:55:52,583 [Runner thread] ERROR BusinessLogic.ClassTermFeeRepository.cs  - Error
+
+System.FormatException: 'Id1' is not a valid 24 digit hex string.
+   at MongoDB.Bson.ObjectId.Parse(String s)
+   at MongoDB.Bson.Serialization.Serializers.StringSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.SerializeMember(BsonWriter bsonWriter, Object obj, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Driver.Operations.BulkInsertOperation.InsertBatchSerializer.SerializeRequest(BsonBinaryWriter bsonWriter, WriteRequest request)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.BatchSerializer.AddRequest(BsonBinaryWriter bsonBinaryWriter, WriteRequest request)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.BatchSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentWrapperSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonValueSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonArraySerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonValueSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.BsonDocumentSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonSerializer.Serialize(BsonWriter bsonWriter, Type nominalType, Object value, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoQueryMessage.WriteBodyTo(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoRequestMessage.WriteTo(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoConnection.SendMessage(MongoRequestMessage message)
+   at MongoDB.Driver.Operations.CommandOperation`1.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.ExecuteBatch(MongoConnection connection, Batch`1 batch, Int32 originalIndex)
+   at MongoDB.Driver.Operations.BulkUnmixedWriteOperationBase.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.BulkInsertOperation.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.InsertOpcodeOperationEmulator.Execute(MongoConnection connection)
+   at MongoDB.Driver.Operations.InsertOpcodeOperation.Execute(MongoConnection connection)
+   at MongoDB.Driver.MongoCollection.InsertBatch(Type nominalType, IEnumerable documents, MongoInsertOptions options)
+   at MongoDB.Driver.MongoCollection.Insert(Type nominalType, Object document, MongoInsertOptions options)
+   at MongoDB.Driver.MongoCollection.Insert(Type nominalType, Object document)
+   at MongoDB.Driver.MongoCollection.Insert[TNominalType](TNominalType document)
+   at MongoRepository.MongoRepository`2.Add(T entity)
+   at BusinessLogic.Repositories.ClassTermFeeRepository.<AddClassTermFees>b__5_0(ClassTermFee x) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\ClassTermFeeRepository.cs:line 66
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.Repositories.ClassTermFeeRepository.AddClassTermFees(IList`1 classTermFees, String username) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\ClassTermFeeRepository.cs:line 66
+
+
+
+2015-08-06 01:04:16,958 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:04:16,967 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-06 01:04:30,846 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:04:30,846 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees reactivated
+
+
+
+
+2015-08-06 01:04:30,852 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:04:30,852 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-06 01:04:30,852 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:04:30,852 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-06 01:04:30,853 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:04:30,853 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-06 01:04:30,853 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:04:30,853 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-06 01:04:30,853 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:04:30,853 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-06 01:04:30,853 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:04:30,853 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-06 01:04:30,854 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:04:30,854 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-06 01:04:30,854 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:04:30,854 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-06 01:16:49,138 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:16:49,147 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-06 01:16:49,158 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:16:49,158 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees reactivated
+
+
+
+
+2015-08-06 01:16:49,162 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:16:49,162 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-06 01:16:49,162 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:16:49,162 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-06 01:16:49,163 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:16:49,163 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-06 01:16:49,163 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:16:49,163 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-06 01:16:49,163 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:16:49,163 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-06 01:16:49,163 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:16:49,163 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-06 01:16:49,164 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:16:49,164 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-06 01:16:49,164 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-06 01:16:49,164 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+

@@ -1,6 +1,7 @@
 ﻿#region
 
 using System;
+using System.Linq;
 using BusinessLogic.Constants;
 using BusinessLogic.Entities;
 using BusinessLogic.Interface;
@@ -58,6 +59,24 @@ namespace BusinessLogic.Repositories
             {
                 var auditTrail = _auditTrailRepository.GetById(id);
                 _auditTrailRepository.Delete(auditTrail);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Others", ex);
+
+                return false;
+            }
+        }
+
+        public bool DeleteTestLog(string log)
+        {
+            try
+            {
+                var auditTrail = _auditTrailRepository.Where(x => x.Details == log).ToList();
+
+                auditTrail.ForEach(x => _auditTrailRepository.Delete(x));
+
                 return true;
             }
             catch (Exception ex)

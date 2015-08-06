@@ -28,99 +28,118 @@ namespace BusinessLogic.Repositories
             XmlConfigurator.Configure();
         }
 
-        public List<ClassTermFee> GetActiveFees()
+        /// <summary>
+        /// Gets the currently activated fees
+        /// </summary>
+        /// <returns>A list of the fees (i.e jss - sss)</returns>
+        public List<ClassTermFee> GetCurrentFees()
         {
             try
             {
-                return _classTermFees.Where(x => x.Active).ToList();
-            }
-            catch (MongoConnectionException ex)
-            {
-                _log.Error("Mongodb", ex);
-                return null;
+                var currentFees = _classTermFees.Where(x => x.Active).ToList();
+
+                return currentFees.Any() ? currentFees : new List<ClassTermFee>();
             }
             catch (Exception ex)
             {
-                _log.Error("Others", ex);
+                _log.Error("Error", ex);
                 return null;
             }
         }
 
-        public ActivatedAndDeactivatedId AddClassTermFees(List<ClassTermFee> classTermFees, string username)
+        /// <summary>
+        /// Adds and activates new set of fees
+        /// </summary>
+        /// <param name="classTermFees">A list of fees (i.e jss - sss)</param>
+        /// <param name="username">The user performing this action, for audit trail.</param>
+        /// <returns>A list of ids of the newly added fees and the ones deactivated </returns>
+        public ActivatedAndDeactivatedId AddClassTermFees(IList<ClassTermFee> classTermFees, string username)
         {
-            var activatedAndDeactivatedId = new ActivatedAndDeactivatedId();
 
+            var currentFees = GetCurrentFees();
+
+            var deActivatedIds = DeactivateFeesAndGetIds(currentFees);
+
+            // Add fees and return ids
             try
             {
-                //If fee already exist, Get all active fees, disable and set end date
+                var activatedIds = classTermFees.Select(x => _classTermFees.Add(x).Id).ToList();
 
-                var activeFees = GetActiveFees();
-
-                if (activeFees != null)
+                var activatedAndDeactivatedId = new ActivatedAndDeactivatedId
                 {
-                    var deactivatedIds = new List<string>();
+                    DeActivatedIds = deActivatedIds,
+                    ActivatedIds = activatedIds
+                };
 
-                    foreach (var fee in activeFees)
-                    {
-                        fee.Active = false;
-                        fee.EndDate = DateTime.Now;
-
-                        var deactivatedId = _classTermFees.Update(fee).Id;
-
-                        deactivatedIds.Add(deactivatedId);
-                    }
-
-                    activatedAndDeactivatedId.DeActivatedIds = deactivatedIds;
-                }
-                else
-                {
-                    activatedAndDeactivatedId.DeActivatedIds = null;
-                }
-
-                // Add fees and return ids
-                var ids = classTermFees.Select(x => _classTermFees.Add(x).Id).ToList();
-
-                activatedAndDeactivatedId.ActivatedIds = ids;
 
                 _auditTrailRepository.Log($"School fees created by {username}", AuditActionEnum.Created);
 
                 _log.Info("Fees added");
 
                 return activatedAndDeactivatedId;
-            }
-            catch (MongoConnectionException ex)
-            {
-                _log.Error("Mongodb", ex);
-                return null;
+
             }
             catch (Exception ex)
             {
-                _log.Error("Others", ex);
+                _log.Error("Error", ex);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Used to deactivates the fees and return their ids
+        /// </summary>
+        /// <param name="currentFees">A list of the current fees to deactivate.</param>
+        /// <returns>A list of ids for the deactivated fees</returns>
+        private List<string> DeactivateFeesAndGetIds(List<ClassTermFee> currentFees)
+        {
+            if (!currentFees.Any()) return new List<string>();
+
+            var deactivatedIds = new List<string>();
+
+            try
+            {
+                foreach (var fee in currentFees)
+                {
+                    fee.Active = false;
+                    fee.EndDate = DateTime.Now;
+
+                    var deactivatedId = _classTermFees.Update(fee).Id;
+
+                    deactivatedIds.Add(deactivatedId);
+                }
+
+                return deactivatedIds;
+
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Error", ex);
                 return null;
             }
 
         }
 
-        public bool DeleteClassTermFees(ActivatedAndDeactivatedId activatedAndDeactivatedId, string username)
+        /// <summary>
+        /// Deletes the current fees and activate the last deactivated fees
+        /// </summary>
+        /// <param name="activatedAndDeactivatedId">A list containing the current fee ids and previous deactivated fee ids</param>
+        /// <param name="username">The user performing this action, for audit trail.</param>
+        /// <returns>True if success, else false</returns>
+        public bool DeleteCurrentFeesAndActivatePreviousFees(ActivatedAndDeactivatedId activatedAndDeactivatedId, string username)
         {
             try
             {
                 // Reactivate the formally deactivated fees
 
-                foreach (var id in activatedAndDeactivatedId.DeActivatedIds)
-                {
-                    var fee = _classTermFees.GetById(id);
+                var success = ReactivatePreviousFees(activatedAndDeactivatedId.DeActivatedIds, username);
 
-                    fee.Active = true;
-                    fee.EndDate = null;
+                if (!success)
+                {
+                    return false;
                 }
 
-                _auditTrailRepository.Log($"School fees reactivated by {username}", AuditActionEnum.Created);
-
-                _log.Info("Fees reactivated");
-
-
-                // Delete the newly added fee
+                // Delete the newly added fees
 
                 foreach (var id in activatedAndDeactivatedId.ActivatedIds)
                 {
@@ -129,25 +148,47 @@ namespace BusinessLogic.Repositories
                     _auditTrailRepository.Log($"School fees deleted by {username}", AuditActionEnum.Deleted);
 
                     _log.Info("Fees deleted");
-
                 }
 
                 // True if delete is successful
 
                 return true;
             }
-            catch (MongoConnectionException ex)
-            {
-                _log.Error("Mongodb", ex);
-                return false;
-            }
             catch (Exception ex)
             {
-                _log.Error("Others", ex);
+                _log.Error("Error", ex);
                 return false;
             }
         }
 
+        /// <summary>
+        /// Reactivates the previous deactivated fee
+        /// </summary>
+        /// <param name="deActivatedIds">A list of ids for the deactivated fees</param>
+        /// <param name="username">The user performing this action, for audit trail.</param>
+        /// <returns>True if success else false</returns>
+        private bool ReactivatePreviousFees(IEnumerable<string> deActivatedIds, string username)
+        {
+            try
+            {
+                foreach (var fee in deActivatedIds.Select(id => _classTermFees.GetById(id)))
+                {
+                    fee.Active = true;
+                    fee.EndDate = null;
+                }
 
+                _auditTrailRepository.Log($"School fees reactivated by {username}", AuditActionEnum.Created);
+
+                _log.Info("Fees reactivated");
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Error", ex);
+                return false;
+            }
+
+        }
     }
 }

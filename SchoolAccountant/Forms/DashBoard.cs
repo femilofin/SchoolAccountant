@@ -803,9 +803,12 @@ namespace SchoolAccountant.Forms
                     // todo: replace with the real user name
                     _activatedAndDeactivatedId = _classTermFeeRepository.AddClassTermFees(classTermFees, "Femi");
 
-                    MessageBox.Show(_activatedAndDeactivatedId.ActivatedIds != null
-                        ? @"Fees added, click the 'undo' button to delete"
-                        : @"Something went wrong, please try again");
+                    if (_activatedAndDeactivatedId == null)
+                    {
+                        MessageBox.Show(@"Something went wrong, Please try again", @"School Accountant");
+                    }
+
+                    MessageBox.Show(@"Fees added, click the 'undo' button to delete");
                     
                     // Enable the undo button
                     btnUndoLastAddFeesANT.Enabled = true;
@@ -826,10 +829,10 @@ namespace SchoolAccountant.Forms
             if (_activatedAndDeactivatedId.ActivatedIds != null)
             {
                 // todo: replace with the real user name
-                var success = _classTermFeeRepository.DeleteClassTermFees(_activatedAndDeactivatedId, "Femi");
+                var success = _classTermFeeRepository.DeleteCurrentFeesAndActivatePreviousFees(_activatedAndDeactivatedId, "Femi");
 
                 MessageBox.Show(success ? @"Fees deleted successfully" : @"Something went wrong, please try again");
-                tsslAddNewTerm.Text = @"Fees deleted successfully, ";
+                tsslAddNewTerm.Text = @"Fees deleted successfully";
             }
             else
             {
