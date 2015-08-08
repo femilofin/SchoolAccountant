@@ -119,8 +119,8 @@ namespace SchoolAccountant.Helpers
             foreach (var comboBox in comboBoxes)
             {
                 var nameAndValues = new BindingList<NameAndValueString>();
-                var names = new[] {"", $"{DateTime.Now.Year}/{DateTime.Now.AddYears(1).Year}", $"{DateTime.Now.AddYears(-1).Year}/{DateTime.Now.Year}"};
-                var values = new[] {"", $"{DateTime.Now.Year}/{DateTime.Now.AddYears(1).Year}", $"{DateTime.Now.AddYears(-1).Year}/{DateTime.Now.Year}"};
+                var names = new[] {"", $"{DateTime.Now.AddYears(-1).Year}/{DateTime.Now.Year}", $"{DateTime.Now.Year}/{DateTime.Now.AddYears(1).Year}" };
+                var values = new[] { "", $"{DateTime.Now.AddYears(-1).Year}/{DateTime.Now.Year}", $"{DateTime.Now.Year}/{DateTime.Now.AddYears(1).Year}" };
 
                 for (int i = 0; i < names.Length; i++)
                 {

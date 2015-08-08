@@ -21,9 +21,7 @@ C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\School
 C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.Forms.Login.resources
 C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.Forms.PayFee.resources
 C:\Users\Oluwafemi\Documents\Visual Studio 2013\Projects\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.Forms.ViewInfo.resources
-C:\Freelance\SchoolAccountant\SchoolAccountant\bin\Debug\SchoolAccountant.exe.config
 C:\Freelance\SchoolAccountant\SchoolAccountant\bin\Debug\SchoolAccountant.exe
-C:\Freelance\SchoolAccountant\SchoolAccountant\bin\Debug\SchoolAccountant.pdb
 C:\Freelance\SchoolAccountant\SchoolAccountant\bin\Debug\BusinessLogic.dll
 C:\Freelance\SchoolAccountant\SchoolAccountant\bin\Debug\MongoDB.Bson.dll
 C:\Freelance\SchoolAccountant\SchoolAccountant\bin\Debug\MongoDB.Driver.dll
@@ -38,8 +36,11 @@ C:\Freelance\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.csproj
 C:\Freelance\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.Forms.DashBoard.resources
 C:\Freelance\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.Forms.Login.resources
 C:\Freelance\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.Forms.PayFee.resources
+C:\Freelance\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.Forms.SchoolSetup.resources
 C:\Freelance\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.Forms.ViewInfo.resources
 C:\Freelance\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.Properties.Resources.resources
 C:\Freelance\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.csproj.GenerateResource.Cache
 C:\Freelance\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.exe
 C:\Freelance\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.pdb
+C:\Freelance\SchoolAccountant\SchoolAccountant\bin\Debug\SchoolAccountant.exe.config
+C:\Freelance\SchoolAccountant\SchoolAccountant\bin\Debug\SchoolAccountant.pdb

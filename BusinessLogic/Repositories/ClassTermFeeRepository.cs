@@ -25,6 +25,11 @@ namespace BusinessLogic.Repositories
             XmlConfigurator.Configure();
         }
 
+        public void Example()
+        {
+            throw new Exception();
+        }
+
         /// <summary>
         /// Gets the currently activated fees
         /// </summary>
@@ -172,6 +177,8 @@ namespace BusinessLogic.Repositories
                 {
                     fee.Active = true;
                     fee.EndDate = null;
+
+                    _classTermFees.Update(fee);
                 }
 
                 _auditTrailRepository.Log($"School fees reactivated by {username}", AuditActionEnum.Created);

@@ -81,6 +81,8 @@ namespace SchoolAccountant.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.tboFullNameAU = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.statusStrip2 = new System.Windows.Forms.StatusStrip();
+            this.tsslAddNewTerm = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -101,14 +103,12 @@ namespace SchoolAccountant.Forms
             this.tboJss1ANT = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.llPromoteStudents = new System.Windows.Forms.LinkLabel();
-            this.label13 = new System.Windows.Forms.Label();
             this.cboTermANT = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.cboSessionANT = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.statusStrip2 = new System.Windows.Forms.StatusStrip();
-            this.tsslAddNewTerm = new System.Windows.Forms.ToolStripStatusLabel();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -116,8 +116,8 @@ namespace SchoolAccountant.Forms
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.statusStrip2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -653,6 +653,21 @@ namespace SchoolAccountant.Forms
             this.tabPage4.Text = "Add New Term";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // statusStrip2
+            // 
+            this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslAddNewTerm});
+            this.statusStrip2.Location = new System.Drawing.Point(3, 587);
+            this.statusStrip2.Name = "statusStrip2";
+            this.statusStrip2.Size = new System.Drawing.Size(649, 22);
+            this.statusStrip2.TabIndex = 9;
+            this.statusStrip2.Text = "statusStrip2";
+            // 
+            // tsslAddNewTerm
+            // 
+            this.tsslAddNewTerm.Name = "tsslAddNewTerm";
+            this.tsslAddNewTerm.Size = new System.Drawing.Size(0, 17);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label29);
@@ -826,18 +841,6 @@ namespace SchoolAccountant.Forms
             this.llPromoteStudents.Text = "Click here to promote students";
             this.llPromoteStudents.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llPromoteStudents_LinkClicked);
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(26, 19);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(472, 30);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "If it is the start of a new session (First Term), Please select the students to p" +
-    "romote first.\r\nIgnore if there is no student repeating a class.";
-            // 
             // cboTermANT
             // 
             this.cboTermANT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -885,20 +888,17 @@ namespace SchoolAccountant.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add School Fees";
             // 
-            // statusStrip2
+            // label13
             // 
-            this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsslAddNewTerm});
-            this.statusStrip2.Location = new System.Drawing.Point(3, 587);
-            this.statusStrip2.Name = "statusStrip2";
-            this.statusStrip2.Size = new System.Drawing.Size(649, 22);
-            this.statusStrip2.TabIndex = 9;
-            this.statusStrip2.Text = "statusStrip2";
-            // 
-            // tsslAddNewTerm
-            // 
-            this.tsslAddNewTerm.Name = "tsslAddNewTerm";
-            this.tsslAddNewTerm.Size = new System.Drawing.Size(0, 17);
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(26, 19);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(472, 30);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "If it is the start of a new session (First Term), Please select the students to p" +
+    "romote first.\r\nIgnore if there is no student repeating a class.";
             // 
             // DashBoard
             // 
@@ -921,10 +921,10 @@ namespace SchoolAccountant.Forms
             this.tabPage2.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.statusStrip2.ResumeLayout(false);
             this.statusStrip2.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -996,7 +996,6 @@ namespace SchoolAccountant.Forms
         private TextBox tboJss1ANT;
         private Label label22;
         private LinkLabel llPromoteStudents;
-        private Label label13;
         private ComboBox cboTermANT;
         private Label label21;
         private ComboBox cboSessionANT;
@@ -1009,5 +1008,6 @@ namespace SchoolAccountant.Forms
         private TextBox tboJssANT;
         private StatusStrip statusStrip2;
         private ToolStripStatusLabel tsslAddNewTerm;
+        private Label label13;
     }
 }

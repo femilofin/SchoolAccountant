@@ -21,6 +21,7 @@ namespace SchoolAccountant.Forms
         private readonly IStudentRepository _studentRepository = new StudentRepository();
         private readonly IUserRepository _userRepository = new UserRepository();
         private readonly IClassTermFeeRepository _classTermFeeRepository = new ClassTermFeeRepository();
+        private readonly ISchoolRepository _schoolRepository = new SchoolRepository();
 
 
         readonly DataGridViewButtonColumn _btnViewInfo = new DataGridViewButtonColumn();
@@ -35,7 +36,10 @@ namespace SchoolAccountant.Forms
 
         public DashBoard(string username)
         {
+
+            _schoolRepository.PromoteStudents(null);
             InitializeComponent();
+
             Utilities.InitialiizeClassCombo(new[] { cboStartClassAS, cboPresentClassAS, cboClassMS });
             Utilities.InitialiizeTermCombo(new[] { cboStartTermAS, cboPresentTermAS, cboTermANT });
             Utilities.InitialiizeArmCombo(new[] { cboArmMS, cboPresentArmAS });
@@ -47,7 +51,7 @@ namespace SchoolAccountant.Forms
 
             _username = username;
 
-            SetCurrentFeesInAddNewTermTab();
+            SetCurrentFeesAsAddNewTermTab();
 
         }
 
@@ -721,18 +725,14 @@ namespace SchoolAccountant.Forms
                     {
                         var row = dgvViewStudent.Rows[e.RowIndex];
 
-                        var response = MessageBox.Show($"Are you sure you want to deactivate {row.Cells["FullName"].Value} ?", ActiveForm.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question,MessageBoxDefaultButton.Button2);
+                        var response = MessageBox.Show($"Are you sure you want to deactivate {row.Cells["FullName"].Value} ?", ActiveForm.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
                         if (response == DialogResult.Yes)
                         {
                             var success = _studentRepository.DeactivateStudent(row.Cells["Id"].Value.ToString());
 
-                            if (success)
-                            {
-                                MessageBox.Show(@"Student Deactivated");
-                            }
+                            MessageBox.Show(success ? @"Student Deactivated" : @"Something went wrong, please try again");
                         }
-
                     }
                     break;
             }
@@ -777,7 +777,17 @@ namespace SchoolAccountant.Forms
                     decimal.TryParse(sss2, out result) && decimal.TryParse(sss3, out result) &&
                     decimal.TryParse(jss, out result) && decimal.TryParse(sss, out result))
                 {
-                    //todo: if first term and students have not been promoted, promote students first before adding fees
+                    // Promtion must occur before a first term school fees is added.
+                    if ((TermEnum)term == TermEnum.First)
+                    {
+                        // Check for the last promotion date to ensure that promotion has not been done.
+                        var lastPromotion = _schoolRepository.Get().PromotionDate;
+
+                        if (DateTime.Now - lastPromotion > TimeSpan.FromDays(60))
+                        {
+                            _schoolRepository.PromoteStudents(null);
+                        }
+                    }
 
                     var classEnums = new List<ClassEnum>()
                     {
@@ -811,7 +821,7 @@ namespace SchoolAccountant.Forms
                         EndDate = null,
                         Active = true,
                         Fee = fee,
-                        TermEnum = (TermEnum) term
+                        TermEnum = (TermEnum)term
                     }).ToList();
 
                     _activatedAndDeactivatedId = _classTermFeeRepository.AddClassTermFees(classTermFees, _username);
@@ -826,7 +836,8 @@ namespace SchoolAccountant.Forms
                     // Enable the undo button
                     btnUndoLastAddFeesANT.Enabled = true;
 
-                    // todo: add new fee to all students and undo deletes the fee
+                    // Add new fee to all students
+                    _schoolRepository.UpdateStudentFees();
                 }
                 else
                 {
@@ -843,23 +854,44 @@ namespace SchoolAccountant.Forms
         {
             if (_activatedAndDeactivatedId.ActivatedIds != null)
             {
-                var success = _classTermFeeRepository.DeleteCurrentFeesAndActivatePreviousFees(_activatedAndDeactivatedId, _username);
+                var addFeeSuccess = _schoolRepository.UndoUpdatedFees();
 
-                MessageBox.Show(success ? @"Fees deleted successfully" : @"Something went wrong, please try again");
-                tsslAddNewTerm.Text = @"Fees deleted successfully";
+                if (addFeeSuccess)
+                {
+                    var success = _classTermFeeRepository.DeleteCurrentFeesAndActivatePreviousFees(_activatedAndDeactivatedId, _username);
+                    MessageBox.Show(success ? @"Fees deleted successfully" : @"Something went wrong, please try again");
 
-                SetCurrentFeesInAddNewTermTab();
+                    if (success)
+                    {
+                        //todo: update labels like this solution wide
+                        tsslAddNewTerm.Text = @"Fees deleted successfully";
+
+                        SetCurrentFeesAsAddNewTermTab();
+                    }
+                    else
+                    {
+                        tsslAddNewTerm.Text = @"Error! Try again";
+                    }
+
+                }
+                MessageBox.Show(@"Something went wrong, please try again");
+                tsslAddNewTerm.Text = @"Something went wrong, please try again";
 
             }
             else
             {
                 MessageBox.Show(@"No recent fee was added");
+                tsslAddNewTerm.Text = @"No recent fee was added";
             }
         }
 
-        private void SetCurrentFeesInAddNewTermTab()
+        /// <summary>
+        /// Use the formal term template and set it as a new term template
+        /// </summary>
+        private void SetCurrentFeesAsAddNewTermTab()
         {
             var currentFees = _classTermFeeRepository.GetCurrentFees();
+
             tboJss1ANT.Text = currentFees.Where(x => x.ClassEnum == ClassEnum.JSS1).Select(x => x.Fee).FirstOrDefault().ToString();
             tboJss2ANT.Text = currentFees.Where(x => x.ClassEnum == ClassEnum.JSS2).Select(x => x.Fee).FirstOrDefault().ToString();
             tboJss3ANT.Text = currentFees.Where(x => x.ClassEnum == ClassEnum.JSS3).Select(x => x.Fee).FirstOrDefault().ToString();
@@ -868,6 +900,32 @@ namespace SchoolAccountant.Forms
             tboSss3ANT.Text = currentFees.Where(x => x.ClassEnum == ClassEnum.SSS3).Select(x => x.Fee).FirstOrDefault().ToString();
             tboJssANT.Text = currentFees.Where(x => x.ClassEnum == ClassEnum.JSS).Select(x => x.Fee).FirstOrDefault().ToString();
             tboSssANT.Text = currentFees.Where(x => x.ClassEnum == ClassEnum.SSS).Select(x => x.Fee).FirstOrDefault().ToString();
+
+            // The just ending term
+            var term = currentFees.Select(x => x.TermEnum).FirstOrDefault();
+
+            // The session combo box loads dynamically according to the year
+            switch (term)
+            {
+                case TermEnum.First:
+                    {
+                        cboTermANT.SelectedIndex = (int)TermEnum.Second + 1;
+                        cboSessionANT.SelectedIndex = 2;
+                    }
+                    break;
+                case TermEnum.Second:
+                    {
+                        cboTermANT.SelectedIndex = (int)TermEnum.Third + 1;
+                        cboSessionANT.SelectedIndex = 1;
+                    }
+                    break;
+                case TermEnum.Third:
+                    {
+                        cboTermANT.SelectedIndex = (int)TermEnum.First + 1;
+                        cboSessionANT.SelectedIndex = 1;
+                    }
+                    break;
+            }
         }
 
     }

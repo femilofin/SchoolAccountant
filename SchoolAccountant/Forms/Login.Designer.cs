@@ -44,6 +44,7 @@ namespace SchoolAccountant.Forms
             this.tboUsername.Name = "tboUsername";
             this.tboUsername.Size = new System.Drawing.Size(130, 20);
             this.tboUsername.TabIndex = 0;
+            this.tboUsername.UseWaitCursor = true;
             // 
             // label1
             // 
@@ -69,20 +70,22 @@ namespace SchoolAccountant.Forms
             this.tboPassword.Name = "tboPassword";
             this.tboPassword.PasswordChar = '*';
             this.tboPassword.Size = new System.Drawing.Size(130, 20);
-            this.tboPassword.TabIndex = 2;
+            this.tboPassword.TabIndex = 1;
+            this.tboPassword.UseSystemPasswordChar = true;
             // 
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(114, 138);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 4;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // Login
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 206);
@@ -91,8 +94,9 @@ namespace SchoolAccountant.Forms
             this.Controls.Add(this.tboPassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tboUsername);
+            this.MaximizeBox = false;
             this.Name = "Login";
-            this.Text = "Login";
+            this.Text = "School Accountant";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -17,6 +17,8 @@ namespace SchoolAccountant
            
             // todo: remove the "femi", change to login
             Application.Run(new DashBoard("Femi"));
+
+//            Application.Run(new Login());
         }
     }
 }
