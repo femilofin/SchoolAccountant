@@ -40,5 +40,14 @@ namespace SchoolAccountantTest
             Assert.AreEqual(true, deleteSuccess);
         }
 
+        [Test]
+        public void UpdateAndUndoUpdateStudentFeesReturnsTrue()
+        {
+            var updated = _studentRepository.UpdateStudentFees();
+            Assert.IsTrue(updated);
+
+            var undidUpdated = _studentRepository.UndoUpdatedFees();
+            Assert.IsTrue(undidUpdated);
+        }
     }
 }

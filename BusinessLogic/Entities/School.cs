@@ -14,9 +14,7 @@ namespace BusinessLogic.Entities
         public string PresentSession { get; set; }
         public TermEnum PresentTermEnum { get; set; }
         public DateTime SessionStart { get; set; }
-        public DateTime SessionEnd { get; set; }
         public DateTime TermStart { get; set; }
-        public DateTime TermEnd { get; set; }
         public int StudentCount { get; set; }
         public DateTime PromotionDate { get; set; }
 

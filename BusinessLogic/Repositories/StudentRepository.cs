@@ -19,6 +19,9 @@ namespace BusinessLogic.Repositories
         private readonly ILog _log = LogManager.GetLogger("BusinessLogic.StudentRepository.cs");
         private readonly MongoRepository<Student> _studentRepository = new MongoRepository<Student>();
         readonly IAuditTrailRepository _auditTrailRepository = new AuditTrailRepository();
+        private readonly ISchoolRepository _schoolRepository = new SchoolRepository();
+        private readonly IClassTermFeeRepository _classTermFeeRepository = new ClassTermFeeRepository();
+
 
         public StudentRepository()
         {
@@ -77,6 +80,7 @@ namespace BusinessLogic.Repositories
 
         }
 
+
         /// <summary>
         /// Add new student into the student collection
         /// </summary>
@@ -84,9 +88,20 @@ namespace BusinessLogic.Repositories
         /// <returns>Whether the method is successful</returns>
         public bool Create(Student model)
         {
+            // todo: check if (firstname, middlename and lastname) combo does not exist
+
             try
             {
                 _studentRepository.Add(model);
+
+                // Add fee
+                UpdateStudentFees(model);
+
+                // Update Student count
+                var school = _schoolRepository.Get();
+                school.StudentCount++;
+
+                _schoolRepository.Edit(school);
 
                 _auditTrailRepository.Log($"Created Student {model.FirstName} {model.LastName}", AuditActionEnum.Created);
 
@@ -101,8 +116,28 @@ namespace BusinessLogic.Repositories
             }
         }
 
+        public bool Update(Student student)
+        {
+            try
+            {
+                _studentRepository.Update(student);
+
+                _auditTrailRepository.Log($"Updated Student {student.FirstName} {student.LastName}", AuditActionEnum.Updated);
+
+                _log.Info("Student Edited");
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Error", ex);
+                return false;
+            }
+        }
+
+
         /// <summary>
-        /// Updates the student collection.
+        /// Edit the student info from the dgv
         /// </summary>
         /// <param name="model">Instance of student class</param>
         /// <returns>True if success, else false</returns>
@@ -120,7 +155,7 @@ namespace BusinessLogic.Repositories
                 studentFromDb.StartDate = model.StartDate;
                 studentFromDb.PresentArm = model.PresentArm;
 
-                _studentRepository.Update(studentFromDb);
+                _studentRepository.Update(model);
 
                 _auditTrailRepository.Log($"Student {model.FirstName} {model.LastName}", AuditActionEnum.Updated);
 
@@ -134,11 +169,6 @@ namespace BusinessLogic.Repositories
                 _log.Error("Error", ex);
                 return false;
             }
-        }
-
-        public IEnumerable<Student> Query(int page, int count, string orderByExpression = null, string whereCondition = null)
-        {
-            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -155,8 +185,198 @@ namespace BusinessLogic.Repositories
                 _studentRepository.Delete(student);
 
                 _auditTrailRepository.Log($"Student {student.FirstName} {student.LastName}", AuditActionEnum.Deleted);
-                
+
                 return true;
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Error", ex);
+                return false;
+            }
+        }
+
+        public bool UpdateStudentFees(Student student)
+        {
+            try
+            {
+                var currentFees = _classTermFeeRepository.GetCurrentFees();
+
+                var presentClass = student.PresentClass;
+
+
+                var isNewIntake = presentClass == student.StartClass && student.PresentTerm == student.StartTerm;
+
+                if (isNewIntake)
+                {
+                    switch (presentClass)
+                    {
+                        case ClassEnum.JSS1:
+                        case ClassEnum.JSS2:
+                        case ClassEnum.JSS3:
+                            student.OutstandingFee += currentFees.FirstOrDefault(x => x.ClassEnum == ClassEnum.JSS).Fee;
+
+                            _studentRepository.Update(student);
+
+                            break;
+
+                        case ClassEnum.SSS1:
+                        case ClassEnum.SSS2:
+                        case ClassEnum.SSS3:
+                            student.OutstandingFee += currentFees.FirstOrDefault(x => x.ClassEnum == ClassEnum.SSS).Fee;
+
+                            _studentRepository.Update(student);
+
+                            break;
+                    }
+                    return true;
+                }
+
+                var classTermFee = currentFees.FirstOrDefault(x => x.ClassEnum == presentClass);
+
+                // Not new student
+                student.OutstandingFee += classTermFee.Fee;
+
+                _studentRepository.Update(student);
+
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Error", ex);
+                return false;
+            }
+        }
+
+        public bool PromoteStudents(List<Student> repeatingStudents)
+        {
+            // Get all active students
+            try
+            {
+                var students = GetActiveStudents();
+
+                // Get promoting students
+                var promotingStudents = students.Where(x => repeatingStudents.All(y => y.Id != x.Id)).ToList();
+
+                foreach (var student in promotingStudents)
+                {
+                    var presentClass = student.PresentClass;
+
+                    switch (presentClass)
+                    {
+                        case ClassEnum.JSS1:
+                            {
+                                //Promote to Jss 2
+                                student.PresentClass = ClassEnum.JSS2;
+                                Edit(student);
+                            }
+                            break;
+                        case ClassEnum.JSS2:
+                            {
+                                //Promote to Jss 3
+                                student.PresentClass = ClassEnum.JSS3;
+                                Edit(student);
+                            }
+                            break;
+                        case ClassEnum.JSS3:
+                            {
+                                //Promote to Sss 1
+                                student.PresentClass = ClassEnum.SSS1;
+                                Edit(student);
+                            }
+                            break;
+                        case ClassEnum.SSS1:
+                            {
+                                //Promote to Sss 2
+                                student.PresentClass = ClassEnum.SSS2;
+                                Edit(student);
+                            }
+                            break;
+                        case ClassEnum.SSS2:
+                            {
+                                //Promote to Sss 3
+                                student.PresentClass = ClassEnum.SSS3;
+                                Edit(student);
+                            }
+                            break;
+                        case ClassEnum.SSS3:
+                            {
+                                // Deactivate student
+                                student.Active = false;
+                                Edit(student);
+                            }
+                            break;
+                    }
+
+                }
+
+                var school = _schoolRepository.Get();
+
+                // Update School details
+
+                school.PromotionDate = DateTime.Now;
+                _schoolRepository.Edit(school);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Error", ex);
+                return false;
+            }
+        }
+
+        public bool UpdateStudentFees()
+        {
+            try
+            {
+                var students = GetActiveStudents();
+
+                var currentFees = _classTermFeeRepository.GetCurrentFees();
+
+                foreach (var student in students)
+                {
+                    var presentClass = student.PresentClass;
+
+                    var classTermFee = currentFees.FirstOrDefault(x => x.ClassEnum == presentClass);
+
+                    student.OutstandingFee += classTermFee.Fee;
+
+                    _studentRepository.Update(student);
+                }
+
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Error", ex);
+                return false;
+            }
+
+        }
+
+        public bool UndoUpdatedFees()
+        {
+            try
+            {
+                var students = GetActiveStudents();
+
+                var currentFees = _classTermFeeRepository.GetCurrentFees();
+
+                foreach (var student in students)
+                {
+                    var presentClass = student.PresentClass;
+
+                    var classTermFee = currentFees.FirstOrDefault(x => x.ClassEnum == presentClass);
+
+                    student.OutstandingFee -= classTermFee.Fee;
+
+                    _studentRepository.Update(student);
+
+                }
+                return true;
+
             }
             catch (Exception ex)
             {

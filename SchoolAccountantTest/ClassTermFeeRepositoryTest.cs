@@ -39,5 +39,7 @@ namespace SchoolAccountantTest
             var deleteSuccess = _auditTrailRepository.DeleteTestLog();
             Assert.AreEqual(true, deleteSuccess);
         }
+
+
     }
 }

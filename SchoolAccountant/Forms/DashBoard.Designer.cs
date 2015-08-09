@@ -48,6 +48,7 @@ namespace SchoolAccountant.Forms
             this.label16 = new System.Windows.Forms.Label();
             this.cboClassMS = new System.Windows.Forms.ComboBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.llAddWithExcel = new System.Windows.Forms.LinkLabel();
             this.tboOutstandingFeeAS = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -103,12 +104,12 @@ namespace SchoolAccountant.Forms
             this.tboJss1ANT = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.llPromoteStudents = new System.Windows.Forms.LinkLabel();
+            this.label13 = new System.Windows.Forms.Label();
             this.cboTermANT = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.cboSessionANT = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -129,8 +130,8 @@ namespace SchoolAccountant.Forms
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(663, 638);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(684, 638);
+            this.tabControl1.TabIndex = 6;
             // 
             // tabPage3
             // 
@@ -148,7 +149,7 @@ namespace SchoolAccountant.Forms
             this.tabPage3.Controls.Add(this.cboClassMS);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(655, 612);
+            this.tabPage3.Size = new System.Drawing.Size(676, 612);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Manage Students";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -158,7 +159,7 @@ namespace SchoolAccountant.Forms
             this.btnRefresh.Location = new System.Drawing.Point(251, 549);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 1;
+            this.btnRefresh.TabIndex = 4;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -170,7 +171,7 @@ namespace SchoolAccountant.Forms
             this.tsslShowAll});
             this.statusStrip1.Location = new System.Drawing.Point(0, 590);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(655, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(676, 22);
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -181,7 +182,6 @@ namespace SchoolAccountant.Forms
             // 
             // tsslShowAll
             // 
-            this.tsslShowAll.IsLink = true;
             this.tsslShowAll.Name = "tsslShowAll";
             this.tsslShowAll.Size = new System.Drawing.Size(53, 17);
             this.tsslShowAll.Text = "Show All";
@@ -192,7 +192,7 @@ namespace SchoolAccountant.Forms
             this.btnPrint.Location = new System.Drawing.Point(388, 549);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(75, 23);
-            this.btnPrint.TabIndex = 9;
+            this.btnPrint.TabIndex = 5;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = true;
             // 
@@ -201,7 +201,7 @@ namespace SchoolAccountant.Forms
             this.dgvViewStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvViewStudent.Location = new System.Drawing.Point(11, 31);
             this.dgvViewStudent.Name = "dgvViewStudent";
-            this.dgvViewStudent.Size = new System.Drawing.Size(635, 501);
+            this.dgvViewStudent.Size = new System.Drawing.Size(662, 501);
             this.dgvViewStudent.TabIndex = 8;
             this.dgvViewStudent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViewStudent_CellContentClick);
             // 
@@ -218,8 +218,8 @@ namespace SchoolAccountant.Forms
             // 
             this.tboSearchMS.Location = new System.Drawing.Point(434, 4);
             this.tboSearchMS.Name = "tboSearchMS";
-            this.tboSearchMS.Size = new System.Drawing.Size(212, 20);
-            this.tboSearchMS.TabIndex = 6;
+            this.tboSearchMS.Size = new System.Drawing.Size(239, 20);
+            this.tboSearchMS.TabIndex = 0;
             this.tboSearchMS.TextChanged += new System.EventHandler(this.tboSearchMS_TextChanged);
             // 
             // label18
@@ -238,7 +238,7 @@ namespace SchoolAccountant.Forms
             this.cboFeeStatusMS.Location = new System.Drawing.Point(284, 4);
             this.cboFeeStatusMS.Name = "cboFeeStatusMS";
             this.cboFeeStatusMS.Size = new System.Drawing.Size(95, 21);
-            this.cboFeeStatusMS.TabIndex = 4;
+            this.cboFeeStatusMS.TabIndex = 3;
             this.cboFeeStatusMS.SelectedIndexChanged += new System.EventHandler(this.cboFeeStatusMS_SelectedIndexChanged);
             // 
             // label17
@@ -276,11 +276,12 @@ namespace SchoolAccountant.Forms
             this.cboClassMS.Location = new System.Drawing.Point(49, 4);
             this.cboClassMS.Name = "cboClassMS";
             this.cboClassMS.Size = new System.Drawing.Size(58, 21);
-            this.cboClassMS.TabIndex = 0;
+            this.cboClassMS.TabIndex = 1;
             this.cboClassMS.SelectedIndexChanged += new System.EventHandler(this.cboClassMS_SelectedIndexChanged);
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.llAddWithExcel);
             this.tabPage1.Controls.Add(this.tboOutstandingFeeAS);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label20);
@@ -308,17 +309,28 @@ namespace SchoolAccountant.Forms
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(655, 612);
+            this.tabPage1.Size = new System.Drawing.Size(676, 612);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add Student";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // llAddWithExcel
+            // 
+            this.llAddWithExcel.AutoSize = true;
+            this.llAddWithExcel.Location = new System.Drawing.Point(26, 18);
+            this.llAddWithExcel.Name = "llAddWithExcel";
+            this.llAddWithExcel.Size = new System.Drawing.Size(121, 13);
+            this.llAddWithExcel.TabIndex = 23;
+            this.llAddWithExcel.TabStop = true;
+            this.llAddWithExcel.Text = "Add Students with excel";
+            this.llAddWithExcel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llAddWithExcel_LinkClicked);
             // 
             // tboOutstandingFeeAS
             // 
             this.tboOutstandingFeeAS.Location = new System.Drawing.Point(460, 153);
             this.tboOutstandingFeeAS.Name = "tboOutstandingFeeAS";
             this.tboOutstandingFeeAS.Size = new System.Drawing.Size(159, 20);
-            this.tboOutstandingFeeAS.TabIndex = 23;
+            this.tboOutstandingFeeAS.TabIndex = 6;
             // 
             // label10
             // 
@@ -359,14 +371,14 @@ namespace SchoolAccountant.Forms
             this.cboPresentArmAS.Location = new System.Drawing.Point(460, 284);
             this.cboPresentArmAS.Name = "cboPresentArmAS";
             this.cboPresentArmAS.Size = new System.Drawing.Size(157, 21);
-            this.cboPresentArmAS.TabIndex = 19;
+            this.cboPresentArmAS.TabIndex = 11;
             // 
             // dtpBirthDateAS
             // 
             this.dtpBirthDateAS.Location = new System.Drawing.Point(29, 153);
             this.dtpBirthDateAS.Name = "dtpBirthDateAS";
             this.dtpBirthDateAS.Size = new System.Drawing.Size(158, 20);
-            this.dtpBirthDateAS.TabIndex = 21;
+            this.dtpBirthDateAS.TabIndex = 4;
             // 
             // label15
             // 
@@ -398,7 +410,7 @@ namespace SchoolAccountant.Forms
             this.cboPresentTermAS.Location = new System.Drawing.Point(245, 284);
             this.cboPresentTermAS.Name = "cboPresentTermAS";
             this.cboPresentTermAS.Size = new System.Drawing.Size(156, 21);
-            this.cboPresentTermAS.TabIndex = 17;
+            this.cboPresentTermAS.TabIndex = 10;
             // 
             // label4
             // 
@@ -421,7 +433,7 @@ namespace SchoolAccountant.Forms
             this.cboPresentClassAS.Location = new System.Drawing.Point(29, 284);
             this.cboPresentClassAS.Name = "cboPresentClassAS";
             this.cboPresentClassAS.Size = new System.Drawing.Size(158, 21);
-            this.cboPresentClassAS.TabIndex = 15;
+            this.cboPresentClassAS.TabIndex = 9;
             // 
             // label14
             // 
@@ -437,18 +449,18 @@ namespace SchoolAccountant.Forms
             this.btnClearTextBoxes.Location = new System.Drawing.Point(541, 8);
             this.btnClearTextBoxes.Name = "btnClearTextBoxes";
             this.btnClearTextBoxes.Size = new System.Drawing.Size(78, 23);
-            this.btnClearTextBoxes.TabIndex = 16;
+            this.btnClearTextBoxes.TabIndex = 13;
             this.btnClearTextBoxes.Text = "Reset";
             this.btnClearTextBoxes.UseVisualStyleBackColor = true;
             this.btnClearTextBoxes.Click += new System.EventHandler(this.btnClearTextBoxes_Click);
             // 
             // btnAddStudent
             // 
-            this.btnAddStudent.Location = new System.Drawing.Point(274, 357);
+            this.btnAddStudent.Location = new System.Drawing.Point(275, 360);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(98, 23);
-            this.btnAddStudent.TabIndex = 10;
-            this.btnAddStudent.Text = "Add Student";
+            this.btnAddStudent.TabIndex = 12;
+            this.btnAddStudent.Text = "Save";
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
@@ -473,7 +485,7 @@ namespace SchoolAccountant.Forms
             this.dtpStartDateAS.Location = new System.Drawing.Point(245, 153);
             this.dtpStartDateAS.Name = "dtpStartDateAS";
             this.dtpStartDateAS.Size = new System.Drawing.Size(158, 20);
-            this.dtpStartDateAS.TabIndex = 13;
+            this.dtpStartDateAS.TabIndex = 5;
             // 
             // label6
             // 
@@ -556,7 +568,7 @@ namespace SchoolAccountant.Forms
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(655, 612);
+            this.tabPage2.Size = new System.Drawing.Size(676, 612);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Add User";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -648,7 +660,7 @@ namespace SchoolAccountant.Forms
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(655, 612);
+            this.tabPage4.Size = new System.Drawing.Size(676, 612);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Add New Term";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -659,7 +671,7 @@ namespace SchoolAccountant.Forms
             this.tsslAddNewTerm});
             this.statusStrip2.Location = new System.Drawing.Point(3, 587);
             this.statusStrip2.Name = "statusStrip2";
-            this.statusStrip2.Size = new System.Drawing.Size(649, 22);
+            this.statusStrip2.Size = new System.Drawing.Size(670, 22);
             this.statusStrip2.TabIndex = 9;
             this.statusStrip2.Text = "statusStrip2";
             // 
@@ -704,7 +716,7 @@ namespace SchoolAccountant.Forms
             this.tboSssANT.Location = new System.Drawing.Point(215, 60);
             this.tboSssANT.Name = "tboSssANT";
             this.tboSssANT.Size = new System.Drawing.Size(135, 20);
-            this.tboSssANT.TabIndex = 9;
+            this.tboSssANT.TabIndex = 10;
             // 
             // tboJssANT
             // 
@@ -715,20 +727,20 @@ namespace SchoolAccountant.Forms
             // 
             // btnUndoLastAddFeesANT
             // 
-            this.btnUndoLastAddFeesANT.Location = new System.Drawing.Point(417, 524);
+            this.btnUndoLastAddFeesANT.Location = new System.Drawing.Point(340, 515);
             this.btnUndoLastAddFeesANT.Name = "btnUndoLastAddFeesANT";
             this.btnUndoLastAddFeesANT.Size = new System.Drawing.Size(75, 23);
-            this.btnUndoLastAddFeesANT.TabIndex = 6;
+            this.btnUndoLastAddFeesANT.TabIndex = 12;
             this.btnUndoLastAddFeesANT.Text = "Undo Add";
             this.btnUndoLastAddFeesANT.UseVisualStyleBackColor = true;
             this.btnUndoLastAddFeesANT.Click += new System.EventHandler(this.btnUndoLastAddFeesANT_Click);
             // 
             // btnSaveSchoolFeesANT
             // 
-            this.btnSaveSchoolFeesANT.Location = new System.Drawing.Point(279, 524);
+            this.btnSaveSchoolFeesANT.Location = new System.Drawing.Point(202, 515);
             this.btnSaveSchoolFeesANT.Name = "btnSaveSchoolFeesANT";
             this.btnSaveSchoolFeesANT.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveSchoolFeesANT.TabIndex = 6;
+            this.btnSaveSchoolFeesANT.TabIndex = 11;
             this.btnSaveSchoolFeesANT.Text = "Save";
             this.btnSaveSchoolFeesANT.UseVisualStyleBackColor = true;
             this.btnSaveSchoolFeesANT.Click += new System.EventHandler(this.btnSaveSchoolFeesANT_Click);
@@ -738,7 +750,7 @@ namespace SchoolAccountant.Forms
             this.tboSss3ANT.Location = new System.Drawing.Point(430, 268);
             this.tboSss3ANT.Name = "tboSss3ANT";
             this.tboSss3ANT.Size = new System.Drawing.Size(135, 20);
-            this.tboSss3ANT.TabIndex = 5;
+            this.tboSss3ANT.TabIndex = 8;
             // 
             // tboJss3ANT
             // 
@@ -770,14 +782,14 @@ namespace SchoolAccountant.Forms
             this.tboSss2ANT.Location = new System.Drawing.Point(240, 268);
             this.tboSss2ANT.Name = "tboSss2ANT";
             this.tboSss2ANT.Size = new System.Drawing.Size(135, 20);
-            this.tboSss2ANT.TabIndex = 5;
+            this.tboSss2ANT.TabIndex = 7;
             // 
             // tboJss2ANT
             // 
             this.tboJss2ANT.Location = new System.Drawing.Point(240, 194);
             this.tboJss2ANT.Name = "tboJss2ANT";
             this.tboJss2ANT.Size = new System.Drawing.Size(135, 20);
-            this.tboJss2ANT.TabIndex = 5;
+            this.tboJss2ANT.TabIndex = 4;
             // 
             // label26
             // 
@@ -802,7 +814,7 @@ namespace SchoolAccountant.Forms
             this.tboSss1ANT.Location = new System.Drawing.Point(50, 268);
             this.tboSss1ANT.Name = "tboSss1ANT";
             this.tboSss1ANT.Size = new System.Drawing.Size(135, 20);
-            this.tboSss1ANT.TabIndex = 5;
+            this.tboSss1ANT.TabIndex = 6;
             // 
             // label25
             // 
@@ -818,7 +830,7 @@ namespace SchoolAccountant.Forms
             this.tboJss1ANT.Location = new System.Drawing.Point(50, 194);
             this.tboJss1ANT.Name = "tboJss1ANT";
             this.tboJss1ANT.Size = new System.Drawing.Size(135, 20);
-            this.tboJss1ANT.TabIndex = 5;
+            this.tboJss1ANT.TabIndex = 3;
             // 
             // label22
             // 
@@ -836,10 +848,22 @@ namespace SchoolAccountant.Forms
             this.llPromoteStudents.Location = new System.Drawing.Point(283, 34);
             this.llPromoteStudents.Name = "llPromoteStudents";
             this.llPromoteStudents.Size = new System.Drawing.Size(170, 15);
-            this.llPromoteStudents.TabIndex = 3;
+            this.llPromoteStudents.TabIndex = 0;
             this.llPromoteStudents.TabStop = true;
             this.llPromoteStudents.Text = "Click here to promote students";
             this.llPromoteStudents.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llPromoteStudents_LinkClicked);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(26, 19);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(472, 30);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "If it is the start of a new session (First Term), Please select the students to p" +
+    "romote first.\r\nIgnore if there is no student repeating a class.";
             // 
             // cboTermANT
             // 
@@ -849,7 +873,7 @@ namespace SchoolAccountant.Forms
             this.cboTermANT.Location = new System.Drawing.Point(240, 96);
             this.cboTermANT.Name = "cboTermANT";
             this.cboTermANT.Size = new System.Drawing.Size(135, 21);
-            this.cboTermANT.TabIndex = 1;
+            this.cboTermANT.TabIndex = 2;
             // 
             // label21
             // 
@@ -888,26 +912,14 @@ namespace SchoolAccountant.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add School Fees";
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(26, 19);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(472, 30);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "If it is the start of a new session (First Term), Please select the students to p" +
-    "romote first.\r\nIgnore if there is no student repeating a class.";
-            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 639);
+            this.ClientSize = new System.Drawing.Size(685, 639);
             this.Controls.Add(this.tabControl1);
             this.Name = "DashBoard";
-            this.Text = "DashBoard";
+            this.Text = "School Accountant DashBoard";
             this.Load += new System.EventHandler(this.DashBoard_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
@@ -1009,5 +1021,6 @@ namespace SchoolAccountant.Forms
         private StatusStrip statusStrip2;
         private ToolStripStatusLabel tsslAddNewTerm;
         private Label label13;
+        private LinkLabel llAddWithExcel;
     }
 }

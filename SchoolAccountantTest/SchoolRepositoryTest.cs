@@ -34,14 +34,6 @@ namespace SchoolAccountantTest
             Assert.IsNotNull(school);
         }
 
-        [Test]
-        public void UpdateAndUndoUpdateStudentFeesReturnsTrue()
-        {
-            var updated = _schoolRepository.UpdateStudentFees();
-            Assert.IsTrue(updated);
-
-            var undidUpdated = _schoolRepository.UndoUpdatedFees();
-            Assert.IsTrue(undidUpdated);
-        }
+       
     }
 }

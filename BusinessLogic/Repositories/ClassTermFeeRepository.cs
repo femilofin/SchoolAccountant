@@ -19,6 +19,7 @@ namespace BusinessLogic.Repositories
         private readonly MongoRepository<ClassTermFee> _classTermFees = new MongoRepository<ClassTermFee>();
         private readonly ILog _log = LogManager.GetLogger("BusinessLogic.ClassTermFeeRepository.cs");
         readonly IAuditTrailRepository _auditTrailRepository = new AuditTrailRepository();
+        readonly ISchoolRepository _schoolRepository = new SchoolRepository();
 
         public ClassTermFeeRepository()
         {
@@ -73,6 +74,17 @@ namespace BusinessLogic.Repositories
                     ActivatedIds = activatedIds
                 };
 
+                // Update School
+                var school = _schoolRepository.Get();
+                school.PresentSession = classTermFees[0].Session;
+                school.PresentTermEnum = classTermFees[0].TermEnum;
+                school.TermStart = DateTime.Now;
+
+                if (classTermFees[0].TermEnum == TermEnum.First)
+                {
+                    school.SessionStart = DateTime.Now;
+                }
+                _schoolRepository.Edit(school);
 
                 _auditTrailRepository.Log($"School fees created by {username}", AuditActionEnum.Created);
 

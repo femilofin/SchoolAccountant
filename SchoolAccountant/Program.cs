@@ -16,8 +16,8 @@ namespace SchoolAccountant
             Application.SetCompatibleTextRenderingDefault(false);
            
             // todo: remove the "femi", change to login
-            Application.Run(new DashBoard("Femi"));
-
+            Application.Run(new DashBoard("admin"));
+//Application.Run(new SchoolSetup("admin"));
 //            Application.Run(new Login());
         }
     }

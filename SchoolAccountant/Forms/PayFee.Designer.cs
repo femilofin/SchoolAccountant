@@ -81,7 +81,7 @@ namespace SchoolAccountant.Forms
             this.cboSession.Location = new System.Drawing.Point(101, 117);
             this.cboSession.Name = "cboSession";
             this.cboSession.Size = new System.Drawing.Size(100, 21);
-            this.cboSession.TabIndex = 3;
+            this.cboSession.TabIndex = 0;
             // 
             // label4
             // 
@@ -98,7 +98,7 @@ namespace SchoolAccountant.Forms
             this.cboTerm.Location = new System.Drawing.Point(322, 117);
             this.cboTerm.Name = "cboTerm";
             this.cboTerm.Size = new System.Drawing.Size(100, 21);
-            this.cboTerm.TabIndex = 3;
+            this.cboTerm.TabIndex = 1;
             // 
             // label5
             // 
@@ -114,7 +114,7 @@ namespace SchoolAccountant.Forms
             this.cboAmount.Location = new System.Drawing.Point(101, 162);
             this.cboAmount.Name = "cboAmount";
             this.cboAmount.Size = new System.Drawing.Size(100, 20);
-            this.cboAmount.TabIndex = 4;
+            this.cboAmount.TabIndex = 2;
             // 
             // label6
             // 
@@ -131,7 +131,7 @@ namespace SchoolAccountant.Forms
             this.cboPrintReceipt.Location = new System.Drawing.Point(259, 161);
             this.cboPrintReceipt.Name = "cboPrintReceipt";
             this.cboPrintReceipt.Size = new System.Drawing.Size(82, 17);
-            this.cboPrintReceipt.TabIndex = 6;
+            this.cboPrintReceipt.TabIndex = 3;
             this.cboPrintReceipt.Text = "Print receipt";
             this.cboPrintReceipt.UseVisualStyleBackColor = true;
             // 
@@ -149,7 +149,7 @@ namespace SchoolAccountant.Forms
             this.rtboComment.Location = new System.Drawing.Point(98, 207);
             this.rtboComment.Name = "rtboComment";
             this.rtboComment.Size = new System.Drawing.Size(324, 96);
-            this.rtboComment.TabIndex = 5;
+            this.rtboComment.TabIndex = 4;
             this.rtboComment.Text = "";
             // 
             // btnSubmit
@@ -157,7 +157,7 @@ namespace SchoolAccountant.Forms
             this.btnSubmit.Location = new System.Drawing.Point(212, 335);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 7;
+            this.btnSubmit.TabIndex = 5;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             // 

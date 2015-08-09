@@ -37,7 +37,6 @@ namespace SchoolAccountant.Forms
         public DashBoard(string username)
         {
 
-            _schoolRepository.PromoteStudents(null);
             InitializeComponent();
 
             Utilities.InitialiizeClassCombo(new[] { cboStartClassAS, cboPresentClassAS, cboClassMS });
@@ -58,6 +57,7 @@ namespace SchoolAccountant.Forms
         private void DashBoard_Load(object sender, EventArgs e)
         {
             RefreshDgv();
+
         }
 
         private void ClearAllComboBoxesInMS()
@@ -443,7 +443,7 @@ namespace SchoolAccountant.Forms
                         $"{activeStudents[i].PresentClass} {activeStudents[i].PresentArm}",
                     OutstandingFee =
                         activeStudents[i].OutstandingFee > 0
-                            ? $"NGN {activeStudents[i].OutstandingFee}"
+                            ? $"{activeStudents[i].OutstandingFee}"
                             : "Cleared",
                     PaidFee = $"NGN {activeStudents[i].PaidFee}",
                     FirstName = activeStudents[i].FirstName,
@@ -485,7 +485,7 @@ namespace SchoolAccountant.Forms
                 .Add(0, "Index", "", width: 20, readOnly: true)
                 .Add(1, "FullName", "FullName", foreColor: Color.Red, width: 234, readOnly: true)
                 .Add(2, "PresentClass", "Class", width: 50, readOnly: true)
-                .Add(3, "OutstandingFee", "Debt", foreColor: Color.Red, width: 80, readOnly: true)
+                .Add(3, "OutstandingFee", "Debt(Naira)", foreColor: Color.Red, width: 80, readOnly: true)
                 .Add(8, "PaidFee", "PaidFee", visible: false)
                 .Add(9, "LastName", "LastName", visible: false)
                 .Add(10, "BirthDate", "BirthDate", visible: false)
@@ -605,8 +605,9 @@ namespace SchoolAccountant.Forms
 
                 if (success)
                 {
-                    MessageBox.Show($"Student \"{firstName} {lastName}\" has been registered");
+                    MessageBox.Show($"Student \"{firstName} {lastName}\" has been registered", @"School Accountant");
                     ClearTextBoxesAS();
+                    RefreshDgv();
                 }
                 else
                 {
@@ -647,6 +648,9 @@ namespace SchoolAccountant.Forms
             cboStartTermAS.SelectedIndex = -1;
             cboStartClassAS.SelectedIndex = -1;
             cboPresentArmAS.SelectedIndex = -1;
+            cboPresentClassAS.SelectedIndex = -1;
+            cboPresentTermAS.SelectedIndex = -1;
+
             dtpStartDateAS.Value = DateTime.Now;
             dtpBirthDateAS.Value = DateTime.Now;
         }
@@ -777,6 +781,7 @@ namespace SchoolAccountant.Forms
                     decimal.TryParse(sss2, out result) && decimal.TryParse(sss3, out result) &&
                     decimal.TryParse(jss, out result) && decimal.TryParse(sss, out result))
                 {
+
                     // Promtion must occur before a first term school fees is added.
                     if ((TermEnum)term == TermEnum.First)
                     {
@@ -785,7 +790,7 @@ namespace SchoolAccountant.Forms
 
                         if (DateTime.Now - lastPromotion > TimeSpan.FromDays(60))
                         {
-                            _schoolRepository.PromoteStudents(null);
+                            // _schoolRepository.PromoteStudents(null);
                         }
                     }
 
@@ -831,13 +836,20 @@ namespace SchoolAccountant.Forms
                         MessageBox.Show(@"Something went wrong, Please try again", @"School Accountant");
                     }
 
-                    MessageBox.Show(@"Fees added, click the 'undo' button to delete");
-
                     // Enable the undo button
                     btnUndoLastAddFeesANT.Enabled = true;
 
+                    //
                     // Add new fee to all students
-                    _schoolRepository.UpdateStudentFees();
+                    var updateSuccess = _studentRepository.UpdateStudentFees();
+
+                    if (!updateSuccess)
+                    {
+                        MessageBox.Show(@"Something went wrong, Please try again");
+
+                    }
+                    MessageBox.Show(@"Fees added, click the 'undo' button to delete");
+
                 }
                 else
                 {
@@ -854,7 +866,7 @@ namespace SchoolAccountant.Forms
         {
             if (_activatedAndDeactivatedId.ActivatedIds != null)
             {
-                var addFeeSuccess = _schoolRepository.UndoUpdatedFees();
+                var addFeeSuccess = _studentRepository.UndoUpdatedFees();
 
                 if (addFeeSuccess)
                 {
@@ -928,5 +940,9 @@ namespace SchoolAccountant.Forms
             }
         }
 
+        private void llAddWithExcel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

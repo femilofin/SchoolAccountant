@@ -44,7 +44,6 @@ namespace SchoolAccountant.Forms
             this.tboUsername.Name = "tboUsername";
             this.tboUsername.Size = new System.Drawing.Size(130, 20);
             this.tboUsername.TabIndex = 0;
-            this.tboUsername.UseWaitCursor = true;
             // 
             // label1
             // 

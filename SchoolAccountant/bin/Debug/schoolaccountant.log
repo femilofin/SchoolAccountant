@@ -963,3 +963,708 @@ Parameter name: source
    at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
    at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
    at BusinessLogic.Repositories.SchoolRepository.PromoteStudents(List`1 repeatingStudents) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\SchoolRepository.cs:line 51
+
+
+
+2015-08-09 00:36:58,527 [1] ERROR BusinessLogic.UserRepository.cs  - Error
+
+System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Linq.Enumerable.All[TSource](IEnumerable`1 source, Func`2 predicate)
+   at BusinessLogic.Repositories.SchoolRepository.<>c__DisplayClass7_0.<PromoteStudents>b__0(Student x) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\SchoolRepository.cs:line 51
+   at System.Linq.Enumerable.WhereListIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.Repositories.SchoolRepository.PromoteStudents(List`1 repeatingStudents) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\SchoolRepository.cs:line 51
+
+
+
+2015-08-09 13:02:17,495 [1] ERROR BusinessLogic.UserRepository.cs  - Error
+
+System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Linq.Enumerable.All[TSource](IEnumerable`1 source, Func`2 predicate)
+   at BusinessLogic.Repositories.SchoolRepository.<>c__DisplayClass7_0.<PromoteStudents>b__0(Student x) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\SchoolRepository.cs:line 52
+   at System.Linq.Enumerable.WhereListIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.Repositories.SchoolRepository.PromoteStudents(List`1 repeatingStudents) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\SchoolRepository.cs:line 52
+
+
+
+2015-08-09 13:05:55,228 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 13:05:55,233 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 13:05:55,279 [1] ERROR BusinessLogic.UserRepository.cs  - Error
+
+System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Linq.Enumerable.All[TSource](IEnumerable`1 source, Func`2 predicate)
+   at BusinessLogic.Repositories.SchoolRepository.<>c__DisplayClass7_0.<PromoteStudents>b__0(Student x) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\SchoolRepository.cs:line 52
+   at System.Linq.Enumerable.WhereListIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.Repositories.SchoolRepository.PromoteStudents(List`1 repeatingStudents) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\SchoolRepository.cs:line 52
+
+
+
+2015-08-09 13:11:30,039 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 13:11:30,044 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 13:11:30,181 [1] ERROR BusinessLogic.UserRepository.cs  - Error
+
+System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Linq.Enumerable.All[TSource](IEnumerable`1 source, Func`2 predicate)
+   at BusinessLogic.Repositories.SchoolRepository.<>c__DisplayClass7_0.<PromoteStudents>b__0(Student x) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\SchoolRepository.cs:line 52
+   at System.Linq.Enumerable.WhereListIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.Repositories.SchoolRepository.PromoteStudents(List`1 repeatingStudents) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\SchoolRepository.cs:line 52
+
+
+
+2015-08-09 13:15:08,431 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 13:15:08,436 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 13:20:51,909 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 13:20:51,914 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 13:23:45,158 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 13:23:45,163 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 13:24:17,880 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 13:24:17,880 [1] INFO  BusinessLogic.UserRepository.cs  - School Created
+
+
+
+
+2015-08-09 13:25:41,004 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 13:25:41,009 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 13:27:59,563 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 13:27:59,568 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 14:13:30,690 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 14:13:30,697 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 14:32:40,613 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 14:32:40,618 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 16:02:12,425 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:02:12,430 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 16:02:25,044 [1] ERROR BusinessLogic.UserRepository.cs  - Error
+
+System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Linq.Enumerable.All[TSource](IEnumerable`1 source, Func`2 predicate)
+   at BusinessLogic.Repositories.SchoolRepository.<>c__DisplayClass7_0.<PromoteStudents>b__0(Student x) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\SchoolRepository.cs:line 52
+   at System.Linq.Enumerable.WhereListIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.Repositories.SchoolRepository.PromoteStudents(List`1 repeatingStudents) in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\SchoolRepository.cs:line 52
+
+
+
+2015-08-09 16:02:25,064 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:02:25,064 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-09 16:02:26,360 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:02:26,360 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 16:02:26,361 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:02:26,361 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 16:14:43,750 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:14:43,755 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 16:15:32,682 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:15:32,682 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-09 16:18:19,755 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:18:19,763 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 16:19:37,646 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:19:37,646 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-09 16:22:48,444 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:22:48,451 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 16:23:07,364 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:23:07,364 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-09 16:31:27,795 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:31:27,800 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 16:32:54,241 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:32:54,242 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-09 16:32:54,247 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:32:54,247 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 16:32:54,247 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:32:54,247 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 16:32:54,247 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:32:54,247 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 16:32:54,248 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:32:54,248 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 16:32:54,248 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:32:54,248 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 16:32:54,248 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:32:54,248 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 16:32:54,249 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:32:54,249 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 16:32:54,249 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:32:54,249 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 16:32:54,249 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:32:54,249 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 16:32:54,250 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:32:54,250 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 16:36:59,194 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:36:59,199 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 16:39:45,098 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:39:45,103 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 16:51:35,375 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:51:35,380 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-09 16:51:35,385 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:51:35,385 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 16:51:35,385 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:51:35,385 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 16:57:15,534 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:57:15,534 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-09 16:57:15,535 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:57:15,535 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 16:57:15,535 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:57:15,535 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 16:57:45,258 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:57:45,258 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-09 16:57:45,258 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:57:45,258 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 16:57:45,259 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 16:57:45,259 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-09 17:17:12,830 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 17:17:12,835 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
+
+
+
+2015-08-09 20:40:38,589 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 20:40:38,595 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 21:42:34,580 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 21:42:34,586 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 21:48:21,273 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 21:48:21,279 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 21:53:01,702 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 21:53:01,708 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 21:54:41,072 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 21:54:41,072 [1] INFO  BusinessLogic.UserRepository.cs  - School Created
+
+
+
+
+2015-08-09 22:07:54,284 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 22:07:54,284 [1] INFO  BusinessLogic.UserRepository.cs  - School Edited
+
+
+
+
+2015-08-09 22:08:01,339 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 22:08:02,442 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-09 22:15:32,856 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 22:15:32,863 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 22:27:40,855 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 22:27:40,860 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 22:30:19,955 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 22:30:19,960 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-09 23:20:48,733 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 23:20:48,739 [1] INFO  BusinessLogic.UserRepository.cs  - School Edited
+
+
+
+
+2015-08-09 23:20:48,739 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 23:20:48,739 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
+
+
+
+2015-08-09 23:26:30,380 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 23:26:30,388 [1] INFO  BusinessLogic.UserRepository.cs  - School Edited
+
+
+
+
+2015-08-09 23:26:30,389 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 23:26:30,389 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
+
+
+
+2015-08-09 23:32:55,479 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 23:32:55,485 [1] INFO  BusinessLogic.UserRepository.cs  - School Edited
+
+
+
+
+2015-08-09 23:32:55,485 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-09 23:32:55,485 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
+
+
+
+2015-08-10 00:01:52,540 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-10 00:01:52,546 [1] INFO  BusinessLogic.UserRepository.cs  - School Edited
+
+
+
+
+2015-08-10 00:01:56,450 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-10 00:01:57,620 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
+
+
+
+2015-08-10 00:16:41,091 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-10 00:16:41,091 [1] INFO  BusinessLogic.UserRepository.cs  - School Edited
+
+
+
+
+2015-08-10 00:16:41,091 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-10 00:16:41,091 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
