@@ -686,7 +686,7 @@ namespace SchoolAccountant.Forms
             this.groupBox2.Controls.Add(this.label28);
             this.groupBox2.Controls.Add(this.tboSssANT);
             this.groupBox2.Controls.Add(this.tboJssANT);
-            this.groupBox2.Location = new System.Drawing.Point(25, 328);
+            this.groupBox2.Location = new System.Drawing.Point(42, 328);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(571, 124);
             this.groupBox2.TabIndex = 8;
@@ -727,7 +727,7 @@ namespace SchoolAccountant.Forms
             // 
             // btnUndoLastAddFeesANT
             // 
-            this.btnUndoLastAddFeesANT.Location = new System.Drawing.Point(340, 515);
+            this.btnUndoLastAddFeesANT.Location = new System.Drawing.Point(357, 515);
             this.btnUndoLastAddFeesANT.Name = "btnUndoLastAddFeesANT";
             this.btnUndoLastAddFeesANT.Size = new System.Drawing.Size(75, 23);
             this.btnUndoLastAddFeesANT.TabIndex = 12;
@@ -737,7 +737,7 @@ namespace SchoolAccountant.Forms
             // 
             // btnSaveSchoolFeesANT
             // 
-            this.btnSaveSchoolFeesANT.Location = new System.Drawing.Point(202, 515);
+            this.btnSaveSchoolFeesANT.Location = new System.Drawing.Point(219, 515);
             this.btnSaveSchoolFeesANT.Name = "btnSaveSchoolFeesANT";
             this.btnSaveSchoolFeesANT.Size = new System.Drawing.Size(75, 23);
             this.btnSaveSchoolFeesANT.TabIndex = 11;
@@ -747,14 +747,14 @@ namespace SchoolAccountant.Forms
             // 
             // tboSss3ANT
             // 
-            this.tboSss3ANT.Location = new System.Drawing.Point(430, 268);
+            this.tboSss3ANT.Location = new System.Drawing.Point(447, 268);
             this.tboSss3ANT.Name = "tboSss3ANT";
             this.tboSss3ANT.Size = new System.Drawing.Size(135, 20);
             this.tboSss3ANT.TabIndex = 8;
             // 
             // tboJss3ANT
             // 
-            this.tboJss3ANT.Location = new System.Drawing.Point(430, 194);
+            this.tboJss3ANT.Location = new System.Drawing.Point(447, 194);
             this.tboJss3ANT.Name = "tboJss3ANT";
             this.tboJss3ANT.Size = new System.Drawing.Size(135, 20);
             this.tboJss3ANT.TabIndex = 5;
@@ -762,7 +762,7 @@ namespace SchoolAccountant.Forms
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(427, 243);
+            this.label27.Location = new System.Drawing.Point(444, 243);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(70, 13);
             this.label27.TabIndex = 4;
@@ -771,7 +771,7 @@ namespace SchoolAccountant.Forms
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(427, 169);
+            this.label24.Location = new System.Drawing.Point(444, 169);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(68, 13);
             this.label24.TabIndex = 4;
@@ -779,14 +779,14 @@ namespace SchoolAccountant.Forms
             // 
             // tboSss2ANT
             // 
-            this.tboSss2ANT.Location = new System.Drawing.Point(240, 268);
+            this.tboSss2ANT.Location = new System.Drawing.Point(257, 268);
             this.tboSss2ANT.Name = "tboSss2ANT";
             this.tboSss2ANT.Size = new System.Drawing.Size(135, 20);
             this.tboSss2ANT.TabIndex = 7;
             // 
             // tboJss2ANT
             // 
-            this.tboJss2ANT.Location = new System.Drawing.Point(240, 194);
+            this.tboJss2ANT.Location = new System.Drawing.Point(257, 194);
             this.tboJss2ANT.Name = "tboJss2ANT";
             this.tboJss2ANT.Size = new System.Drawing.Size(135, 20);
             this.tboJss2ANT.TabIndex = 4;
@@ -794,7 +794,7 @@ namespace SchoolAccountant.Forms
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(237, 243);
+            this.label26.Location = new System.Drawing.Point(254, 243);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(73, 13);
             this.label26.TabIndex = 4;
@@ -803,7 +803,7 @@ namespace SchoolAccountant.Forms
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(237, 168);
+            this.label23.Location = new System.Drawing.Point(254, 168);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(68, 13);
             this.label23.TabIndex = 4;
@@ -811,7 +811,7 @@ namespace SchoolAccountant.Forms
             // 
             // tboSss1ANT
             // 
-            this.tboSss1ANT.Location = new System.Drawing.Point(50, 268);
+            this.tboSss1ANT.Location = new System.Drawing.Point(67, 268);
             this.tboSss1ANT.Name = "tboSss1ANT";
             this.tboSss1ANT.Size = new System.Drawing.Size(135, 20);
             this.tboSss1ANT.TabIndex = 6;
@@ -819,7 +819,7 @@ namespace SchoolAccountant.Forms
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(47, 243);
+            this.label25.Location = new System.Drawing.Point(64, 243);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(70, 13);
             this.label25.TabIndex = 4;
@@ -827,7 +827,7 @@ namespace SchoolAccountant.Forms
             // 
             // tboJss1ANT
             // 
-            this.tboJss1ANT.Location = new System.Drawing.Point(50, 194);
+            this.tboJss1ANT.Location = new System.Drawing.Point(67, 194);
             this.tboJss1ANT.Name = "tboJss1ANT";
             this.tboJss1ANT.Size = new System.Drawing.Size(135, 20);
             this.tboJss1ANT.TabIndex = 3;
@@ -835,7 +835,7 @@ namespace SchoolAccountant.Forms
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(47, 168);
+            this.label22.Location = new System.Drawing.Point(64, 168);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(68, 13);
             this.label22.TabIndex = 4;
@@ -845,7 +845,7 @@ namespace SchoolAccountant.Forms
             // 
             this.llPromoteStudents.AutoSize = true;
             this.llPromoteStudents.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llPromoteStudents.Location = new System.Drawing.Point(283, 34);
+            this.llPromoteStudents.Location = new System.Drawing.Point(300, 34);
             this.llPromoteStudents.Name = "llPromoteStudents";
             this.llPromoteStudents.Size = new System.Drawing.Size(170, 15);
             this.llPromoteStudents.TabIndex = 0;
@@ -858,7 +858,7 @@ namespace SchoolAccountant.Forms
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(26, 19);
+            this.label13.Location = new System.Drawing.Point(43, 19);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(472, 30);
             this.label13.TabIndex = 2;
@@ -870,7 +870,7 @@ namespace SchoolAccountant.Forms
             this.cboTermANT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTermANT.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cboTermANT.FormattingEnabled = true;
-            this.cboTermANT.Location = new System.Drawing.Point(240, 96);
+            this.cboTermANT.Location = new System.Drawing.Point(257, 96);
             this.cboTermANT.Name = "cboTermANT";
             this.cboTermANT.Size = new System.Drawing.Size(135, 21);
             this.cboTermANT.TabIndex = 2;
@@ -878,7 +878,7 @@ namespace SchoolAccountant.Forms
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(237, 70);
+            this.label21.Location = new System.Drawing.Point(254, 70);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(31, 13);
             this.label21.TabIndex = 0;
@@ -889,7 +889,7 @@ namespace SchoolAccountant.Forms
             this.cboSessionANT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSessionANT.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cboSessionANT.FormattingEnabled = true;
-            this.cboSessionANT.Location = new System.Drawing.Point(50, 96);
+            this.cboSessionANT.Location = new System.Drawing.Point(67, 96);
             this.cboSessionANT.Name = "cboSessionANT";
             this.cboSessionANT.Size = new System.Drawing.Size(135, 21);
             this.cboSessionANT.TabIndex = 1;
@@ -897,7 +897,7 @@ namespace SchoolAccountant.Forms
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(47, 70);
+            this.label11.Location = new System.Drawing.Point(64, 70);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(44, 13);
             this.label11.TabIndex = 0;
@@ -905,7 +905,7 @@ namespace SchoolAccountant.Forms
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(25, 140);
+            this.groupBox1.Location = new System.Drawing.Point(42, 140);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(571, 182);
             this.groupBox1.TabIndex = 7;

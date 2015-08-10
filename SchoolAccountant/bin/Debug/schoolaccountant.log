@@ -1668,3 +1668,123 @@ Parameter name: source
 
 2015-08-10 00:16:41,091 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Added
 
+
+
+
+2015-08-10 22:20:42,612 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-10 22:20:42,629 [1] INFO  BusinessLogic.UserRepository.cs  - School Edited
+
+
+
+
+2015-08-10 22:20:42,629 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-10 22:20:42,629 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-10 22:25:58,390 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-10 22:25:58,395 [1] INFO  BusinessLogic.UserRepository.cs  - School Edited
+
+
+
+
+2015-08-10 22:25:58,395 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-10 22:25:58,395 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-10 22:48:55,040 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-10 22:48:55,044 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-10 22:49:17,559 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-10 22:49:17,559 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-10 22:49:17,560 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-10 22:49:17,560 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-10 22:49:17,560 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-10 22:49:17,560 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-10 22:49:17,561 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-10 22:49:17,561 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-10 22:49:32,477 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-10 22:49:32,477 [1] INFO  BusinessLogic.UserRepository.cs  - School Edited
+
+
+
+
+2015-08-10 22:49:32,485 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-10 22:49:32,485 [1] INFO  BusinessLogic.UserRepository.cs  - School Edited
+
+
+
+
+2015-08-10 22:49:32,485 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-10 22:49:32,485 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+

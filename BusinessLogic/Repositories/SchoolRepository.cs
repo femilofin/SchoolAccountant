@@ -24,6 +24,10 @@ namespace BusinessLogic.Repositories
             XmlConfigurator.Configure();
         }
 
+        /// <summary>
+        /// Get details of the school
+        /// </summary>
+        /// <returns>School details</returns>
         public School Get()
         {
             try
@@ -38,8 +42,12 @@ namespace BusinessLogic.Repositories
                 return null;
             }
         }
-
       
+        /// <summary>
+        /// Used to setup school on first run of the application
+        /// </summary>
+        /// <param name="school">An instance of school class</param>
+        /// <returns>School Id</returns>
         public string SchoolSetup(School school)
         {
             try
@@ -62,6 +70,11 @@ namespace BusinessLogic.Repositories
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Update school details
+        /// </summary>
+        /// <param name="model">An instance of school class</param>
+        /// <returns>true if success else false</returns>
         public bool Edit(School model)
         {
             try
@@ -79,6 +92,11 @@ namespace BusinessLogic.Repositories
             }
         }
 
+        /// <summary>
+        /// Delete the school setup
+        /// </summary>
+        /// <param name="id">school id</param>
+        /// <returns>true if success else false</returns>
         public bool Delete(string id)
         {
             try

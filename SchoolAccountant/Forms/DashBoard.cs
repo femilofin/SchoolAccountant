@@ -548,19 +548,19 @@ namespace SchoolAccountant.Forms
 
                 if (success)
                 {
-                    MessageBox.Show($"User \"{username}\" has been registered");
+                    MessageBox.Show($"User \"{username}\" has been registered", @"School Accountant");
                     ClearTextBoxesAU();
                 }
                 else
                 {
-                    MessageBox.Show(@"Something went wrong, please try again");
+                    MessageBox.Show(@"Something went wrong, please try again", @"School Accountant");
                 }
             }
 
             else
             {
 
-                MessageBox.Show(@"Please, all information are required");
+                MessageBox.Show(@"Please, all information are required", @"School Accountant");
             }
         }
 
@@ -611,13 +611,13 @@ namespace SchoolAccountant.Forms
                 }
                 else
                 {
-                    MessageBox.Show(@"Something went wrong, please try again");
+                    MessageBox.Show(@"Something went wrong, please try again", @"School Accountant");
                 }
             }
 
             else
             {
-                MessageBox.Show(@"Please, all information are required");
+                MessageBox.Show(@"Please, all information are required", @"School Accountant");
             }
         }
 
@@ -786,11 +786,17 @@ namespace SchoolAccountant.Forms
                     if ((TermEnum)term == TermEnum.First)
                     {
                         // Check for the last promotion date to ensure that promotion has not been done.
-                        var lastPromotion = _schoolRepository.Get().PromotionDate;
+                        var presentTerm = _schoolRepository.Get().PresentTermEnum;
 
-                        if (DateTime.Now - lastPromotion > TimeSpan.FromDays(60))
+                        if (presentTerm == TermEnum.Third)
                         {
-                            // _schoolRepository.PromoteStudents(null);
+                            var success = _studentRepository.PromoteStudents(null);
+
+                            if (!success)
+                            {
+                                MessageBox.Show(@"Something went wrong, Please try again", @"School Accountant");
+                                return;
+                            }
                         }
                     }
 
@@ -845,20 +851,22 @@ namespace SchoolAccountant.Forms
 
                     if (!updateSuccess)
                     {
-                        MessageBox.Show(@"Something went wrong, Please try again");
+                        MessageBox.Show(@"Something went wrong, Please try again", @"School Accountant");
 
                     }
-                    MessageBox.Show(@"Fees added, click the 'undo' button to delete");
+                    MessageBox.Show(@"Fees added, click the 'undo' button to delete", @"School Accountant");
+
+                    RefreshDgv();
 
                 }
                 else
                 {
-                    MessageBox.Show(@"Please, enter only numbers to fees");
+                    MessageBox.Show(@"Please, enter only numbers to fees", @"School Accountant");
                 }
             }
             else
             {
-                MessageBox.Show(@"Please, all information are required");
+                MessageBox.Show(@"Please, all information are required", @"School Accountant");
             }
         }
 
@@ -878,6 +886,7 @@ namespace SchoolAccountant.Forms
                         //todo: update labels like this solution wide
                         tsslAddNewTerm.Text = @"Fees deleted successfully";
 
+                        RefreshDgv();
                         SetCurrentFeesAsAddNewTermTab();
                     }
                     else
@@ -886,13 +895,13 @@ namespace SchoolAccountant.Forms
                     }
 
                 }
-                MessageBox.Show(@"Something went wrong, please try again");
+                MessageBox.Show(@"Something went wrong, please try again", @"School Accountant");
                 tsslAddNewTerm.Text = @"Something went wrong, please try again";
 
             }
             else
             {
-                MessageBox.Show(@"No recent fee was added");
+                MessageBox.Show(@"No recent fee was added", @"School Accountant");
                 tsslAddNewTerm.Text = @"No recent fee was added";
             }
         }

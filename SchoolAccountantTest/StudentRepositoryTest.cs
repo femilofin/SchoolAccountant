@@ -26,10 +26,14 @@ namespace SchoolAccountantTest
             var addSuccess = _studentRepository.Create(student);
             Assert.AreEqual(true, addSuccess);
 
-            // Update
+            // Edit
             student.LastName = "TestLastName";
-            var updateSuccess = _studentRepository.Edit(student);
-            Assert.AreEqual(true, updateSuccess);
+            var editSuccess = _studentRepository.Edit(student);
+            Assert.AreEqual(true, editSuccess);
+
+            // Update
+            var updateSuccess = _studentRepository.Update(student);
+            Assert.IsTrue(updateSuccess);
 
             // Deactivate
             var deactivated = _studentRepository.DeactivateStudent(student.Id);
@@ -49,5 +53,6 @@ namespace SchoolAccountantTest
             var undidUpdated = _studentRepository.UndoUpdatedFees();
             Assert.IsTrue(undidUpdated);
         }
+
     }
 }

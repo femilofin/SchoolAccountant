@@ -10,9 +10,9 @@ namespace BusinessLogic.Interface
         IList<Student> GetActiveStudents();
         bool DeactivateStudent(string id);
         bool Update(Student student);
-        //        bool UpdateStudentFees(Student student);
         bool UpdateStudentFees();
         bool UndoUpdatedFees();
+        bool PromoteStudents(List<Student> repeatingStudents);
 
     }
 }

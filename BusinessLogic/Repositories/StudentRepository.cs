@@ -116,6 +116,11 @@ namespace BusinessLogic.Repositories
             }
         }
 
+        /// <summary>
+        /// Updates the student
+        /// </summary>
+        /// <param name="student">Instance of the given student</param>
+        /// <returns>true if success else false</returns>
         public bool Update(Student student)
         {
             try
@@ -195,11 +200,17 @@ namespace BusinessLogic.Repositories
             }
         }
 
+        /// <summary>
+        /// Update the fees of a given student, only for when adding a new student 
+        /// (not necessary new to the school) to the system
+        /// </summary>
+        /// <param name="student">The student whose fees is to be updated</param>
+        /// <returns>true if success else false</returns>
         public bool UpdateStudentFees(Student student)
         {
             try
             {
-                var currentFees = _classTermFeeRepository.GetCurrentFees();
+                var currentFees = _classTermFeeRepository.GetCurrentFees() ?? new List<ClassTermFee>();
 
                 var presentClass = student.PresentClass;
 
@@ -248,19 +259,24 @@ namespace BusinessLogic.Repositories
             }
         }
 
+        /// <summary>
+        /// Used to promote all promoting students
+        /// </summary>
+        /// <param name="repeatingStudents">A list of repeating students</param>
+        /// <returns>true if success else false</returns>
         public bool PromoteStudents(List<Student> repeatingStudents)
         {
             // Get all active students
             try
             {
                 var students = GetActiveStudents();
-
+                var repeatingStudentsList = repeatingStudents ?? new List<Student>();
                 // Get promoting students
-                var promotingStudents = students.Where(x => repeatingStudents.All(y => y.Id != x.Id)).ToList();
+                var promotingStudents = students.Where(x => repeatingStudentsList.All(y => y.Id != x.Id)).ToList();
 
                 foreach (var student in promotingStudents)
                 {
-                    var presentClass = student.PresentClass;
+                    var presentClass = student.PresentClass;    
 
                     switch (presentClass)
                     {
@@ -268,42 +284,42 @@ namespace BusinessLogic.Repositories
                             {
                                 //Promote to Jss 2
                                 student.PresentClass = ClassEnum.JSS2;
-                                Edit(student);
+                                Update(student);
                             }
                             break;
                         case ClassEnum.JSS2:
                             {
                                 //Promote to Jss 3
                                 student.PresentClass = ClassEnum.JSS3;
-                                Edit(student);
+                                Update(student);
                             }
                             break;
                         case ClassEnum.JSS3:
                             {
                                 //Promote to Sss 1
                                 student.PresentClass = ClassEnum.SSS1;
-                                Edit(student);
+                                Update(student);
                             }
                             break;
                         case ClassEnum.SSS1:
                             {
                                 //Promote to Sss 2
                                 student.PresentClass = ClassEnum.SSS2;
-                                Edit(student);
+                                Update(student);
                             }
                             break;
                         case ClassEnum.SSS2:
                             {
                                 //Promote to Sss 3
                                 student.PresentClass = ClassEnum.SSS3;
-                                Edit(student);
+                                Update(student);
                             }
                             break;
                         case ClassEnum.SSS3:
                             {
                                 // Deactivate student
                                 student.Active = false;
-                                Edit(student);
+                                Update(student);
                             }
                             break;
                     }
@@ -326,6 +342,10 @@ namespace BusinessLogic.Repositories
             }
         }
 
+        /// <summary>
+        /// Updates the fees of all active students
+        /// </summary>
+        /// <returns>true if success else false</returns>
         public bool UpdateStudentFees()
         {
             try
@@ -356,6 +376,10 @@ namespace BusinessLogic.Repositories
 
         }
 
+        /// <summary>
+        /// Undo/delete the last added fee during the current session
+        /// </summary>
+        /// <returns>true if success else false</returns>
         public bool UndoUpdatedFees()
         {
             try
