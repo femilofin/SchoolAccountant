@@ -38,9 +38,9 @@ namespace SchoolAccountant.Forms
             this.label4 = new System.Windows.Forms.Label();
             this.cboTerm = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cboAmount = new System.Windows.Forms.TextBox();
+            this.tboAmount = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cboPrintReceipt = new System.Windows.Forms.CheckBox();
+            this.chkPrintReceipt = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.rtboComment = new System.Windows.Forms.RichTextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -78,7 +78,7 @@ namespace SchoolAccountant.Forms
             // cboSession
             // 
             this.cboSession.FormattingEnabled = true;
-            this.cboSession.Location = new System.Drawing.Point(101, 117);
+            this.cboSession.Location = new System.Drawing.Point(98, 117);
             this.cboSession.Name = "cboSession";
             this.cboSession.Size = new System.Drawing.Size(100, 21);
             this.cboSession.TabIndex = 0;
@@ -103,37 +103,37 @@ namespace SchoolAccountant.Forms
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 165);
+            this.label5.Location = new System.Drawing.Point(29, 161);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.Size = new System.Drawing.Size(43, 26);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Amount";
+            this.label5.Text = "Amount\r\n(Naira)";
             // 
-            // cboAmount
+            // tboAmount
             // 
-            this.cboAmount.Location = new System.Drawing.Point(101, 162);
-            this.cboAmount.Name = "cboAmount";
-            this.cboAmount.Size = new System.Drawing.Size(100, 20);
-            this.cboAmount.TabIndex = 2;
+            this.tboAmount.Location = new System.Drawing.Point(98, 164);
+            this.tboAmount.Name = "tboAmount";
+            this.tboAmount.Size = new System.Drawing.Size(100, 20);
+            this.tboAmount.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 210);
+            this.label6.Location = new System.Drawing.Point(29, 218);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 13);
             this.label6.TabIndex = 2;
             this.label6.Text = "Comment";
             // 
-            // cboPrintReceipt
+            // chkPrintReceipt
             // 
-            this.cboPrintReceipt.AutoSize = true;
-            this.cboPrintReceipt.Location = new System.Drawing.Point(259, 161);
-            this.cboPrintReceipt.Name = "cboPrintReceipt";
-            this.cboPrintReceipt.Size = new System.Drawing.Size(82, 17);
-            this.cboPrintReceipt.TabIndex = 3;
-            this.cboPrintReceipt.Text = "Print receipt";
-            this.cboPrintReceipt.UseVisualStyleBackColor = true;
+            this.chkPrintReceipt.AutoSize = true;
+            this.chkPrintReceipt.Location = new System.Drawing.Point(259, 165);
+            this.chkPrintReceipt.Name = "chkPrintReceipt";
+            this.chkPrintReceipt.Size = new System.Drawing.Size(82, 17);
+            this.chkPrintReceipt.TabIndex = 3;
+            this.chkPrintReceipt.Text = "Print receipt";
+            this.chkPrintReceipt.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -146,7 +146,7 @@ namespace SchoolAccountant.Forms
             // 
             // rtboComment
             // 
-            this.rtboComment.Location = new System.Drawing.Point(98, 207);
+            this.rtboComment.Location = new System.Drawing.Point(98, 215);
             this.rtboComment.Name = "rtboComment";
             this.rtboComment.Size = new System.Drawing.Size(324, 96);
             this.rtboComment.TabIndex = 4;
@@ -154,22 +154,23 @@ namespace SchoolAccountant.Forms
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(212, 335);
+            this.btnSubmit.Location = new System.Drawing.Point(212, 343);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 5;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // PayFee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 394);
+            this.ClientSize = new System.Drawing.Size(456, 394);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.cboPrintReceipt);
+            this.Controls.Add(this.chkPrintReceipt);
             this.Controls.Add(this.rtboComment);
-            this.Controls.Add(this.cboAmount);
+            this.Controls.Add(this.tboAmount);
             this.Controls.Add(this.cboTerm);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -196,9 +197,9 @@ namespace SchoolAccountant.Forms
         private Label label4;
         private ComboBox cboTerm;
         private Label label5;
-        private TextBox cboAmount;
+        private TextBox tboAmount;
         private Label label6;
-        private CheckBox cboPrintReceipt;
+        private CheckBox chkPrintReceipt;
         private Label label1;
         private RichTextBox rtboComment;
         private Button btnSubmit;

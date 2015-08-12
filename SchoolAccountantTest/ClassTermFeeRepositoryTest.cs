@@ -26,6 +26,7 @@ namespace SchoolAccountantTest
         /// <summary>
         /// AddClassTermFees should not return null and delete fees should return true
         /// </summary>
+        [Ignore]
         [Test]
         public void AddClassTermFeesDoesNotReturnNullAndDeleteReturnsTrue()
         {

@@ -2593,3 +2593,1008 @@ System.FormatException: 'Id1' is not a valid 24 digit hex string.
 
 2015-08-10 23:24:30,388 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
 
+
+
+
+2015-08-11 22:41:30,033 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:41:30,055 [Runner thread] INFO  BusinessLogic.UserRepository.cs  - School Created
+
+
+
+
+2015-08-11 22:41:30,060 [Runner thread] INFO  BusinessLogic.UserRepository.cs  - School Deleted
+
+
+
+
+2015-08-11 22:56:36,810 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:56:36,821 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Created
+
+
+
+
+2015-08-11 22:56:36,834 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Deleted
+
+
+
+
+2015-08-11 22:58:09,686 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,897 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,897 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-11 22:58:09,897 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,897 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-11 22:58:09,901 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,901 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees reactivated
+
+
+
+
+2015-08-11 22:58:09,902 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,902 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-11 22:58:09,902 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,902 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-11 22:58:09,903 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,903 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-11 22:58:09,903 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,903 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-11 22:58:09,903 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,903 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-11 22:58:09,903 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,903 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-11 22:58:09,904 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,904 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-11 22:58:09,904 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,904 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-11 22:58:09,959 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,959 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Created
+
+
+
+
+2015-08-11 22:58:09,959 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Deleted
+
+
+
+
+2015-08-11 22:58:09,979 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,980 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-11 22:58:09,980 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,980 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
+
+
+
+2015-08-11 22:58:09,988 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,988 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-11 22:58:09,988 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,988 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-11 22:58:09,989 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:09,989 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Deactivated
+
+
+
+
+2015-08-11 22:58:09,990 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:10,020 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:10,021 [Runner thread] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-11 22:58:10,024 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:58:10,024 [Runner thread] INFO  BusinessLogic.UserRepository.cs  - Registered user
+
+
+
+
+2015-08-11 22:58:10,026 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:02:10,964 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:02:10,973 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-11 23:02:10,974 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:02:10,974 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
+
+
+
+2015-08-11 23:02:10,992 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:02:10,992 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-11 23:02:10,993 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:02:10,993 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-11 23:02:10,994 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:02:10,994 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Deactivated
+
+
+
+
+2015-08-11 23:02:10,999 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:24:02,382 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:24:02,392 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-11 23:24:02,412 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:24:02,412 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
+
+
+
+2015-08-11 23:24:02,429 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:24:02,429 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-11 23:24:02,430 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:24:02,430 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-11 23:24:02,431 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:24:02,432 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Deactivated
+
+
+
+
+2015-08-11 23:24:02,436 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:36:07,307 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:36:07,335 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-11 23:36:07,336 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:36:07,336 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
+
+
+
+2015-08-11 23:36:08,392 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:36:08,392 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-11 23:36:08,393 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:36:08,393 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-11 23:36:08,394 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:36:08,395 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Deactivated
+
+
+
+
+2015-08-11 23:36:08,400 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:49:15,351 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:49:18,419 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-11 23:49:44,096 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:49:45,008 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
+
+
+
+2015-08-11 23:51:05,281 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:51:06,956 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-11 23:53:21,995 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:53:23,060 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-11 23:54:19,274 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:54:20,221 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Deactivated
+
+
+
+
+2015-08-11 23:54:55,168 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,380 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,572 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,572 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-12 00:17:26,572 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,572 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-12 00:17:26,576 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,576 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees reactivated
+
+
+
+
+2015-08-12 00:17:26,576 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,576 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-12 00:17:26,577 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,577 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-12 00:17:26,577 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,577 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-12 00:17:26,577 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,577 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-12 00:17:26,578 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,578 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-12 00:17:26,578 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,578 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-12 00:17:26,578 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,578 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-12 00:17:26,578 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,578 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-12 00:17:26,625 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,625 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Created
+
+
+
+
+2015-08-12 00:17:26,625 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Deleted
+
+
+
+
+2015-08-12 00:17:26,647 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,647 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-12 00:17:26,647 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,647 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
+
+
+
+2015-08-12 00:17:26,654 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,654 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-12 00:17:26,654 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,654 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-12 00:17:26,656 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,656 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-12 00:17:26,656 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,656 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Deactivated
+
+
+
+
+2015-08-12 00:17:26,656 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,656 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-12 00:17:26,657 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,690 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,690 [Runner thread] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-12 00:17:26,693 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:17:26,693 [Runner thread] INFO  BusinessLogic.UserRepository.cs  - Registered user
+
+
+
+
+2015-08-12 00:17:26,695 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:50:03,019 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:50:04,063 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Created
+
+
+
+
+2015-08-12 00:50:50,559 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Deleted
+
+
+
+
+2015-08-12 00:53:14,118 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:53:14,127 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-12 00:53:14,127 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:53:14,127 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
+
+
+
+2015-08-12 00:53:14,144 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:53:14,144 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-12 00:53:14,144 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:53:14,144 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-12 00:53:14,146 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:53:14,146 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-12 00:53:14,146 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:53:14,146 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Deactivated
+
+
+
+
+2015-08-12 00:53:14,151 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:53:14,151 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-12 00:53:14,151 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:53:24,812 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:53:24,822 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-12 00:53:24,822 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:53:24,822 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
+
+
+
+2015-08-12 00:53:24,840 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:53:24,840 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-12 00:53:24,841 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:53:24,841 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-12 00:53:24,842 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:53:24,842 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-12 00:53:24,843 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:53:24,843 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Deactivated
+
+
+
+
+2015-08-12 00:53:24,847 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:53:24,847 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-12 00:53:24,847 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:53:47,144 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:53:47,153 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Created
+
+
+
+
+2015-08-12 00:53:47,158 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Deleted
+
+
+
+
+2015-08-12 00:54:10,966 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:54:10,975 [Runner thread] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-08-12 00:54:11,017 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:54:11,018 [Runner thread] INFO  BusinessLogic.UserRepository.cs  - Registered user
+
+
+
+
+2015-08-12 00:54:11,045 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:55:32,026 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:55:32,035 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-12 00:55:32,035 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:55:32,035 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-12 00:55:32,049 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:55:32,049 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees reactivated
+
+
+
+
+2015-08-12 00:55:32,053 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:55:32,053 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-12 00:55:32,053 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:55:32,053 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-12 00:55:32,054 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:55:32,054 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-12 00:55:32,054 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:55:32,054 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-12 00:55:32,054 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:55:32,054 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-12 00:55:32,054 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:55:32,054 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-12 00:55:32,054 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:55:32,054 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+
+
+
+
+2015-08-12 00:55:32,055 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:55:32,055 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
+

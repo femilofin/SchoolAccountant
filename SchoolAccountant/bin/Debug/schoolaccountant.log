@@ -1788,3 +1788,203 @@ Parameter name: source
 
 2015-08-10 22:49:32,485 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
 
+
+
+
+2015-08-11 22:54:27,544 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:54:29,291 [1] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-11 22:54:35,501 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 22:54:37,477 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-11 23:37:19,371 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:37:19,377 [1] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-11 23:37:19,377 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-11 23:37:19,377 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-12 00:47:12,372 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:47:12,377 [1] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-12 00:47:12,378 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:47:12,378 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-12 00:56:26,801 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:56:26,807 [1] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-12 00:56:26,807 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 00:56:26,807 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-12 01:03:37,119 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 01:03:37,124 [1] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-12 01:03:37,124 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 01:03:37,124 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-12 01:16:18,789 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 01:16:20,016 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-12 01:16:27,425 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 01:16:27,425 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-12 01:16:27,426 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 01:16:27,426 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-12 01:16:27,426 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 01:16:27,426 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-12 01:16:30,064 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 01:16:30,064 [1] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-12 01:16:30,076 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 01:16:30,076 [1] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-12 01:16:30,076 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 01:16:30,076 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-12 23:59:40,136 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-12 23:59:40,141 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-13 00:00:05,717 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-13 00:00:05,717 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-13 00:05:10,208 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-13 00:05:10,208 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+

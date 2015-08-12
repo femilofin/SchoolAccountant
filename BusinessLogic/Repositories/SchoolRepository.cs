@@ -15,7 +15,7 @@ namespace BusinessLogic.Repositories
 {
     public class SchoolRepository : ISchoolRepository
     {
-        private readonly ILog _log = LogManager.GetLogger("BusinessLogic.UserRepository.cs");
+        private readonly ILog _log = LogManager.GetLogger("BusinessLogic.SchoolRepository.cs");
         private readonly MongoRepository<School> _schoolRepository = new MongoRepository<School>();
         private readonly IAuditTrailRepository _auditTrailRepository = new AuditTrailRepository();
 

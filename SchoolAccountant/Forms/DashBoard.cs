@@ -456,7 +456,8 @@ namespace SchoolAccountant.Forms
                     StartClass = activeStudents[i].StartClass,
                     StartDate = activeStudents[i].StartDate,
                     StartTerm = activeStudents[i].StartTerm,
-                    Id = activeStudents[i].Id
+                    Id = activeStudents[i].Id,
+                    PresentClassEnum = activeStudents[i].PresentClass
 
                 }
                     );
@@ -497,6 +498,7 @@ namespace SchoolAccountant.Forms
                 .Add(15, "StartDate", "StartDate", visible: false)
                 .Add(15, "StartTerm", "StartTerm", visible: false)
                 .Add(15, "Id", "Id", visible: false)
+                .Add(15, "PresentClassEnum", "PresentClassEnum", visible: false)
                 .Add(15, "FirstName", "FirstName", visible: false);
 
 
@@ -785,9 +787,9 @@ namespace SchoolAccountant.Forms
                     // Promtion must occur before a first term school fees is added.
                     if ((TermEnum)term == TermEnum.First)
                     {
-                        // Check for the last promotion date to ensure that promotion has not been done.
                         var presentTerm = _schoolRepository.Get().PresentTermEnum;
 
+                        // Check if the just concluded term is a third term
                         if (presentTerm == TermEnum.Third)
                         {
                             var success = _studentRepository.PromoteStudents(null);

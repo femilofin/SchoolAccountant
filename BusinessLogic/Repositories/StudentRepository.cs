@@ -66,6 +66,9 @@ namespace BusinessLogic.Repositories
 
                 _studentRepository.Update(student);
 
+                // Decrease Student Count
+                DecreaseStudentCount();
+
                 _auditTrailRepository.Log($"Deactivated Student {student.FirstName} {student.LastName}", AuditActionEnum.Deactivated);
 
                 _log.Info("Student Deactivated");
@@ -98,10 +101,7 @@ namespace BusinessLogic.Repositories
                 UpdateStudentFees(model);
 
                 // Update Student count
-                var school = _schoolRepository.Get();
-                school.StudentCount++;
-
-                _schoolRepository.Edit(school);
+                IncreaseStudentCount();
 
                 _auditTrailRepository.Log($"Created Student {model.FirstName} {model.LastName}", AuditActionEnum.Created);
 
@@ -114,6 +114,22 @@ namespace BusinessLogic.Repositories
                 _log.Error("Error", ex);
                 return false;
             }
+        }
+
+        private void IncreaseStudentCount()
+        {
+            var school = _schoolRepository.Get();
+            school.StudentCount++;
+
+            _schoolRepository.Edit(school);
+        }
+
+        private void DecreaseStudentCount()
+        {
+            var school = _schoolRepository.Get();
+            school.StudentCount--;
+
+            _schoolRepository.Edit(school);
         }
 
         /// <summary>
@@ -188,6 +204,9 @@ namespace BusinessLogic.Repositories
                 var student = _studentRepository.GetById(id);
 
                 _studentRepository.Delete(student);
+
+                // Decrease student count
+                DecreaseStudentCount();
 
                 _auditTrailRepository.Log($"Student {student.FirstName} {student.LastName}", AuditActionEnum.Deleted);
 
@@ -266,11 +285,13 @@ namespace BusinessLogic.Repositories
         /// <returns>true if success else false</returns>
         public bool PromoteStudents(List<Student> repeatingStudents)
         {
-            // Get all active students
             try
             {
+                // Get all active students
                 var students = GetActiveStudents();
+
                 var repeatingStudentsList = repeatingStudents ?? new List<Student>();
+
                 // Get promoting students
                 var promotingStudents = students.Where(x => repeatingStudentsList.All(y => y.Id != x.Id)).ToList();
 
@@ -340,6 +361,11 @@ namespace BusinessLogic.Repositories
                 _log.Error("Error", ex);
                 return false;
             }
+        }
+
+        public Student GetStudentById(string id)
+        {
+            return _studentRepository.GetById(id);
         }
 
         /// <summary>

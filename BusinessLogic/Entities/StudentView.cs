@@ -24,6 +24,7 @@ namespace BusinessLogic.Entities
         public string PaidFee { get; set; }
         public TermEnum PresentTerm { get; set; }
         public ArmEnum PresentArm { get; set; }
+        public ClassEnum PresentClassEnum { get; set; }
 
 
     }

@@ -13,6 +13,7 @@ namespace BusinessLogic.Interface
         bool UpdateStudentFees();
         bool UndoUpdatedFees();
         bool PromoteStudents(List<Student> repeatingStudents);
+        Student GetStudentById(string id);
 
     }
 }

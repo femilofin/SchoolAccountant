@@ -75,16 +75,7 @@ namespace BusinessLogic.Repositories
                 };
 
                 // Update School
-                var school = _schoolRepository.Get();
-                school.PresentSession = classTermFees[0].Session;
-                school.PresentTermEnum = classTermFees[0].TermEnum;
-                school.TermStart = DateTime.Now;
-
-                if (classTermFees[0].TermEnum == TermEnum.First)
-                {
-                    school.SessionStart = DateTime.Now;
-                }
-                _schoolRepository.Edit(school);
+                UpdateSchool(classTermFees);
 
                 _auditTrailRepository.Log($"School fees created by {username}", AuditActionEnum.Created);
 
@@ -98,6 +89,21 @@ namespace BusinessLogic.Repositories
                 _log.Error("Error", ex);
                 return null;
             }
+        }
+
+        private void UpdateSchool(IList<ClassTermFee> classTermFees)
+        {
+            var school = _schoolRepository.Get();
+
+            school.PresentSession = classTermFees[0].Session;
+            school.PresentTermEnum = classTermFees[0].TermEnum;
+            school.TermStart = DateTime.Now;
+
+            if (classTermFees[0].TermEnum == TermEnum.First)
+            {
+                school.SessionStart = DateTime.Now;
+            }
+            _schoolRepository.Edit(school);
         }
 
         /// <summary>
