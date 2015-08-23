@@ -182,6 +182,7 @@ namespace SchoolAccountant.Forms
             // 
             // tsslShowAll
             // 
+            this.tsslShowAll.IsLink = true;
             this.tsslShowAll.Name = "tsslShowAll";
             this.tsslShowAll.Size = new System.Drawing.Size(53, 17);
             this.tsslShowAll.Text = "Show All";

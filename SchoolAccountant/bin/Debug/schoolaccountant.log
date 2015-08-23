@@ -1988,3 +1988,481 @@ Parameter name: source
 
 2015-08-13 00:05:10,208 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
 
+
+
+
+2015-08-13 22:49:20,999 [1] ERROR BusinessLogic.StudentRepository.cs  - Others
+
+System.IO.FileFormatException: An error occurred while deserializing the FeePayments property of class BusinessLogic.Entities.Student: Element 'HasCollectedReceipt' does not match any field or property of class BusinessLogic.Entities.FeePayment. ---> System.IO.FileFormatException: Element 'HasCollectedReceipt' does not match any field or property of class BusinessLogic.Entities.FeePayment.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.EnumerableSerializerBase`1.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+   --- End of inner exception stack trace ---
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadBodyFrom(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoConnection.ReceiveMessage[TDocument](BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.Operations.QueryOperation`1.GetFirstBatch(IConnectionProvider connectionProvider)
+   at MongoDB.Driver.Operations.QueryOperation`1.Execute(IConnectionProvider connectionProvider)
+   at MongoDB.Driver.MongoCursor`1.GetEnumerator()
+   at MongoDB.Driver.Linq.IdentityProjector`1.GetEnumerator()
+   at MongoDB.Driver.Linq.MongoQueryable`1.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.Repositories.StudentRepository.GetActiveStudents() in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\StudentRepository.cs:line 39
+
+
+
+2015-08-13 22:49:29,872 [1] ERROR BusinessLogic.StudentRepository.cs  - Others
+
+System.IO.FileFormatException: An error occurred while deserializing the FeePayments property of class BusinessLogic.Entities.Student: Element 'HasCollectedReceipt' does not match any field or property of class BusinessLogic.Entities.FeePayment. ---> System.IO.FileFormatException: Element 'HasCollectedReceipt' does not match any field or property of class BusinessLogic.Entities.FeePayment.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.EnumerableSerializerBase`1.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+   --- End of inner exception stack trace ---
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadBodyFrom(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoConnection.ReceiveMessage[TDocument](BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.Operations.QueryOperation`1.GetFirstBatch(IConnectionProvider connectionProvider)
+   at MongoDB.Driver.Operations.QueryOperation`1.Execute(IConnectionProvider connectionProvider)
+   at MongoDB.Driver.MongoCursor`1.GetEnumerator()
+   at MongoDB.Driver.Linq.IdentityProjector`1.GetEnumerator()
+   at MongoDB.Driver.Linq.MongoQueryable`1.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.Repositories.StudentRepository.GetActiveStudents() in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\StudentRepository.cs:line 39
+
+
+
+2015-08-13 22:49:52,926 [1] ERROR BusinessLogic.StudentRepository.cs  - Others
+
+System.IO.FileFormatException: An error occurred while deserializing the FeePayments property of class BusinessLogic.Entities.Student: Element 'HasCollectedReceipt' does not match any field or property of class BusinessLogic.Entities.FeePayment. ---> System.IO.FileFormatException: Element 'HasCollectedReceipt' does not match any field or property of class BusinessLogic.Entities.FeePayment.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.EnumerableSerializerBase`1.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+   --- End of inner exception stack trace ---
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadBodyFrom(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoConnection.ReceiveMessage[TDocument](BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.Operations.QueryOperation`1.GetFirstBatch(IConnectionProvider connectionProvider)
+   at MongoDB.Driver.Operations.QueryOperation`1.Execute(IConnectionProvider connectionProvider)
+   at MongoDB.Driver.MongoCursor`1.GetEnumerator()
+   at MongoDB.Driver.Linq.IdentityProjector`1.GetEnumerator()
+   at MongoDB.Driver.Linq.MongoQueryable`1.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.Repositories.StudentRepository.GetActiveStudents() in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\StudentRepository.cs:line 39
+
+
+
+2015-08-13 22:50:55,333 [1] ERROR BusinessLogic.StudentRepository.cs  - Others
+
+System.IO.FileFormatException: An error occurred while deserializing the FeePayments property of class BusinessLogic.Entities.Student: Element 'HasCollectedReceipt' does not match any field or property of class BusinessLogic.Entities.FeePayment. ---> System.IO.FileFormatException: Element 'HasCollectedReceipt' does not match any field or property of class BusinessLogic.Entities.FeePayment.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.EnumerableSerializerBase`1.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+   --- End of inner exception stack trace ---
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadBodyFrom(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoConnection.ReceiveMessage[TDocument](BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.Operations.QueryOperation`1.GetFirstBatch(IConnectionProvider connectionProvider)
+   at MongoDB.Driver.Operations.QueryOperation`1.Execute(IConnectionProvider connectionProvider)
+   at MongoDB.Driver.MongoCursor`1.GetEnumerator()
+   at MongoDB.Driver.Linq.IdentityProjector`1.GetEnumerator()
+   at MongoDB.Driver.Linq.MongoQueryable`1.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.Repositories.StudentRepository.GetActiveStudents() in C:\Freelance\SchoolAccountant\BusinessLogic\Repositories\StudentRepository.cs:line 39
+
+
+
+2015-08-13 22:54:40,454 [1] ERROR BusinessLogic.StudentRepository.cs  - Others
+
+System.IO.FileFormatException: An error occurred while deserializing the FeePayments property of class BusinessLogic.Entities.Student: Element 'HasCollectedReceipt' does not match any field or property of class BusinessLogic.Entities.FeePayment. ---> System.IO.FileFormatException: Element 'HasCollectedReceipt' does not match any field or property of class BusinessLogic.Entities.FeePayment.
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.Serializers.EnumerableSerializerBase`1.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+   --- End of inner exception stack trace ---
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.DeserializeMemberValue(BsonReader bsonReader, BsonMemberMap memberMap)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, Type actualType, IBsonSerializationOptions options)
+   at MongoDB.Bson.Serialization.BsonClassMapSerializer.Deserialize(BsonReader bsonReader, Type nominalType, IBsonSerializationOptions options)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadBodyFrom(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoReplyMessage`1.ReadFrom(BsonBuffer buffer)
+   at MongoDB.Driver.Internal.MongoConnection.ReceiveMessage[TDocument](BsonBinaryReaderSettings readerSettings, IBsonSerializer serializer, IBsonSerializationOptions serializationOptions)
+   at MongoDB.Driver.Operations.QueryOperation`1.GetFirstBatch(IConnectionProvider connectionProvider)
+   at MongoDB.Driver.Operations.QueryOperation`1.Execute(IConnectionProvider connectionProvider)
+   at MongoDB.Driver.MongoCursor`1.GetEnumerator()
+   at MongoDB.Driver.Linq.IdentityProjector`1.GetEnumerator()
+   at MongoDB.Driver.Linq.MongoQueryable`1.GetEnumerator()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BusinessLogic.Repositories.StudentRepository.GetActiveStudents()
+
+
+
+2015-08-13 22:57:29,173 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-13 22:57:29,179 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-13 22:58:35,091 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-13 22:58:35,091 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-13 23:00:13,664 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-13 23:00:13,669 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-13 23:06:38,489 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-13 23:06:38,494 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-13 23:06:55,841 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-13 23:06:55,841 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-15 13:20:14,728 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-15 13:20:14,734 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-16 22:07:36,911 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-16 22:07:36,917 [1] INFO  BusinessLogic.SchoolRepository.cs  - School Created
+
+
+
+
+2015-08-16 22:07:37,034 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-16 22:07:37,034 [1] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-08-16 22:07:37,034 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-16 22:07:37,034 [1] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees added
+
+
+
+
+2015-08-23 09:35:48,986 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 09:35:48,992 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 09:38:56,145 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 09:38:56,150 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 09:43:46,286 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 09:43:46,291 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 09:55:33,158 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 09:55:33,163 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:04:03,123 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:04:03,128 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:05:59,663 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:05:59,663 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:06:47,655 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:06:47,660 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:07:56,436 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:07:56,441 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:09:42,561 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:09:42,566 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:10:31,890 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:10:31,895 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:12:08,042 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:12:08,047 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:12:45,042 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:12:45,048 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:16:01,415 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:16:01,420 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:40:31,827 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:40:31,832 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:43:07,493 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:43:07,499 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:46:00,047 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:46:00,052 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:47:52,853 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:47:52,858 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:48:47,943 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:48:47,948 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:50:38,138 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:50:38,144 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:52:28,471 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:52:28,476 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:53:43,779 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:53:43,784 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:55:04,479 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:55:04,484 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:56:10,421 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:56:10,426 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:57:00,204 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:57:00,209 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 10:58:29,450 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 10:58:29,456 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 11:55:00,655 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 11:55:00,660 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-23 12:05:40,951 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-23 12:05:40,956 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+

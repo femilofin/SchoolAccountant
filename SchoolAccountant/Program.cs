@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 using SchoolAccountant.Forms;
+using SchoolAccountant.Helpers;
+using SchoolAccountant.Models;
 
 namespace SchoolAccountant
 {
@@ -19,6 +22,10 @@ namespace SchoolAccountant
             Application.Run(new DashBoard("admin"));
 //Application.Run(new SchoolSetup("admin"));
 //            Application.Run(new Login());
+//var rm = new ReceiptModel();
+            
+//            new ReceiptGenerator(rm).Generate();
+//            Process.Start(@"E:\recipt.pdf");
         }
     }
 }

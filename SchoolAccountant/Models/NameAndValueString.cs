@@ -1,4 +1,4 @@
-﻿namespace SchoolAccountant.Helpers
+﻿namespace SchoolAccountant.Models
 {
     internal class NameAndValueString
     {

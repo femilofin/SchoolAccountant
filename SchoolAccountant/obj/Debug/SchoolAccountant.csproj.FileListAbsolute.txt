@@ -44,3 +44,5 @@ C:\Freelance\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.exe
 C:\Freelance\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.pdb
 C:\Freelance\SchoolAccountant\SchoolAccountant\bin\Debug\SchoolAccountant.exe.config
 C:\Freelance\SchoolAccountant\SchoolAccountant\bin\Debug\SchoolAccountant.pdb
+C:\Freelance\SchoolAccountant\SchoolAccountant\bin\Debug\itextsharp.dll
+C:\Freelance\SchoolAccountant\SchoolAccountant\bin\Debug\itextsharp.xml

@@ -36,6 +36,10 @@ namespace SchoolAccountant.Forms
         private void btnSave_Click(object sender, EventArgs e)
         {
             var schoolName = tboSchoolName.Text;
+            var address = tboAddress.Text;
+            var slogan = tboSlogan.Text;
+            var logoPath = tboLogoPath.Text;
+            var phoneNumbers = tboPhoneNumbers.Text;
             var sessionDateStarted = dtpSessionDateStarted.Text;
             var termDatedStarted = dtpTermDateStarted.Text;
             var presentSession = cboPresentSession.SelectedValue;
@@ -56,7 +60,9 @@ namespace SchoolAccountant.Forms
             if (presentSession != "" && presentTerm != "" && !string.IsNullOrWhiteSpace(jss1) &&
                 !string.IsNullOrWhiteSpace(jss2) && !string.IsNullOrWhiteSpace(jss3) && !string.IsNullOrWhiteSpace(sss1) &&
                 !string.IsNullOrWhiteSpace(sss2) && !string.IsNullOrWhiteSpace(sss3) && !string.IsNullOrWhiteSpace(jss) &&
-                !string.IsNullOrWhiteSpace(sss))
+                !string.IsNullOrWhiteSpace(sss) && !string.IsNullOrWhiteSpace(sss3) && !string.IsNullOrWhiteSpace(schoolName)
+                && !string.IsNullOrWhiteSpace(address) && !string.IsNullOrWhiteSpace(slogan) && !string.IsNullOrWhiteSpace(logoPath)
+                && !string.IsNullOrWhiteSpace(phoneNumbers))
             {
                 decimal result;
 
@@ -68,17 +74,21 @@ namespace SchoolAccountant.Forms
                     decimal.TryParse(jss, out result) && decimal.TryParse(sss, out result))
                 {
 
-                    var response = MessageBox.Show(@"Please confirm the information provided before proceeding. Are you sure you want to save?", ActiveForm.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                    var response = MessageBox.Show(@"Please confirm the information provided before proceeding. Are you sure you want to save?", @"School Setup", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
                     if (response != DialogResult.Yes) return;
 
                     var school = new School()
                     {
-                        Name = schoolName,
+                        Name = schoolName.ToUpper(),
                         PresentSession = presentSession.ToString(),
                         PresentTermEnum = (TermEnum)presentTerm,
                         SessionStart = Convert.ToDateTime(sessionDateStarted),
-                        TermStart = Convert.ToDateTime(termDatedStarted)
+                        TermStart = Convert.ToDateTime(termDatedStarted),
+                        Address = address,
+                        PhoneNumbers = phoneNumbers.Split(',').Select(x => x.Trim()).ToList(),
+                        LogoPath = Utilities.GetPermanentLogoPath(logoPath),
+                        Slogan = slogan
                     };
 
                     _schoolRepository.SchoolSetup(school);
@@ -139,6 +149,15 @@ namespace SchoolAccountant.Forms
             else
             {
                 MessageBox.Show(@"Please, all information are required");
+            }
+        }
+
+        private void btnSelectLogo_Click(object sender, EventArgs e)
+        {
+            var response = ofdSelectLogo.ShowDialog();
+            if (response == DialogResult.OK)
+            {
+                tboLogoPath.Text = ofdSelectLogo.FileName;
             }
         }
     }

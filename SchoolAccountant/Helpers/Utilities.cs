@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using SchoolAccountant.Models;
+using static System.Environment;
 
 namespace SchoolAccountant.Helpers
 {
@@ -133,5 +136,16 @@ namespace SchoolAccountant.Helpers
             }
         }
 
+        public static string GetPermanentLogoPath(string logoPath)
+        {
+            if (!File.Exists(logoPath)) return null;
+
+            var fileName = Path.GetFileName(logoPath);
+            var destinationPath = GetFolderPath(SpecialFolder.LocalApplicationData);
+            var destinationFile = Path.Combine(destinationPath, fileName);
+
+            File.Copy(logoPath, destinationFile, true);
+            return destinationFile;
+        }
     }
 }

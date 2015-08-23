@@ -51,6 +51,28 @@ namespace BusinessLogic.Repositories
         }
 
         /// <summary>
+        /// Gets the fees where the session, term and the class is known
+        /// </summary>
+        /// <param name="session">session</param>
+        /// <param name="term">term</param>
+        /// <param name="classEnum">class</param>
+        /// <returns>ClassTermFees</returns>
+        public ClassTermFee GetFees(string session, TermEnum term, ClassEnum classEnum)
+        {
+            try
+            {
+                var fees =
+                    _classTermFees.FirstOrDefault(x => x.Session == session && x.TermEnum == term && x.ClassEnum == classEnum);
+                return fees ?? new ClassTermFee();
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Error", ex);
+                return null;
+            }
+        }
+
+        /// <summary>
         /// Adds and activates new set of fees
         /// </summary>
         /// <param name="classTermFees">A list of fees (i.e jss - sss)</param>

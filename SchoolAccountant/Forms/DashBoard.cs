@@ -12,6 +12,7 @@ using BusinessLogic.Interface;
 using BusinessLogic.Repositories;
 using BusinessLogic.Utility;
 using SchoolAccountant.Helpers;
+using SchoolAccountant.Models;
 
 #endregion
 namespace SchoolAccountant.Forms
@@ -685,7 +686,7 @@ namespace SchoolAccountant.Forms
         /// <summary>
         /// It is used to reload the dgv
         /// </summary>
-        private void RefreshDgv()
+        public void RefreshDgv()
         {
             var filter = tboSearchMS.Text.ToLower();
             var selectedClass = cboClassMS.SelectedValue;
@@ -712,7 +713,8 @@ namespace SchoolAccountant.Forms
                 case (int)ButtonColumnIndex.PayFee:
                     {
                         var row = dgvViewStudent.Rows[e.RowIndex];
-                        new PayFee(row).ShowDialog();
+                        new PayFee(row, _username).ShowDialog();
+                        RefreshDgv();
                     }
                     break;
                 case (int)ButtonColumnIndex.ViewInfo:
