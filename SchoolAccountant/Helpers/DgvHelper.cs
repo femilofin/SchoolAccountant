@@ -39,7 +39,7 @@ namespace SchoolAccountant.Helpers
             return this;
         }
 
-        public DgvHelper Add(int columnIndex, string name, string headerText, Color foreColor = default(Color), Color backColor = default(Color), int width = default(int), char alignment = 'L', string format = default(string), bool readOnly = false, bool frozen = false, bool visible = true)
+        public DgvHelper Add(int columnIndex, string name, string headerText, Color foreColor = default(Color), Color backColor = default(Color), int width = default(int), char alignment = 'L', string format = default(string), bool readOnly = false, bool frozen = false, bool visible = false)
         {
             Dgv.Columns[name].DefaultCellStyle.Format = format;
             Dgv.Columns[name].DefaultCellStyle.ForeColor = foreColor;

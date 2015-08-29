@@ -29,20 +29,22 @@ namespace SchoolAccountant.Forms
         readonly DataGridViewButtonColumn _btnViewPaymentHistory = new DataGridViewButtonColumn();
         readonly DataGridViewButtonColumn _btnPayFee = new DataGridViewButtonColumn();
         readonly DataGridViewButtonColumn _btnDeactivateStudent = new DataGridViewButtonColumn();
+        readonly DataGridViewButtonColumn _btnRepeating = new DataGridViewButtonColumn();
+        readonly DataGridViewButtonColumn _btnRemoveStudent = new DataGridViewButtonColumn();
         private ActivatedAndDeactivatedId _activatedAndDeactivatedId;
 
         private readonly string _username;
 
-
+        public List<StudentView> RepeatingStudentViews { get; set; } = new List<StudentView>();
 
         public DashBoard(string username)
         {
 
             InitializeComponent();
 
-            Utilities.InitialiizeClassCombo(new[] { cboStartClassAS, cboPresentClassAS, cboClassMS });
+            Utilities.InitialiizeClassCombo(new[] { cboStartClassAS, cboPresentClassAS, cboClassMS, cboClassPS });
             Utilities.InitialiizeTermCombo(new[] { cboStartTermAS, cboPresentTermAS, cboTermANT });
-            Utilities.InitialiizeArmCombo(new[] { cboArmMS, cboPresentArmAS });
+            Utilities.InitialiizeArmCombo(new[] { cboArmMS, cboPresentArmAS, cboArmPS });
             Utilities.InitialiizeFeeStatusCombo(new[] { cboFeeStatusMS });
             Utilities.InitializeSessionCombo(new[] { cboSessionANT });
 
@@ -52,13 +54,13 @@ namespace SchoolAccountant.Forms
             _username = username;
 
             SetCurrentFeesAsAddNewTermTab();
-
         }
 
         private void DashBoard_Load(object sender, EventArgs e)
         {
-            RefreshDgv();
-
+            RefreshDgvMS();
+            RefreshDgvPS();
+            //            RefreshDgvRepeatingStudents();
         }
 
         private void ClearAllComboBoxesInMS()
@@ -428,6 +430,11 @@ namespace SchoolAccountant.Forms
             return dataSource;
         }
 
+        /// <summary>
+        /// Gets a list of the class "Student View" which is the class for the dgv
+        /// </summary>
+        /// <param name="activeStudents">A list of active students</param>
+        /// <returns>A list of the class "Student View" which is the class for the dgv</returns>
         private static List<StudentView> GetStudentView(IList<Student> activeStudents)
         {
             var studentViews = new List<StudentView>();
@@ -478,29 +485,29 @@ namespace SchoolAccountant.Forms
         /// Fills the datagrid view
         /// </summary>
         /// <param name="dataSource">Data source for the datagridview</param>
-        private void FillDgv(object dataSource)
+        private void FillStudentDgvMS(object dataSource)
         {
 
             var dgvHelper = new DgvHelper(dgvViewStudent, dataSource);
             dgvHelper.Properties(borderStyle: BorderStyle.Fixed3D, font: "Arial", fontSize: 8)
                 .Header(fontSize: 8, font: "Arial")
-                .Add(0, "Index", "", width: 20, readOnly: true)
-                .Add(1, "FullName", "FullName", foreColor: Color.Red, width: 234, readOnly: true)
-                .Add(2, "PresentClass", "Class", width: 50, readOnly: true)
-                .Add(3, "OutstandingFee", "Debt(Naira)", foreColor: Color.Red, width: 80, readOnly: true)
-                .Add(8, "PaidFee", "PaidFee", visible: false)
-                .Add(9, "LastName", "LastName", visible: false)
-                .Add(10, "BirthDate", "BirthDate", visible: false)
-                .Add(11, "MiddleName", "MiddleName", visible: false)
-                .Add(12, "Active", "Active", visible: false)
-                .Add(13, "PresentArm", "PresentArm", visible: false)
-                .Add(14, "PresentTerm", "PresentTerm", visible: false)
-                .Add(15, "StartClass", "StartClass", visible: false)
-                .Add(15, "StartDate", "StartDate", visible: false)
-                .Add(15, "StartTerm", "StartTerm", visible: false)
-                .Add(15, "Id", "Id", visible: false)
-                .Add(15, "PresentClassEnum", "PresentClassEnum", visible: false)
-                .Add(15, "FirstName", "FirstName", visible: false);
+                .Add(0, "Index", "", width: 20, readOnly: true, visible: true)
+                .Add(1, "FullName", "FullName", foreColor: Color.Red, width: 234, readOnly: true, visible: true)
+                .Add(2, "PresentClass", "Class", width: 50, readOnly: true, visible: true)
+                .Add(3, "OutstandingFee", "Debt(Naira)", foreColor: Color.Red, width: 80, readOnly: true, visible: true)
+                .Add(8, "PaidFee", "PaidFee")
+                .Add(9, "LastName", "LastName")
+                .Add(10, "BirthDate", "BirthDate")
+                .Add(11, "MiddleName", "MiddleName")
+                .Add(12, "Active", "Active")
+                .Add(13, "PresentArm", "PresentArm")
+                .Add(14, "PresentTerm", "PresentTerm")
+                .Add(15, "StartClass", "StartClass")
+                .Add(15, "StartDate", "StartDate")
+                .Add(15, "StartTerm", "StartTerm")
+                .Add(15, "Id", "Id")
+                .Add(15, "PresentClassEnum", "PresentClassEnum")
+                .Add(15, "FirstName", "FirstName");
 
 
             // Add "Pay Fee" button
@@ -610,7 +617,7 @@ namespace SchoolAccountant.Forms
                 {
                     MessageBox.Show($"Student \"{firstName} {lastName}\" has been registered", @"School Accountant");
                     ClearTextBoxesAS();
-                    RefreshDgv();
+                    RefreshDgvMS();
                 }
                 else
                 {
@@ -660,12 +667,12 @@ namespace SchoolAccountant.Forms
 
         private void tboSearchMS_TextChanged(object sender, EventArgs e)
         {
-            RefreshDgv();
+            RefreshDgvMS();
         }
 
         private void cboClassMS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RefreshDgv();
+            RefreshDgvMS();
         }
 
         private void cboArmMS_SelectedIndexChanged(object sender, EventArgs e)
@@ -675,18 +682,61 @@ namespace SchoolAccountant.Forms
                 ClearAllComboBoxesInMS();
             }
 
-            RefreshDgv();
+            RefreshDgvMS();
         }
 
         private void cboFeeStatusMS_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RefreshDgv();
+            RefreshDgvMS();
+        }
+
+        private void RefreshDgvPS()
+        {
+            var filter = tboSearchPS.Text.ToLower();
+            var selectedClass = cboClassPS.SelectedValue;
+            var selectedArm = cboArmPS.SelectedValue;
+            dgvStudentsPS.Columns.Clear();
+
+            var dataSource = GetDataSource(filter, (int)selectedClass, (int)selectedArm);
+            FillStudentDgvPS(dataSource);
+        }
+
+        private void FillStudentDgvPS(object dataSource)
+        {
+            var dgvHelper = new DgvHelper(dgvStudentsPS, dataSource);
+            dgvHelper.Properties(borderStyle: BorderStyle.Fixed3D, font: "Arial", fontSize: 8)
+                .Header(fontSize: 8, font: "Arial")
+                .Add(0, "Index", "", width: 20, readOnly: true, visible: true)
+                .Add(1, "FullName", "FullName", foreColor: Color.Red, width: 234, readOnly: true, visible: true)
+                .Add(2, "PresentClass", "Class", width: 50, readOnly: true, visible: true)
+                .Add(3, "OutstandingFee", "Debt(Naira)", visible: false, foreColor: Color.Red, width: 80, readOnly: true)
+                .Add(5, "PaidFee", "PaidFee")
+                .Add(6, "LastName", "LastName")
+                .Add(7, "BirthDate", "BirthDate")
+                .Add(8, "MiddleName", "MiddleName")
+                .Add(9, "Active", "Active")
+                .Add(10, "PresentArm", "PresentArm")
+                .Add(11, "PresentTerm", "PresentTerm")
+                .Add(12, "StartClass", "StartClass")
+                .Add(13, "StartDate", "StartDate")
+                .Add(14, "StartTerm", "StartTerm")
+                .Add(15, "Id", "Id")
+                .Add(15, "PresentClassEnum", "PresentClassEnum")
+                .Add(15, "FirstName", "FirstName");
+
+
+            // Add "Repeating" button
+            _btnRepeating.Text = "Repeating";
+            _btnRepeating.UseColumnTextForButtonValue = true;
+            _btnRepeating.Width = 80;
+            dgvStudentsPS.Columns.Insert(4, _btnRepeating);
+
         }
 
         /// <summary>
         /// It is used to reload the dgv
         /// </summary>
-        public void RefreshDgv()
+        public void RefreshDgvMS()
         {
             var filter = tboSearchMS.Text.ToLower();
             var selectedClass = cboClassMS.SelectedValue;
@@ -695,14 +745,14 @@ namespace SchoolAccountant.Forms
             dgvViewStudent.Columns.Clear();
 
             var dataSource = GetDataSource(filter, (int)selectedClass, (int)selectedArm, (int)selectedFeeStatus);
-            FillDgv(dataSource);
+            FillStudentDgvMS(dataSource);
 
         }
 
         private void tsslShowAll_Click(object sender, EventArgs e)
         {
             ClearAllComboBoxesInMS();
-            RefreshDgv();
+            RefreshDgvMS();
         }
 
         private void dgvViewStudent_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -714,7 +764,7 @@ namespace SchoolAccountant.Forms
                     {
                         var row = dgvViewStudent.Rows[e.RowIndex];
                         new PayFee(row, _username).ShowDialog();
-                        RefreshDgv();
+                        RefreshDgvMS();
                     }
                     break;
                 case (int)ButtonColumnIndex.ViewInfo:
@@ -749,12 +799,12 @@ namespace SchoolAccountant.Forms
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             ClearAllComboBoxesInMS();
-            RefreshDgv();
+            RefreshDgvMS();
         }
 
         private void llPromoteStudents_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            new PromoteStudents().ShowDialog();
+            tabControl1.SelectedTab = Promotion;
         }
 
         private void btnSaveSchoolFeesANT_Click(object sender, EventArgs e)
@@ -860,7 +910,7 @@ namespace SchoolAccountant.Forms
                     }
                     MessageBox.Show(@"Fees added, click the 'undo' button to delete", @"School Accountant");
 
-                    RefreshDgv();
+                    RefreshDgvMS();
 
                 }
                 else
@@ -890,7 +940,7 @@ namespace SchoolAccountant.Forms
                         //todo: update labels like this solution wide
                         tsslAddNewTerm.Text = @"Fees deleted successfully";
 
-                        RefreshDgv();
+                        RefreshDgvMS();
                         SetCurrentFeesAsAddNewTermTab();
                     }
                     else
@@ -956,6 +1006,148 @@ namespace SchoolAccountant.Forms
         private void llAddWithExcel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
+        }
+
+
+
+        private void cboClassPS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshDgvPS();
+        }
+
+        private void cboArmPS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((int)cboClassPS.SelectedValue == -1)
+            {
+                ClearAllComboBoxesInPS();
+            }
+
+            RefreshDgvPS();
+        }
+
+        private void ClearAllComboBoxesInPS()
+        {
+            cboClassPS.SelectedValue = -1;
+            cboArmPS.SelectedValue = -1;
+            tboSearchPS.Clear();
+        }
+
+        private void tboSearchPS_TextChanged(object sender, EventArgs e)
+        {
+            RefreshDgvPS();
+        }
+
+        private void tsslShowAllPS_Click(object sender, EventArgs e)
+        {
+            ClearAllComboBoxesInPS();
+            RefreshDgvPS();
+        }
+
+        private void dgvStudentsPS_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            // 4 is the index for the button to repeat
+            if (e.ColumnIndex == 0)
+            {
+                var row = dgvStudentsPS.Rows[e.RowIndex];
+
+                var student = new StudentView()
+                {
+                    Id = row.Cells["Id"].Value.ToString(),
+                    FullName =
+                         row.Cells["FullName"].Value.ToString(),
+                    PresentClass = row.Cells["PresentClass"].Value.ToString(),
+                    Index = (int)row.Cells["Index"].Value,
+                };
+
+                RepeatingStudentViews.Add(student);
+
+                RefreshDgvRepeatingStudents();
+            }
+
+        }
+
+        private void RefreshDgvRepeatingStudents()
+        {
+            dgvRepeatingStudents.Columns.Clear();
+            dgvRepeatingStudents.DataSource = null;
+
+            object dataSource = RepeatingStudentViews;
+            FillRepeatingStudentsDgv(dataSource);
+        }
+
+
+        private void FillRepeatingStudentsDgv(object dataSource)
+        {
+            var dgvHelper = new DgvHelper(dgvRepeatingStudents, dataSource);
+            dgvHelper.Properties(borderStyle: BorderStyle.Fixed3D, font: "Arial", fontSize: 8)
+                .Header(fontSize: 8, font: "Arial")
+                .Add(0, "Index", "", width: 20, readOnly: true, visible: true)
+                .Add(1, "FullName", "FullName", foreColor: Color.Red, width: 234, readOnly: true, visible: true)
+                .Add(2, "PresentClass", "Class", width: 50, readOnly: true, visible: true)
+                .Add(3, "OutstandingFee", "Debt(Naira)", visible: false, foreColor: Color.Red, width: 80, readOnly: true)
+                .Add(5, "PaidFee", "PaidFee")
+                .Add(6, "LastName", "LastName")
+                .Add(7, "BirthDate", "BirthDate")
+                .Add(8, "MiddleName", "MiddleName")
+                .Add(9, "Active", "Active")
+                .Add(10, "PresentArm", "PresentArm")
+                .Add(11, "PresentTerm", "PresentTerm")
+                .Add(12, "StartClass", "StartClass")
+                .Add(13, "StartDate", "StartDate")
+                .Add(14, "StartTerm", "StartTerm")
+                .Add(15, "Id", "Id")
+                .Add(15, "PresentClassEnum", "PresentClassEnum")
+                .Add(15, "FirstName", "FirstName");
+
+
+            // Add "Remove" button
+            _btnRemoveStudent.Text = "Remove";
+            _btnRemoveStudent.UseColumnTextForButtonValue = true;
+            _btnRemoveStudent.Width = 80;
+            dgvRepeatingStudents.Columns.Insert(4, _btnRemoveStudent);
+        }
+
+        private void dgvRepeatingStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // 4 is the index for the button to remove
+
+            if (e.ColumnIndex == 4)
+            {
+                var row = dgvRepeatingStudents.Rows[e.RowIndex];
+
+                var studentId = row.Cells["Id"].Value.ToString();
+
+                RepeatingStudentViews.RemoveAll(x => x.Id == studentId);
+
+            }
+
+            RefreshDgvRepeatingStudents();
+        }
+
+        private void btnSubmitRepeatingStudentsPS_Click(object sender, EventArgs e)
+        {
+            var response =
+                MessageBox.Show(
+                    @"Please ensure that these are all the students repeating. This action can be performed only once. Do you want to proceed with submitting this list of students?",
+                    @"School Accountant", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2);
+
+            if (response == DialogResult.Yes)
+            {
+                List<Student> repeatingStudents =
+                    RepeatingStudentViews.Select(repeatingStudent => _studentRepository.GetStudentById(repeatingStudent.Id))
+                        .ToList();
+
+                var success = _studentRepository.PromoteStudents(repeatingStudents);
+
+                MessageBox.Show(success ? @"Success" : @"Something went wrong, please try again");
+
+                dgvRepeatingStudents.DataSource = null;
+                dgvStudentsPS.DataSource = null;
+
+                tabControl1.SelectedTab = AddNewTerm;
+            }
         }
     }
 }

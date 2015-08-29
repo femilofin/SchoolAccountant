@@ -25,7 +25,13 @@ namespace BusinessLogic.Entities
         public TermEnum PresentTerm { get; set; }
         public ArmEnum PresentArm { get; set; }
         public ClassEnum PresentClassEnum { get; set; }
+    }
 
-
+    public class CompactStudentView
+    {
+        public string Id { get; set; }
+        public int Index { get; set; }
+        public string FullName { get; set; }
+        public string PresentClass { get; set; }
     }
 }

@@ -73,12 +73,6 @@
     <Compile Include="Forms\PayFee.Designer.cs">
       <DependentUpon>PayFee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PromoteStudents.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PromoteStudents.Designer.cs">
-      <DependentUpon>PromoteStudents.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\SchoolSetup.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -81,7 +81,7 @@ namespace SchoolAccountant.Forms
             this.tboUsernameAU = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tboFullNameAU = new System.Windows.Forms.TextBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.AddNewTerm = new System.Windows.Forms.TabPage();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.tsslAddNewTerm = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -110,15 +110,33 @@ namespace SchoolAccountant.Forms
             this.cboSessionANT = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Promotion = new System.Windows.Forms.TabPage();
+            this.statusStrip3 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslShowAllPS = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dgvRepeatingStudents = new System.Windows.Forms.DataGridView();
+            this.btnSubmitRepeatingStudentsPS = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.dgvStudentsPS = new System.Windows.Forms.DataGridView();
+            this.label30 = new System.Windows.Forms.Label();
+            this.tboSearchPS = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.cboArmPS = new System.Windows.Forms.ComboBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.cboClassPS = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewStudent)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.AddNewTerm.SuspendLayout();
             this.statusStrip2.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.Promotion.SuspendLayout();
+            this.statusStrip3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRepeatingStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentsPS)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -126,7 +144,8 @@ namespace SchoolAccountant.Forms
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.AddNewTerm);
+            this.tabControl1.Controls.Add(this.Promotion);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -633,38 +652,38 @@ namespace SchoolAccountant.Forms
             this.tboFullNameAU.Size = new System.Drawing.Size(163, 20);
             this.tboFullNameAU.TabIndex = 1;
             // 
-            // tabPage4
+            // AddNewTerm
             // 
-            this.tabPage4.Controls.Add(this.statusStrip2);
-            this.tabPage4.Controls.Add(this.groupBox2);
-            this.tabPage4.Controls.Add(this.btnUndoLastAddFeesANT);
-            this.tabPage4.Controls.Add(this.btnSaveSchoolFeesANT);
-            this.tabPage4.Controls.Add(this.tboSss3ANT);
-            this.tabPage4.Controls.Add(this.tboJss3ANT);
-            this.tabPage4.Controls.Add(this.label27);
-            this.tabPage4.Controls.Add(this.label24);
-            this.tabPage4.Controls.Add(this.tboSss2ANT);
-            this.tabPage4.Controls.Add(this.tboJss2ANT);
-            this.tabPage4.Controls.Add(this.label26);
-            this.tabPage4.Controls.Add(this.label23);
-            this.tabPage4.Controls.Add(this.tboSss1ANT);
-            this.tabPage4.Controls.Add(this.label25);
-            this.tabPage4.Controls.Add(this.tboJss1ANT);
-            this.tabPage4.Controls.Add(this.label22);
-            this.tabPage4.Controls.Add(this.llPromoteStudents);
-            this.tabPage4.Controls.Add(this.label13);
-            this.tabPage4.Controls.Add(this.cboTermANT);
-            this.tabPage4.Controls.Add(this.label21);
-            this.tabPage4.Controls.Add(this.cboSessionANT);
-            this.tabPage4.Controls.Add(this.label11);
-            this.tabPage4.Controls.Add(this.groupBox1);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(676, 612);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Add New Term";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.AddNewTerm.Controls.Add(this.statusStrip2);
+            this.AddNewTerm.Controls.Add(this.groupBox2);
+            this.AddNewTerm.Controls.Add(this.btnUndoLastAddFeesANT);
+            this.AddNewTerm.Controls.Add(this.btnSaveSchoolFeesANT);
+            this.AddNewTerm.Controls.Add(this.tboSss3ANT);
+            this.AddNewTerm.Controls.Add(this.tboJss3ANT);
+            this.AddNewTerm.Controls.Add(this.label27);
+            this.AddNewTerm.Controls.Add(this.label24);
+            this.AddNewTerm.Controls.Add(this.tboSss2ANT);
+            this.AddNewTerm.Controls.Add(this.tboJss2ANT);
+            this.AddNewTerm.Controls.Add(this.label26);
+            this.AddNewTerm.Controls.Add(this.label23);
+            this.AddNewTerm.Controls.Add(this.tboSss1ANT);
+            this.AddNewTerm.Controls.Add(this.label25);
+            this.AddNewTerm.Controls.Add(this.tboJss1ANT);
+            this.AddNewTerm.Controls.Add(this.label22);
+            this.AddNewTerm.Controls.Add(this.llPromoteStudents);
+            this.AddNewTerm.Controls.Add(this.label13);
+            this.AddNewTerm.Controls.Add(this.cboTermANT);
+            this.AddNewTerm.Controls.Add(this.label21);
+            this.AddNewTerm.Controls.Add(this.cboSessionANT);
+            this.AddNewTerm.Controls.Add(this.label11);
+            this.AddNewTerm.Controls.Add(this.groupBox1);
+            this.AddNewTerm.Location = new System.Drawing.Point(4, 22);
+            this.AddNewTerm.Name = "AddNewTerm";
+            this.AddNewTerm.Padding = new System.Windows.Forms.Padding(3);
+            this.AddNewTerm.Size = new System.Drawing.Size(676, 612);
+            this.AddNewTerm.TabIndex = 3;
+            this.AddNewTerm.Text = "Add New Term";
+            this.AddNewTerm.UseVisualStyleBackColor = true;
             // 
             // statusStrip2
             // 
@@ -846,12 +865,12 @@ namespace SchoolAccountant.Forms
             // 
             this.llPromoteStudents.AutoSize = true;
             this.llPromoteStudents.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llPromoteStudents.Location = new System.Drawing.Point(300, 34);
+            this.llPromoteStudents.Location = new System.Drawing.Point(268, 34);
             this.llPromoteStudents.Name = "llPromoteStudents";
-            this.llPromoteStudents.Size = new System.Drawing.Size(170, 15);
+            this.llPromoteStudents.Size = new System.Drawing.Size(215, 15);
             this.llPromoteStudents.TabIndex = 0;
             this.llPromoteStudents.TabStop = true;
-            this.llPromoteStudents.Text = "Click here to promote students";
+            this.llPromoteStudents.Text = "Click here to submit repeating students\r\n";
             this.llPromoteStudents.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llPromoteStudents_LinkClicked);
             // 
             // label13
@@ -861,10 +880,10 @@ namespace SchoolAccountant.Forms
             this.label13.ForeColor = System.Drawing.Color.Red;
             this.label13.Location = new System.Drawing.Point(43, 19);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(472, 30);
+            this.label13.Size = new System.Drawing.Size(478, 30);
             this.label13.TabIndex = 2;
-            this.label13.Text = "If it is the start of a new session (First Term), Please select the students to p" +
-    "romote first.\r\nIgnore if there is no student repeating a class.";
+            this.label13.Text = "If it is the start of a new session (First Term), Please submit the list of stude" +
+    "nts repeating.\r\nIgnore if there are no students repeating.";
             // 
             // cboTermANT
             // 
@@ -913,6 +932,143 @@ namespace SchoolAccountant.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add School Fees";
             // 
+            // Promotion
+            // 
+            this.Promotion.Controls.Add(this.statusStrip3);
+            this.Promotion.Controls.Add(this.dgvRepeatingStudents);
+            this.Promotion.Controls.Add(this.btnSubmitRepeatingStudentsPS);
+            this.Promotion.Controls.Add(this.label33);
+            this.Promotion.Controls.Add(this.dgvStudentsPS);
+            this.Promotion.Controls.Add(this.label30);
+            this.Promotion.Controls.Add(this.tboSearchPS);
+            this.Promotion.Controls.Add(this.label31);
+            this.Promotion.Controls.Add(this.cboArmPS);
+            this.Promotion.Controls.Add(this.label32);
+            this.Promotion.Controls.Add(this.cboClassPS);
+            this.Promotion.Location = new System.Drawing.Point(4, 22);
+            this.Promotion.Name = "Promotion";
+            this.Promotion.Padding = new System.Windows.Forms.Padding(3);
+            this.Promotion.Size = new System.Drawing.Size(676, 612);
+            this.Promotion.TabIndex = 4;
+            this.Promotion.Text = "Submit Repeating Students";
+            this.Promotion.UseVisualStyleBackColor = true;
+            // 
+            // statusStrip3
+            // 
+            this.statusStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.tsslShowAllPS});
+            this.statusStrip3.Location = new System.Drawing.Point(3, 587);
+            this.statusStrip3.Name = "statusStrip3";
+            this.statusStrip3.Size = new System.Drawing.Size(670, 22);
+            this.statusStrip3.TabIndex = 19;
+            this.statusStrip3.Text = "statusStrip3";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            // 
+            // tsslShowAllPS
+            // 
+            this.tsslShowAllPS.IsLink = true;
+            this.tsslShowAllPS.Name = "tsslShowAllPS";
+            this.tsslShowAllPS.Size = new System.Drawing.Size(53, 17);
+            this.tsslShowAllPS.Text = "Show All";
+            this.tsslShowAllPS.Click += new System.EventHandler(this.tsslShowAllPS_Click);
+            // 
+            // dgvRepeatingStudents
+            // 
+            this.dgvRepeatingStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRepeatingStudents.Location = new System.Drawing.Point(8, 356);
+            this.dgvRepeatingStudents.Name = "dgvRepeatingStudents";
+            this.dgvRepeatingStudents.Size = new System.Drawing.Size(409, 172);
+            this.dgvRepeatingStudents.TabIndex = 18;
+            this.dgvRepeatingStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepeatingStudents_CellContentClick);
+            // 
+            // btnSubmitRepeatingStudentsPS
+            // 
+            this.btnSubmitRepeatingStudentsPS.Location = new System.Drawing.Point(171, 548);
+            this.btnSubmitRepeatingStudentsPS.Name = "btnSubmitRepeatingStudentsPS";
+            this.btnSubmitRepeatingStudentsPS.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmitRepeatingStudentsPS.TabIndex = 17;
+            this.btnSubmitRepeatingStudentsPS.Text = "Submit";
+            this.btnSubmitRepeatingStudentsPS.UseVisualStyleBackColor = true;
+            this.btnSubmitRepeatingStudentsPS.Click += new System.EventHandler(this.btnSubmitRepeatingStudentsPS_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(9, 340);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(132, 13);
+            this.label33.TabIndex = 15;
+            this.label33.Text = "List of Repeating Students";
+            // 
+            // dgvStudentsPS
+            // 
+            this.dgvStudentsPS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudentsPS.Location = new System.Drawing.Point(8, 37);
+            this.dgvStudentsPS.Name = "dgvStudentsPS";
+            this.dgvStudentsPS.Size = new System.Drawing.Size(409, 284);
+            this.dgvStudentsPS.TabIndex = 14;
+            this.dgvStudentsPS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudentsPS_CellContentClick);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(222, 13);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(41, 13);
+            this.label30.TabIndex = 13;
+            this.label30.Text = "Search";
+            // 
+            // tboSearchPS
+            // 
+            this.tboSearchPS.Location = new System.Drawing.Point(271, 9);
+            this.tboSearchPS.Name = "tboSearchPS";
+            this.tboSearchPS.Size = new System.Drawing.Size(146, 20);
+            this.tboSearchPS.TabIndex = 8;
+            this.tboSearchPS.TextChanged += new System.EventHandler(this.tboSearchPS_TextChanged);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(116, 13);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(25, 13);
+            this.label31.TabIndex = 12;
+            this.label31.Text = "Arm";
+            // 
+            // cboArmPS
+            // 
+            this.cboArmPS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboArmPS.FormattingEnabled = true;
+            this.cboArmPS.Location = new System.Drawing.Point(150, 9);
+            this.cboArmPS.Name = "cboArmPS";
+            this.cboArmPS.Size = new System.Drawing.Size(58, 21);
+            this.cboArmPS.TabIndex = 11;
+            this.cboArmPS.SelectedIndexChanged += new System.EventHandler(this.cboArmPS_SelectedIndexChanged);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(9, 14);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(32, 13);
+            this.label32.TabIndex = 9;
+            this.label32.Text = "Class";
+            // 
+            // cboClassPS
+            // 
+            this.cboClassPS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboClassPS.FormattingEnabled = true;
+            this.cboClassPS.Location = new System.Drawing.Point(50, 10);
+            this.cboClassPS.Name = "cboClassPS";
+            this.cboClassPS.Size = new System.Drawing.Size(58, 21);
+            this.cboClassPS.TabIndex = 10;
+            this.cboClassPS.SelectedIndexChanged += new System.EventHandler(this.cboClassPS_SelectedIndexChanged);
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -932,12 +1088,18 @@ namespace SchoolAccountant.Forms
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            this.AddNewTerm.ResumeLayout(false);
+            this.AddNewTerm.PerformLayout();
             this.statusStrip2.ResumeLayout(false);
             this.statusStrip2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.Promotion.ResumeLayout(false);
+            this.Promotion.PerformLayout();
+            this.statusStrip3.ResumeLayout(false);
+            this.statusStrip3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRepeatingStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentsPS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -993,7 +1155,7 @@ namespace SchoolAccountant.Forms
         private Label label10;
         private ToolStripStatusLabel tsslShowAll;
         private Button btnRefresh;
-        private TabPage tabPage4;
+        private TabPage AddNewTerm;
         private Button btnUndoLastAddFeesANT;
         private Button btnSaveSchoolFeesANT;
         private TextBox tboSss3ANT;
@@ -1023,5 +1185,19 @@ namespace SchoolAccountant.Forms
         private ToolStripStatusLabel tsslAddNewTerm;
         private Label label13;
         private LinkLabel llAddWithExcel;
+        private TabPage Promotion;
+        private Label label32;
+        private Button btnSubmitRepeatingStudentsPS;
+        private Label label33;
+        private DataGridView dgvStudentsPS;
+        private Label label30;
+        private TextBox tboSearchPS;
+        private Label label31;
+        private ComboBox cboArmPS;
+        private ComboBox cboClassPS;
+        private StatusStrip statusStrip3;
+        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripStatusLabel tsslShowAllPS;
+        private DataGridView dgvRepeatingStudents;
     }
 }

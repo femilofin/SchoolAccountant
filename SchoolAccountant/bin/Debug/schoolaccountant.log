@@ -2466,3 +2466,33 @@ System.IO.FileFormatException: An error occurred while deserializing the FeePaym
 
 2015-08-23 12:05:40,956 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
 
+
+
+
+2015-08-29 17:57:01,641 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-29 17:57:01,657 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-29 17:57:01,658 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-29 17:57:01,658 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-08-29 17:57:27,002 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-08-29 17:57:27,002 [1] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+

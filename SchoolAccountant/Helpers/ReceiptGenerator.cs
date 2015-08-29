@@ -97,13 +97,11 @@ namespace SchoolAccountant.Helpers
                 titles.Add("Comment");
             }
 
-            var numberText = new NumberText();
-
             var texts = new List<string>
             {
                 DateTime.Now.ToString(),
                 _feePayment.PaidBy,
-               $"{numberText.ToText((int) _feePayment.Amount)} Naira Only (NGN {_feePayment.Amount})",
+               $"{NumberText.NumberToWords((int)_feePayment.Amount)} Naira Only (NGN {_feePayment.Amount})",
                $"{_student.FirstName} {_student.LastName}"
             };
 
