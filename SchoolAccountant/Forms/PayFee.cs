@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 using BusinessLogic.Constants;
 using BusinessLogic.Entities;
@@ -20,6 +22,10 @@ namespace SchoolAccountant.Forms
         private readonly ISchoolRepository _schoolRepository = new SchoolRepository();
         private readonly IStudentRepository _studentRepository = new StudentRepository();
         private readonly IClassTermFeeRepository _classTermFeeRepository = new ClassTermFeeRepository();
+        private PrintPreviewDialog _printPreviewDialog = new PrintPreviewDialog();
+        private PrintDocument _printDocument = new PrintDocument();
+        private string _documentContents;
+
         private School _school;
 
         public PayFee(DataGridViewRow row, string username)
@@ -104,7 +110,19 @@ namespace SchoolAccountant.Forms
                         // If print receipt check box is checked, open pdf file(recipt)
                         if (chkPrintReceipt.Checked)
                         {
-                            Process.Start(path);
+                            //Process.Start(path);
+                           // _printDocument.DocumentName = path;
+                            //_printPreviewDialog.Document = _printDocument;
+                           // _printPreviewDialog.ShowDialog();
+
+                            //PrintDialog pDialog = new PrintDialog();
+                            //pDialog.Document = _printDocument;
+                            //if (pDialog.ShowDialog() == DialogResult.OK)
+                            //{
+                              //  _printDocument.DocumentName = path;
+                               // _printDocument.Print();
+                          //  }
+                          SendToPrinter(path);
                         }
 
                     }
@@ -119,6 +137,25 @@ namespace SchoolAccountant.Forms
             {
                 MessageBox.Show(@"Please, ensure that the session, paidby, term and the amount is filled", @"School Accountant");
             }
+        }
+
+        private void SendToPrinter(string path)
+        {
+            ProcessStartInfo info = new ProcessStartInfo
+            {
+                Verb = "print",
+                FileName = path,
+                CreateNoWindow = true,
+                WindowStyle = ProcessWindowStyle.Hidden
+            };
+
+            Process p = new Process {StartInfo = info};
+            p.Start();
+
+            p.WaitForInputIdle();
+            Thread.Sleep(100000);
+            if (false == p.CloseMainWindow())
+                p.Kill();
         }
     }
 }
