@@ -11,5 +11,6 @@ namespace BusinessLogic.Interface
         bool DeleteCurrentFeesAndActivatePreviousFees(ActivatedAndDeactivatedId activatedAndDeactivatedId, string username);
         List<ClassTermFee> GetCurrentFees();
         ClassTermFee GetFees(string session, TermEnum term, ClassEnum classEnum);
+        ClassTermFee GetClassTermFeeById(string classTermFeeId);
     }
 }

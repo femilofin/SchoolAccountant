@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -60,7 +61,6 @@ namespace SchoolAccountant.Forms
         {
             RefreshDgvMS();
             RefreshDgvPS();
-            //            RefreshDgvRepeatingStudents();
         }
 
         private void ClearAllComboBoxesInMS()
@@ -451,9 +451,9 @@ namespace SchoolAccountant.Forms
                         $"{activeStudents[i].PresentClass} {activeStudents[i].PresentArm}",
                     OutstandingFee =
                         activeStudents[i].OutstandingFee > 0
-                            ? $"{activeStudents[i].OutstandingFee}"
+                            ? activeStudents[i].OutstandingFee.ToString("C0")
                             : "Cleared",
-                    PaidFee = $"NGN {activeStudents[i].PaidFee}",
+                    PaidFee = activeStudents[i].PaidFee.ToString("C0"),
                     FirstName = activeStudents[i].FirstName,
                     LastName = activeStudents[i].LastName,
                     BirthDate = activeStudents[i].BirthDate,
@@ -465,7 +465,8 @@ namespace SchoolAccountant.Forms
                     StartDate = activeStudents[i].StartDate,
                     StartTerm = activeStudents[i].StartTerm,
                     Id = activeStudents[i].Id,
-                    PresentClassEnum = activeStudents[i].PresentClass
+                    PresentClassEnum = activeStudents[i].PresentClass,
+                    FeePayments = activeStudents[i].FeePayments
 
                 }
                     );
@@ -494,7 +495,7 @@ namespace SchoolAccountant.Forms
                 .Add(0, "Index", "", width: 20, readOnly: true, visible: true)
                 .Add(1, "FullName", "FullName", foreColor: Color.Red, width: 234, readOnly: true, visible: true)
                 .Add(2, "PresentClass", "Class", width: 50, readOnly: true, visible: true)
-                .Add(3, "OutstandingFee", "Debt(Naira)", foreColor: Color.Red, width: 80, readOnly: true, visible: true)
+                .Add(3, "OutstandingFee", "Debt", foreColor: Color.Red, width: 80, readOnly: true, visible: true)
                 .Add(8, "PaidFee", "PaidFee")
                 .Add(9, "LastName", "LastName")
                 .Add(10, "BirthDate", "BirthDate")
@@ -507,8 +508,8 @@ namespace SchoolAccountant.Forms
                 .Add(15, "StartTerm", "StartTerm")
                 .Add(15, "Id", "Id")
                 .Add(15, "PresentClassEnum", "PresentClassEnum")
-                .Add(15, "FirstName", "FirstName");
-
+                .Add(15, "FirstName", "FirstName")
+                .Add(15, "FeePayments", "FeePayments");
 
             // Add "Pay Fee" button
             _btnPayFee.Text = "Pay Fee";

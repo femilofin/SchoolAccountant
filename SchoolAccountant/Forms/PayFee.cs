@@ -122,7 +122,7 @@ namespace SchoolAccountant.Forms
                               //  _printDocument.DocumentName = path;
                                // _printDocument.Print();
                           //  }
-                          SendToPrinter(path);
+                          Utilities.SendToPrinter(path);
                         }
 
                     }
@@ -139,23 +139,6 @@ namespace SchoolAccountant.Forms
             }
         }
 
-        private void SendToPrinter(string path)
-        {
-            ProcessStartInfo info = new ProcessStartInfo
-            {
-                Verb = "print",
-                FileName = path,
-                CreateNoWindow = true,
-                WindowStyle = ProcessWindowStyle.Hidden
-            };
-
-            Process p = new Process {StartInfo = info};
-            p.Start();
-
-            p.WaitForInputIdle();
-            Thread.Sleep(100000);
-            if (false == p.CloseMainWindow())
-                p.Kill();
-        }
+       
     }
 }

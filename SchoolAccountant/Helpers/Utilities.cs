@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
+using BusinessLogic.Constants;
+using BusinessLogic.Entities;
 using SchoolAccountant.Models;
 using static System.Environment;
 
@@ -146,6 +150,57 @@ namespace SchoolAccountant.Helpers
 
             File.Copy(logoPath, destinationFile, true);
             return destinationFile;
+        }
+
+        public static void SendToPrinter(string path)
+        {
+            ProcessStartInfo info = new ProcessStartInfo
+            {
+                Verb = "print",
+                FileName = path,
+                CreateNoWindow = true,
+                WindowStyle = ProcessWindowStyle.Hidden
+            };
+
+            Process p = new Process { StartInfo = info };
+            p.Start();
+
+            p.WaitForInputIdle();
+            Thread.Sleep(100000);
+            if (false == p.CloseMainWindow())
+                p.Kill();
+        }
+
+        public static string GetFilePath(Student student, ClassTermFee classTermFee)
+        {
+            //check if school folder exist, create if false. Document\SchoolReceipt.
+            var myDocument = GetFolderPath(SpecialFolder.ApplicationData);
+            //            var myDocument = @"E:\Documents";
+            var schoolDirectory = Path.Combine(myDocument, "SchoolReceipt");
+
+            if (!Directory.Exists(schoolDirectory))
+            {
+                Directory.CreateDirectory(schoolDirectory);
+            }
+
+            //Check if student folder exist, create if false. Format -> FirstName.LastName.MiddleName
+            var studentFolder = $"{student.FirstName}.{student.LastName}.{student.MiddleName}";
+            var studentDirectory = Path.Combine(schoolDirectory, studentFolder);
+
+            if (!Directory.Exists(studentDirectory))
+            {
+                Directory.CreateDirectory(studentDirectory);
+            }
+
+            //Set file name in format -> fullname.Session.term
+            var currentTerm =
+                $"{studentFolder}.{classTermFee.Session.Replace(@"/", "-")}.{Enum.GetName(typeof(TermEnum), classTermFee.TermEnum)}.pdf";
+
+            //append all path to string and return
+            var currentTermFileName = Path.Combine(studentDirectory, currentTerm);
+
+            return currentTermFileName;
+
         }
     }
 }

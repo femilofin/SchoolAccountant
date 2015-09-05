@@ -72,6 +72,19 @@ namespace BusinessLogic.Repositories
             }
         }
 
+        public ClassTermFee GetClassTermFeeById(string classTermFeeId)
+        {
+            try
+            {
+                return _classTermFees.GetById(classTermFeeId);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Error", ex);
+                return null;
+            }
+        }
+
         /// <summary>
         /// Adds and activates new set of fees
         /// </summary>

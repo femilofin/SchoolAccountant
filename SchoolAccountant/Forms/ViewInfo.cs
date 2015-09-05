@@ -73,7 +73,7 @@ namespace SchoolAccountant.Forms
                 var success = _studentRepository.Edit(student);
                 if (success)
                 {
-                    MessageBox.Show(string.Format("Student has been updated"));
+                    MessageBox.Show(@"Student has been updated");
                 }
             }
            

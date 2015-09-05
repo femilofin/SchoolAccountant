@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using BusinessLogic.Constants;
 
 namespace BusinessLogic.Entities
@@ -25,13 +26,8 @@ namespace BusinessLogic.Entities
         public TermEnum PresentTerm { get; set; }
         public ArmEnum PresentArm { get; set; }
         public ClassEnum PresentClassEnum { get; set; }
+        public IList<FeePayment> FeePayments { get; set; } = new List<FeePayment>();
+
     }
 
-    public class CompactStudentView
-    {
-        public string Id { get; set; }
-        public int Index { get; set; }
-        public string FullName { get; set; }
-        public string PresentClass { get; set; }
-    }
 }

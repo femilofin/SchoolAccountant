@@ -43,7 +43,7 @@ namespace SchoolAccountant.Helpers
 
         internal string Generate()
         {
-            var filePath = GetFilePath();
+            var filePath = Utilities.GetFilePath(_student, _classTermFee);
             var document = NewDocument(filePath);
 
             document.Open();
@@ -159,37 +159,7 @@ namespace SchoolAccountant.Helpers
             return table;
         }
 
-        private string GetFilePath()
-        {
-            //check if school folder exist, create if false. Document\SchoolReceipt.
-            //            var myDocument = GetFolderPath(SpecialFolder.MyDocuments);
-            var myDocument = @"E:\Documents";
-            var schoolDirectory = Path.Combine(myDocument, "SchoolReceipt");
-
-            if (!Directory.Exists(schoolDirectory))
-            {
-                Directory.CreateDirectory(schoolDirectory);
-            }
-
-            //Check if sttudent folder exist, create if false. Format -> FirstName.LastName.MiddleName
-            var studentFolder = $"{_student.FirstName}.{_student.LastName}.{_student.MiddleName}";
-            var studentDirectory = Path.Combine(schoolDirectory, studentFolder);
-
-            if (!Directory.Exists(studentDirectory))
-            {
-                Directory.CreateDirectory(studentDirectory);
-            }
-
-            //Set file name in format -> fullname.Session.term
-            var currentTerm =
-                $"{studentFolder}.{_classTermFee.Session.Replace(@"/", "-")}.{Enum.GetName(typeof(TermEnum), _classTermFee.TermEnum)}.pdf";
-
-            //append all path to string and return
-            var currentTermFileName = Path.Combine(studentDirectory, currentTerm);
-
-            return currentTermFileName;
-
-        }
+       
 
         private static PdfPCell AddTitle(string text, Font font, char vAlignment = 'C', float borderWidth = 0.05f, char hAlignment = 'L')
         {

@@ -101,6 +101,7 @@
     <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\FeeHistoryModel.cs" />
     <Compile Include="Models\NameAndValue.cs" />
     <Compile Include="Models\NameAndValueString.cs" />
     <Compile Include="Helpers\ReceiptGenerator.cs" />

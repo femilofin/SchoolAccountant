@@ -50,8 +50,8 @@ namespace SchoolAccountant.Helpers
             Dgv.Columns[name].Visible = visible;
             Dgv.Columns[name].ReadOnly = readOnly;
             Dgv.Columns[name].Frozen = frozen;
-            Dgv.Columns[name].DefaultCellStyle.Alignment = alignment == 'M'
-                                                                     ? DataGridViewContentAlignment.MiddleCenter
+            Dgv.Columns[name].DefaultCellStyle.Alignment = alignment == 'R'
+                                                                     ? DataGridViewContentAlignment.MiddleRight
                                                                      : DataGridViewContentAlignment.MiddleLeft;
             Dgv.Columns[name].DisplayIndex = columnIndex;
             return this;
