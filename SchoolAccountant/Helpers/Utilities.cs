@@ -166,7 +166,7 @@ namespace SchoolAccountant.Helpers
             p.Start();
 
             p.WaitForInputIdle();
-            Thread.Sleep(100000);
+            Thread.Sleep(10000);
             if (false == p.CloseMainWindow())
                 p.Kill();
         }
@@ -174,9 +174,8 @@ namespace SchoolAccountant.Helpers
         public static string GetFilePath(Student student, ClassTermFee classTermFee)
         {
             //check if school folder exist, create if false. Document\SchoolReceipt.
-            var myDocument = GetFolderPath(SpecialFolder.ApplicationData);
-            //            var myDocument = @"E:\Documents";
-            var schoolDirectory = Path.Combine(myDocument, "SchoolReceipt");
+            var parentDirectory = GetFolderPath(SpecialFolder.ApplicationData);
+            var schoolDirectory = Path.Combine(parentDirectory, "SchoolAccountant");
 
             if (!Directory.Exists(schoolDirectory))
             {
@@ -201,6 +200,13 @@ namespace SchoolAccountant.Helpers
 
             return currentTermFileName;
 
+        }
+
+        public static byte[] GetPasswordHash(string passwword)
+        {
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(passwword);
+            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+            return data;
         }
     }
 }

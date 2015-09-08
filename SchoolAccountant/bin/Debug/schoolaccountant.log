@@ -2566,3 +2566,263 @@ System.IO.FileFormatException: An error occurred while deserializing the FeePaym
 
 2015-08-29 18:51:51,514 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
 
+
+
+
+2015-09-06 10:42:04,321 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 10:42:04,337 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-06 10:45:02,261 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 10:45:02,267 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-06 10:47:33,218 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 10:47:33,223 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-06 10:49:31,828 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 10:49:31,833 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-06 10:55:13,432 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 10:55:13,437 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-06 10:58:58,333 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 10:58:58,338 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-06 10:59:55,862 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 10:59:55,867 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-06 11:02:32,927 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 11:02:32,932 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-06 11:02:45,393 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 11:02:45,393 [1] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-09-06 11:06:10,766 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 11:06:10,772 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-06 11:06:20,010 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 11:06:20,010 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-09-06 11:06:20,013 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 11:06:20,013 [1] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-09-06 11:07:52,220 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 11:07:52,225 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-06 11:08:01,896 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 11:08:01,897 [1] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-09-06 11:08:01,899 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 11:08:01,899 [1] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-09-06 11:15:54,657 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 11:15:54,662 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-06 11:18:39,487 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 11:18:39,492 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-06 11:35:42,961 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 11:35:42,966 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-06 11:36:46,968 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 11:36:46,974 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-06 11:40:06,952 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 11:40:06,958 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-06 12:14:39,026 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 12:14:39,032 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-06 15:25:20,171 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 15:25:20,176 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-06 15:26:40,768 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 15:26:40,774 [1] INFO  BusinessLogic.UserRepository.cs  - Registered user
+
+
+
+
+2015-09-06 15:27:22,184 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-06 15:27:22,189 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-08 20:06:17,478 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-08 20:06:17,484 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-08 20:33:35,833 [1] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-08 20:33:35,839 [1] INFO  BusinessLogic.UserRepository.cs  - Login
+

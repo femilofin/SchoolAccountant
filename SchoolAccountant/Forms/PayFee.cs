@@ -88,6 +88,8 @@ namespace SchoolAccountant.Forms
 
                     student.FeePayments.Add(feePayment);
                     student.OutstandingFee -= Convert.ToDecimal(amount);
+                    student.PaidFee += Convert.ToDecimal(amount);
+
                     var updateSuccess = _studentRepository.Update(student);
 
                     if (updateSuccess)
@@ -130,7 +132,7 @@ namespace SchoolAccountant.Forms
                 }
                 else
                 {
-                    MessageBox.Show(@"Please, enter correct amount in the amount field", @"School Accountant");
+                    MessageBox.Show(@"Please, enter correct amount in the amount field.", @"School Accountant");
                 }
             }
             else

@@ -31,13 +31,13 @@ namespace SchoolAccountant.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsslTableStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslShowAll = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.dgvViewStudent = new System.Windows.Forms.DataGridView();
             this.label19 = new System.Windows.Forms.Label();
             this.tboSearchMS = new System.Windows.Forms.TextBox();
@@ -48,7 +48,6 @@ namespace SchoolAccountant.Forms
             this.label16 = new System.Windows.Forms.Label();
             this.cboClassMS = new System.Windows.Forms.ComboBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.llAddWithExcel = new System.Windows.Forms.LinkLabel();
             this.tboOutstandingFeeAS = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -156,7 +155,6 @@ namespace SchoolAccountant.Forms
             // 
             this.tabPage3.Controls.Add(this.btnRefresh);
             this.tabPage3.Controls.Add(this.statusStrip1);
-            this.tabPage3.Controls.Add(this.btnPrint);
             this.tabPage3.Controls.Add(this.dgvViewStudent);
             this.tabPage3.Controls.Add(this.label19);
             this.tabPage3.Controls.Add(this.tboSearchMS);
@@ -175,7 +173,7 @@ namespace SchoolAccountant.Forms
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(251, 549);
+            this.btnRefresh.Location = new System.Drawing.Point(304, 551);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 4;
@@ -206,15 +204,6 @@ namespace SchoolAccountant.Forms
             this.tsslShowAll.Size = new System.Drawing.Size(53, 17);
             this.tsslShowAll.Text = "Show All";
             this.tsslShowAll.Click += new System.EventHandler(this.tsslShowAll_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Location = new System.Drawing.Point(388, 549);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 23);
-            this.btnPrint.TabIndex = 5;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.UseVisualStyleBackColor = true;
             // 
             // dgvViewStudent
             // 
@@ -301,7 +290,6 @@ namespace SchoolAccountant.Forms
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.llAddWithExcel);
             this.tabPage1.Controls.Add(this.tboOutstandingFeeAS);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label20);
@@ -333,17 +321,6 @@ namespace SchoolAccountant.Forms
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add Student";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // llAddWithExcel
-            // 
-            this.llAddWithExcel.AutoSize = true;
-            this.llAddWithExcel.Location = new System.Drawing.Point(26, 18);
-            this.llAddWithExcel.Name = "llAddWithExcel";
-            this.llAddWithExcel.Size = new System.Drawing.Size(121, 13);
-            this.llAddWithExcel.TabIndex = 23;
-            this.llAddWithExcel.TabStop = true;
-            this.llAddWithExcel.Text = "Add Students with excel";
-            this.llAddWithExcel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llAddWithExcel_LinkClicked);
             // 
             // tboOutstandingFeeAS
             // 
@@ -1075,6 +1052,8 @@ namespace SchoolAccountant.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 639);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "DashBoard";
             this.Text = "School Accountant DashBoard";
             this.Load += new System.EventHandler(this.DashBoard_Load);
@@ -1129,7 +1108,6 @@ namespace SchoolAccountant.Forms
         private TabPage tabPage3;
         private Label label7;
         private DateTimePicker dtpStartDateAS;
-        private DataGridView dgvViewStudent;
         private Label label19;
         private TextBox tboSearchMS;
         private Label label18;
@@ -1140,7 +1118,6 @@ namespace SchoolAccountant.Forms
         private ComboBox cboClassMS;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel tsslTableStatus;
-        private Button btnPrint;
         private Label label4;
         private Label label5;
         private Label label9;
@@ -1184,7 +1161,6 @@ namespace SchoolAccountant.Forms
         private StatusStrip statusStrip2;
         private ToolStripStatusLabel tsslAddNewTerm;
         private Label label13;
-        private LinkLabel llAddWithExcel;
         private TabPage Promotion;
         private Label label32;
         private Button btnSubmitRepeatingStudentsPS;
@@ -1199,5 +1175,6 @@ namespace SchoolAccountant.Forms
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripStatusLabel tsslShowAllPS;
         private DataGridView dgvRepeatingStudents;
+        private DataGridView dgvViewStudent;
     }
 }

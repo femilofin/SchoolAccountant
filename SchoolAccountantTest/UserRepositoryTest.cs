@@ -3,6 +3,7 @@ using BusinessLogic.Interface;
 using BusinessLogic.Repositories;
 using FizzWare.NBuilder;
 using NUnit.Framework;
+using SchoolAccountant.Helpers;
 
 namespace SchoolAccountantTest
 {
@@ -14,7 +15,7 @@ namespace SchoolAccountantTest
         [Test]
         public void LoginShouldReturnTrue()
         {
-            var success = _userRepository.Login("admin", "3756");
+            var success = _userRepository.Login("admin", Utilities.GetPasswordHash("3756"));
             Assert.AreEqual(true, success);
         }
 

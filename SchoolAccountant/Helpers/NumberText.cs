@@ -12,28 +12,28 @@ namespace SchoolAccountant.Helpers
         public static string NumberToWords(int number)
         {
             if (number == 0)
-                return "zero";
+                return "Zero";
 
             if (number < 0)
-                return "minus " + NumberToWords(Math.Abs(number));
+                return "Minus " + NumberToWords(Math.Abs(number));
 
             string words = "";
 
             if ((number/1000000) > 0)
             {
-                words += NumberToWords(number/1000000) + " million ";
+                words += NumberToWords(number/1000000) + " Million ";
                 number %= 1000000;
             }
 
             if ((number/1000) > 0)
             {
-                words += NumberToWords(number/1000) + " thousand ";
+                words += NumberToWords(number/1000) + " Thousand ";
                 number %= 1000;
             }
 
             if ((number/100) > 0)
             {
-                words += NumberToWords(number/100) + " hundred ";
+                words += NumberToWords(number/100) + " Hundred ";
                 number %= 100;
             }
 
@@ -44,14 +44,14 @@ namespace SchoolAccountant.Helpers
 
                 var unitsMap = new[]
                 {
-                    "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven",
-                    "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"
+                    "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven",
+                    "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"
                 };
                 var tensMap = new[]
-                {"zero", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+                {"Zero", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
 
                 if (number < 20)
-                    words += unitsMap[number];
+                    words += unitsMap[number].ToUpper();
                 else
                 {
                     words += tensMap[number/10];

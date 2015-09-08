@@ -47,3 +47,7 @@ C:\Freelance\SchoolAccountant\SchoolAccountant\bin\Debug\SchoolAccountant.pdb
 C:\Freelance\SchoolAccountant\SchoolAccountant\bin\Debug\itextsharp.dll
 C:\Freelance\SchoolAccountant\SchoolAccountant\bin\Debug\itextsharp.xml
 C:\Freelance\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.Forms.FeeHistory.resources
+C:\Freelance\SchoolAccountant\SchoolAccountant\bin\Debug\SchoolAccountant.exe.manifest
+C:\Freelance\SchoolAccountant\SchoolAccountant\bin\Debug\SchoolAccountant.application
+C:\Freelance\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.exe.manifest
+C:\Freelance\SchoolAccountant\SchoolAccountant\obj\Debug\SchoolAccountant.application

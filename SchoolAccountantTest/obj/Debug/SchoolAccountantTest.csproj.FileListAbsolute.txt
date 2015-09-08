@@ -37,3 +37,7 @@ C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\log4net.xml
 C:\Freelance\SchoolAccountant\SchoolAccountantTest\obj\Debug\SchoolAccountantTest.csprojResolveAssemblyReference.cache
 C:\Freelance\SchoolAccountant\SchoolAccountantTest\obj\Debug\SchoolAccountantTest.dll
 C:\Freelance\SchoolAccountant\SchoolAccountantTest\obj\Debug\SchoolAccountantTest.pdb
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\SchoolAccountant.exe
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\itextsharp.dll
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\SchoolAccountant.pdb
+C:\Freelance\SchoolAccountant\SchoolAccountantTest\bin\Debug\itextsharp.xml

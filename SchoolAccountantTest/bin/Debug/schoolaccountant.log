@@ -3598,3 +3598,123 @@ System.FormatException: 'Id1' is not a valid 24 digit hex string.
 
 2015-08-12 00:55:32,055 [Runner thread] INFO  BusinessLogic.ClassTermFeeRepository.cs  - Fees deleted
 
+
+
+
+2015-09-08 20:22:25,768 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-08 20:22:26,043 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-08 20:22:26,043 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Created
+
+
+
+
+2015-09-08 20:22:26,043 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Deleted
+
+
+
+
+2015-09-08 20:22:26,443 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-08 20:22:26,443 [Runner thread] INFO  BusinessLogic.UserRepository.cs  - Login
+
+
+
+
+2015-09-08 20:22:26,459 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-08 20:22:26,459 [Runner thread] INFO  BusinessLogic.UserRepository.cs  - Registered user
+
+
+
+
+2015-09-08 20:22:26,462 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-08 20:33:13,417 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-08 20:33:13,427 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-09-08 20:33:13,428 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-08 20:33:13,428 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Added
+
+
+
+
+2015-09-08 20:33:13,443 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-08 20:33:13,443 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-09-08 20:33:13,444 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-08 20:33:13,444 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Edited
+
+
+
+
+2015-09-08 20:33:13,446 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-08 20:33:13,446 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-09-08 20:33:13,446 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-08 20:33:13,446 [Runner thread] INFO  BusinessLogic.StudentRepository.cs  - Student Deactivated
+
+
+
+
+2015-09-08 20:33:13,452 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+
+
+
+
+2015-09-08 20:33:13,452 [Runner thread] INFO  BusinessLogic.SchoolRepository.cs  - School Edited
+
+
+
+
+2015-09-08 20:33:13,452 [Runner thread] INFO  BusinessLogic.AuditTrailRepository.cs  - Audit trail created
+

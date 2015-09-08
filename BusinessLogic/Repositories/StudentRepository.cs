@@ -91,7 +91,9 @@ namespace BusinessLogic.Repositories
         /// <returns>Whether the method is successful</returns>
         public bool Create(Student model)
         {
-            // todo: check if (firstname, middlename and lastname) combo does not exist
+//            bool studentExist = CheckIfStudentExist(model);
+//
+//            if (studentExist) return false;
 
             try
             {
@@ -114,6 +116,17 @@ namespace BusinessLogic.Repositories
                 _log.Error("Error", ex);
                 return false;
             }
+        }
+
+        private bool CheckIfStudentExist(Student student)
+        {
+            return
+                _studentRepository.Any(x => string.Equals(x.FirstName.Trim(), student.FirstName.Trim(),
+                            StringComparison.CurrentCultureIgnoreCase) &&
+                        string.Equals(x.LastName.Trim(), student.LastName.Trim(),
+                            StringComparison.CurrentCultureIgnoreCase) &&
+                        string.Equals(x.MiddleName.Trim(), student.MiddleName.Trim(),
+                            StringComparison.CurrentCultureIgnoreCase));
         }
 
         private void IncreaseStudentCount()

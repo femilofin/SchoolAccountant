@@ -4,6 +4,7 @@ using BusinessLogic.Entities;
 using BusinessLogic.Interface;
 using BusinessLogic.Repositories;
 using MongoRepository;
+using SchoolAccountant.Helpers;
 
 namespace SchoolAccountant.Forms
 {
@@ -22,8 +23,9 @@ namespace SchoolAccountant.Forms
         {
             var username = tboUsername.Text;
             var password = tboPassword.Text;
+            var passwordHash = Utilities.GetPasswordHash(password);
 
-            var success = _userRepository.Login(username, password);
+            var success = _userRepository.Login(username, passwordHash);
 
             var school = _schoolRepository.Get();
             
@@ -39,7 +41,7 @@ namespace SchoolAccountant.Forms
             }
             else
             {
-                MessageBox.Show(@"Something went wrong, please try again");
+                MessageBox.Show(@"Username or Password incorrect, Please try again");
             }
         }
 

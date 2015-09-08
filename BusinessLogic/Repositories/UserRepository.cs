@@ -30,13 +30,13 @@ namespace BusinessLogic.Repositories
         ///     Checks if user exist in the user collection.
         /// </summary>
         /// <param name="username">Username of the user.</param>
-        /// <param name="password">Password of the user.</param>
+        /// <param name="passwordHash">Password of the user.</param>
         /// <returns>True if the login succeeds; otherwise, false</returns>
-        public bool Login(string username, string password)
+        public bool Login(string username, byte[] passwordHash)
         {
             try
             {
-                bool isARegisteredUser = _userRepository.Any(x => x.Username == username && x.PasswordHash == password);
+                bool isARegisteredUser = _userRepository.Any(x => x.Username == username && x.PasswordHash == passwordHash);
 
                 _auditTrailRepository.Log($"{username}", AuditActionEnum.LoggedIn);
 

@@ -16,7 +16,7 @@ namespace SchoolAccountant.Helpers
         public override void OnEndPage(PdfWriter writer, Document document)
         {
             ColumnText.ShowTextAligned(writer.DirectContentUnder, Element.ALIGN_CENTER,
-                new Phrase(_schoolName, _font15Bg), 200, 165, 35);
+                new Phrase(_schoolName, _font15Bg), 200, 190, 35);
         }
     }
 }

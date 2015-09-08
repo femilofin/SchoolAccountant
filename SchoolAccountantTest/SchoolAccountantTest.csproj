@@ -66,6 +66,10 @@
       <Project>{dd73ad3b-8f55-4d2f-a16f-00ffbb7649d2}</Project>
       <Name>BusinessLogic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SchoolAccountant\SchoolAccountant.csproj">
+      <Project>{33f3ec36-51ef-47fe-8f48-d60ba56a9f07}</Project>
+      <Name>SchoolAccountant</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

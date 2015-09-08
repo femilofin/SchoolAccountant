@@ -44,6 +44,7 @@ namespace SchoolAccountant.Forms
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // dgvFeeHistory
             // 
@@ -73,7 +74,7 @@ namespace SchoolAccountant.Forms
             this.Controls.Add(this.dgvFeeHistory);
             this.Controls.Add(this.btnClose);
             this.Name = "FeeHistory";
-            this.Text = "FeeHistory";
+            this.Text = "Fee History";
             this.Load += new System.EventHandler(this.FeeHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFeeHistory)).EndInit();
             this.ResumeLayout(false);

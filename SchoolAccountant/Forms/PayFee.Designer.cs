@@ -65,7 +65,7 @@ namespace SchoolAccountant.Forms
             this.lblFullName.Location = new System.Drawing.Point(38, 35);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(34, 13);
-            this.lblFullName.TabIndex = 0;
+            this.lblFullName.TabIndex = 20;
             this.lblFullName.Text = "temp";
             // 
             // lblClass
@@ -75,7 +75,7 @@ namespace SchoolAccountant.Forms
             this.lblClass.Location = new System.Drawing.Point(107, 75);
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(54, 13);
-            this.lblClass.TabIndex = 1;
+            this.lblClass.TabIndex = 21;
             this.lblClass.Text = "classtemp";
             // 
             // label3
@@ -84,7 +84,7 @@ namespace SchoolAccountant.Forms
             this.label3.Location = new System.Drawing.Point(38, 120);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 23;
             this.label3.Text = "Session";
             // 
             // cboSession
@@ -101,7 +101,7 @@ namespace SchoolAccountant.Forms
             this.label4.Location = new System.Drawing.Point(316, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
-            this.label4.TabIndex = 2;
+            this.label4.TabIndex = 27;
             this.label4.Text = "Term";
             // 
             // cboTerm
@@ -120,7 +120,7 @@ namespace SchoolAccountant.Forms
             this.label5.Location = new System.Drawing.Point(38, 161);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 26);
-            this.label5.TabIndex = 2;
+            this.label5.TabIndex = 25;
             this.label5.Text = "Amount\r\n(Naira)";
             // 
             // tboBank
@@ -128,7 +128,7 @@ namespace SchoolAccountant.Forms
             this.tboBank.Location = new System.Drawing.Point(94, 30);
             this.tboBank.Name = "tboBank";
             this.tboBank.Size = new System.Drawing.Size(304, 20);
-            this.tboBank.TabIndex = 2;
+            this.tboBank.TabIndex = 6;
             // 
             // label6
             // 
@@ -136,7 +136,7 @@ namespace SchoolAccountant.Forms
             this.label6.Location = new System.Drawing.Point(38, 488);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 13);
-            this.label6.TabIndex = 2;
+            this.label6.TabIndex = 22;
             this.label6.Text = "Comment";
             // 
             // chkPrintReceipt
@@ -155,7 +155,7 @@ namespace SchoolAccountant.Forms
             this.label1.Location = new System.Drawing.Point(38, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 24;
             this.label1.Text = "Class";
             // 
             // rtboComment
@@ -163,7 +163,7 @@ namespace SchoolAccountant.Forms
             this.rtboComment.Location = new System.Drawing.Point(110, 485);
             this.rtboComment.Name = "rtboComment";
             this.rtboComment.Size = new System.Drawing.Size(355, 96);
-            this.rtboComment.TabIndex = 4;
+            this.rtboComment.TabIndex = 10;
             this.rtboComment.Text = "";
             // 
             // btnSubmit
@@ -171,7 +171,7 @@ namespace SchoolAccountant.Forms
             this.btnSubmit.Location = new System.Drawing.Point(236, 617);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 5;
+            this.btnSubmit.TabIndex = 11;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -182,7 +182,7 @@ namespace SchoolAccountant.Forms
             this.label2.Location = new System.Drawing.Point(39, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Bank";
             // 
             // groupBox1
@@ -194,7 +194,7 @@ namespace SchoolAccountant.Forms
             this.groupBox1.Location = new System.Drawing.Point(41, 261);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(424, 100);
-            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bank Payment";
             // 
@@ -204,7 +204,7 @@ namespace SchoolAccountant.Forms
             this.label7.Location = new System.Drawing.Point(10, 67);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 13);
-            this.label7.TabIndex = 2;
+            this.label7.TabIndex = 0;
             this.label7.Text = "Receipt No";
             // 
             // tboReceiptNo
@@ -212,7 +212,7 @@ namespace SchoolAccountant.Forms
             this.tboReceiptNo.Location = new System.Drawing.Point(94, 64);
             this.tboReceiptNo.Name = "tboReceiptNo";
             this.tboReceiptNo.Size = new System.Drawing.Size(304, 20);
-            this.tboReceiptNo.TabIndex = 2;
+            this.tboReceiptNo.TabIndex = 7;
             // 
             // tboAmount
             // 
@@ -228,7 +228,7 @@ namespace SchoolAccountant.Forms
             this.groupBox2.Location = new System.Drawing.Point(41, 383);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(424, 74);
-            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cheque";
             // 
@@ -238,7 +238,7 @@ namespace SchoolAccountant.Forms
             this.label9.Location = new System.Drawing.Point(13, 34);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 13);
-            this.label9.TabIndex = 2;
+            this.label9.TabIndex = 0;
             this.label9.Text = "Cheque No";
             // 
             // tboChequeNo
@@ -246,7 +246,7 @@ namespace SchoolAccountant.Forms
             this.tboChequeNo.Location = new System.Drawing.Point(94, 31);
             this.tboChequeNo.Name = "tboChequeNo";
             this.tboChequeNo.Size = new System.Drawing.Size(304, 20);
-            this.tboChequeNo.TabIndex = 2;
+            this.tboChequeNo.TabIndex = 8;
             // 
             // label8
             // 
@@ -254,7 +254,7 @@ namespace SchoolAccountant.Forms
             this.label8.Location = new System.Drawing.Point(38, 214);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 13);
-            this.label8.TabIndex = 7;
+            this.label8.TabIndex = 26;
             this.label8.Text = "Paid By";
             // 
             // tboPaidBy
@@ -262,7 +262,7 @@ namespace SchoolAccountant.Forms
             this.tboPaidBy.Location = new System.Drawing.Point(110, 211);
             this.tboPaidBy.Name = "tboPaidBy";
             this.tboPaidBy.Size = new System.Drawing.Size(354, 20);
-            this.tboPaidBy.TabIndex = 8;
+            this.tboPaidBy.TabIndex = 4;
             // 
             // PayFee
             // 
