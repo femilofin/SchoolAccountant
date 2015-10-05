@@ -46,14 +46,14 @@ namespace SchoolAccountant.Forms
             var presentTerm = cboPresentTerm.SelectedValue;
 
             // Setup fees
-            var jss1 = tboJss1.Text;
-            var jss2 = tboJss2.Text;
-            var jss3 = tboJss3.Text;
-            var sss1 = tboSss1.Text;
-            var sss2 = tboSss2.Text;
-            var sss3 = tboSss3.Text;
-            var jss = tboJss.Text;
-            var sss = tboSss.Text;
+            var jss1 = tboJss1.Text.Replace(",","");
+            var jss2 = tboJss2.Text.Replace(",","");;
+            var jss3 = tboJss3.Text.Replace(",","");;
+            var sss1 = tboSss1.Text.Replace(",","");;
+            var sss2 = tboSss2.Text.Replace(",","");;
+            var sss3 = tboSss3.Text.Replace(",", ""); ;
+            var jss = tboJss.Text.Replace(",","");;
+            var sss = tboSss.Text.Replace(",", ""); ;
 
             // Check if all fields are filled
 
@@ -132,7 +132,7 @@ namespace SchoolAccountant.Forms
 
                     if (_activatedAndDeactivatedId == null)
                     {
-                        MessageBox.Show(@"Something went wrong, Please try again", ActiveForm.Text);
+                        MessageBox.Show(@"Something went wrong, Please restart the program and try again", ActiveForm.Text);
                         return;
                     }
 

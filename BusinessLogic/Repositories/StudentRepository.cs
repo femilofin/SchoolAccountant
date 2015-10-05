@@ -179,7 +179,9 @@ namespace BusinessLogic.Repositories
         {
             try
             {
-                var studentFromDb = _studentRepository.GetById(model.Id);
+                Student studentFromDb = _studentRepository.GetById(model.Id);
+
+                // var kdlfd = studentFromDb;
 
                 // Update items
                 studentFromDb.MiddleName = model.MiddleName;
@@ -189,7 +191,7 @@ namespace BusinessLogic.Repositories
                 studentFromDb.StartDate = model.StartDate;
                 studentFromDb.PresentArm = model.PresentArm;
 
-                _studentRepository.Update(model);
+                _studentRepository.Update(studentFromDb);
 
                 _auditTrailRepository.Log($"Student {model.FirstName} {model.LastName}", AuditActionEnum.Updated);
 
@@ -379,6 +381,27 @@ namespace BusinessLogic.Repositories
         public Student GetStudentById(string id)
         {
             return _studentRepository.GetById(id);
+        }
+
+        public bool ChangeOutstandingFees(string id, decimal newAmount)
+        {
+            try
+            {
+                var student = _studentRepository.GetById(id);
+
+                _auditTrailRepository.Log($"Fees for Student {student.FirstName} {student.LastName} changed from {student.OutstandingFee} to {newAmount}", AuditActionEnum.Updated);
+
+                student.OutstandingFee = newAmount;
+
+                _studentRepository.Update(student);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Error", ex);
+                return false;
+            }
         }
 
         /// <summary>

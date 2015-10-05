@@ -144,9 +144,16 @@ namespace SchoolAccountant.Helpers
         {
             if (!File.Exists(logoPath)) return null;
 
+            var schoolDirectory = GetSchoolDirectory();
+
+            if (!Directory.Exists(schoolDirectory))
+            {
+                Directory.CreateDirectory(schoolDirectory);
+            }
+
             var fileName = Path.GetFileName(logoPath);
-            var destinationPath = GetFolderPath(SpecialFolder.LocalApplicationData);
-            var destinationFile = Path.Combine(destinationPath, fileName);
+
+            var destinationFile = Path.Combine(schoolDirectory, fileName);
 
             File.Copy(logoPath, destinationFile, true);
             return destinationFile;
@@ -173,10 +180,9 @@ namespace SchoolAccountant.Helpers
 
         public static string GetFilePath(Student student, ClassTermFee classTermFee)
         {
-            //check if school folder exist, create if false. Document\SchoolReceipt.
-            var parentDirectory = GetFolderPath(SpecialFolder.ApplicationData);
-            var schoolDirectory = Path.Combine(parentDirectory, "SchoolAccountant");
+            var schoolDirectory = GetSchoolDirectory();
 
+            //check if school folder exist, create if false. Document\SchoolReceipt.
             if (!Directory.Exists(schoolDirectory))
             {
                 Directory.CreateDirectory(schoolDirectory);
@@ -207,6 +213,22 @@ namespace SchoolAccountant.Helpers
             byte[] data = System.Text.Encoding.ASCII.GetBytes(passwword);
             data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
             return data;
+        }
+
+        public static string GetSchoolDirectory()
+        {
+          
+            var parentDirectory = GetFolderPath(SpecialFolder.LocalApplicationData);
+            var schoolDirectory = Path.Combine(parentDirectory, "SchoolAccountant");
+
+            return schoolDirectory;
+        }
+
+        public static string GetExcelPath()
+        {
+            var schoolDirectory = GetSchoolDirectory();
+            var excelPath = Path.Combine(schoolDirectory, "addNewStudents.xlsx");
+            return excelPath;
         }
     }
 }

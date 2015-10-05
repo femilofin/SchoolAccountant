@@ -51,7 +51,7 @@ namespace SchoolAccountant.Helpers
                 {"Zero", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
 
                 if (number < 20)
-                    words += unitsMap[number].ToUpper();
+                    words += unitsMap[number];
                 else
                 {
                     words += tensMap[number/10];

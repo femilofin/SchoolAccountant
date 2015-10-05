@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SchoolSetup));
             this.label4 = new System.Windows.Forms.Label();
             this.tboSchoolName = new System.Windows.Forms.TextBox();
             this.cboPresentSession = new System.Windows.Forms.ComboBox();
@@ -136,14 +137,14 @@
             // 
             this.dtpSessionDateStarted.Location = new System.Drawing.Point(236, 272);
             this.dtpSessionDateStarted.Name = "dtpSessionDateStarted";
-            this.dtpSessionDateStarted.Size = new System.Drawing.Size(158, 20);
+            this.dtpSessionDateStarted.Size = new System.Drawing.Size(325, 20);
             this.dtpSessionDateStarted.TabIndex = 6;
             // 
             // dtpTermDateStarted
             // 
             this.dtpTermDateStarted.Location = new System.Drawing.Point(236, 323);
             this.dtpTermDateStarted.Name = "dtpTermDateStarted";
-            this.dtpTermDateStarted.Size = new System.Drawing.Size(158, 20);
+            this.dtpTermDateStarted.Size = new System.Drawing.Size(325, 20);
             this.dtpTermDateStarted.TabIndex = 8;
             // 
             // label5
@@ -161,7 +162,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 17;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -361,9 +362,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(21, 164);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 13);
+            this.label8.Size = new System.Drawing.Size(70, 13);
             this.label8.TabIndex = 28;
-            this.label8.Text = "School Slogan";
+            this.label8.Text = "School Motto";
             // 
             // tboSlogan
             // 
@@ -422,6 +423,7 @@
             this.Controls.Add(this.cboPresentSession);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tboSchoolName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "SchoolSetup";
             this.Text = "School Setup";

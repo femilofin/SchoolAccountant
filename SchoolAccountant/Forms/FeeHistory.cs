@@ -65,7 +65,7 @@ namespace SchoolAccountant.Forms
                         Index = indexes[i],
                         Session = classTermFee.Session,
                         Term = Enum.GetName(typeof (TermEnum), classTermFee.TermEnum),
-                        PaidFee = feePayments[i].Amount.ToString("C0"),
+                        PaidFee = feePayments[i].Amount.ToString(),
                         OutstandingFee = _row.Cells["OutstandingFee"].Value.ToString(),
                         DatePaid = feePayments[i].PaidDate,
                         FilePath = Utilities.GetFilePath(student, classTermFee)
@@ -88,7 +88,7 @@ namespace SchoolAccountant.Forms
                 .Add(1, "Session", "Session", width: 80, readOnly: true, visible: true)
                 .Add(2, "Term", "Term", width: 50, readOnly: true, visible: true)
                 .Add(4, "OutstandingFee", "Outstanding Fee", width: 80, readOnly: true, visible: true, alignment: 'R')
-                .Add(3, "PaidFee", "Fees Paid", width: 80, readOnly: true, visible: true, alignment: 'R')
+                .Add(3, "PaidFee", "Fees Paid (Naira)", width: 80, readOnly: true, visible: true, alignment: 'R')
                 .Add(5, "DatePaid", "Date Paid", width: 120, readOnly: true, visible: true)
                 .Add(6, "FilePath", "FilePath", width: 120, readOnly: true);
                 
@@ -98,6 +98,9 @@ namespace SchoolAccountant.Forms
             _llbPrintReceipt.UseColumnTextForLinkValue = true;
 
             dgvFeeHistory.Columns.Insert(7, _llbPrintReceipt);
+
+            dgvFeeHistory.AllowUserToResizeRows = false;
+
         }
 
         private void dgvFeeHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -43,7 +43,7 @@ namespace SchoolAccountant.Forms
             lblFullName.Text = _row.Cells["FullName"].Value.ToString().ToUpper();
             lblClass.Text = _row.Cells["PresentClass"].Value.ToString();
             tboAmount.Text = _row.Cells["OutstandingFee"].Value.ToString();
-            chkPrintReceipt.Checked = true;
+            chkPrintReceipt.Checked = false;
 
             // Load school details
             _school = _schoolRepository.Get();
@@ -55,7 +55,7 @@ namespace SchoolAccountant.Forms
         {
             var session = cboSession.SelectedValue;
             var term = cboTerm.SelectedValue;
-            var amount = tboAmount.Text;
+            var amount = tboAmount.Text.Replace(",", "");
             var paidBy = tboPaidBy.Text;
 
             if (session != "" && term != "" && !string.IsNullOrWhiteSpace(paidBy) && !string.IsNullOrWhiteSpace(amount))

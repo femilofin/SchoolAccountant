@@ -14,6 +14,6 @@ namespace BusinessLogic.Interface
         bool UndoUpdatedFees();
         bool PromoteStudents(List<Student> repeatingStudents);
         Student GetStudentById(string id);
-
+        bool ChangeOutstandingFees(string id, decimal newAmount);
     }
 }

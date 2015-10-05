@@ -30,6 +30,7 @@ namespace SchoolAccountant.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FeeHistory));
             this.btnClose = new System.Windows.Forms.Button();
             this.dgvFeeHistory = new System.Windows.Forms.DataGridView();
             this.lblStudentName = new System.Windows.Forms.Label();
@@ -42,7 +43,7 @@ namespace SchoolAccountant.Forms
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 0;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = "&Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -73,6 +74,8 @@ namespace SchoolAccountant.Forms
             this.Controls.Add(this.lblStudentName);
             this.Controls.Add(this.dgvFeeHistory);
             this.Controls.Add(this.btnClose);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FeeHistory";
             this.Text = "Fee History";
             this.Load += new System.EventHandler(this.FeeHistory_Load);

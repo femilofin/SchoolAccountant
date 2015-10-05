@@ -3,6 +3,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Globalization;
@@ -37,6 +38,8 @@ namespace SchoolAccountant.Forms
         private readonly DataGridViewButtonColumn _btnDeactivateStudent = new DataGridViewButtonColumn();
         private readonly DataGridViewButtonColumn _btnRepeating = new DataGridViewButtonColumn();
         private readonly DataGridViewButtonColumn _btnRemoveStudent = new DataGridViewButtonColumn();
+        private readonly DataGridViewButtonColumn _btnChangeSchoolFees = new DataGridViewButtonColumn();
+
         private ActivatedAndDeactivatedId _activatedAndDeactivatedId;
 
         private readonly string _username;
@@ -504,13 +507,13 @@ namespace SchoolAccountant.Forms
                 .Add(2, "PresentClass", "Class", width: 50, readOnly: true, visible: true)
                 .Add(3, "OutstandingFee", "Debt(Naira)", foreColor: Color.Red, width: 80, readOnly: true, visible: true,
                     alignment: 'R')
-                .Add(8, "PaidFee", "PaidFee")
-                .Add(9, "LastName", "LastName")
-                .Add(10, "BirthDate", "BirthDate")
-                .Add(11, "MiddleName", "MiddleName")
-                .Add(12, "Active", "Active")
-                .Add(13, "PresentArm", "PresentArm")
-                .Add(14, "PresentTerm", "PresentTerm")
+                .Add(9, "PaidFee", "PaidFee")
+                .Add(10, "LastName", "LastName")
+                .Add(11, "BirthDate", "BirthDate")
+                .Add(12, "MiddleName", "MiddleName")
+                .Add(13, "Active", "Active")
+                .Add(14, "PresentArm", "PresentArm")
+                .Add(15, "PresentTerm", "PresentTerm")
                 .Add(15, "StartClass", "StartClass")
                 .Add(15, "StartDate", "StartDate")
                 .Add(15, "StartTerm", "StartTerm")
@@ -542,6 +545,14 @@ namespace SchoolAccountant.Forms
             _btnDeactivateStudent.UseColumnTextForButtonValue = true;
             _btnDeactivateStudent.Width = 66;
             dgvViewStudent.Columns.Insert((int) ButtonColumnIndex.Deactivate, _btnDeactivateStudent);
+
+            // Add "Change Fees" button
+            _btnChangeSchoolFees.Text = "Change Fees";
+            _btnChangeSchoolFees.UseColumnTextForButtonValue = true;
+            _btnChangeSchoolFees.Width = 80;
+            dgvViewStudent.Columns.Insert((int)ButtonColumnIndex.ChangeFees, _btnChangeSchoolFees);
+
+            dgvViewStudent.AllowUserToResizeRows = false;
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -572,7 +583,7 @@ namespace SchoolAccountant.Forms
                 }
                 else
                 {
-                    MessageBox.Show(@"Something went wrong, please try again", @"School Accountant");
+                    MessageBox.Show(@"Something went wrong, please restart the program and try again", @"School Accountant");
                 }
             }
 
@@ -592,17 +603,17 @@ namespace SchoolAccountant.Forms
             var middleName = tboMiddleNameAS.Text;
             var startDate = dtpStartDateAS.Text;
             var birthDate = dtpBirthDateAS.Text;
-            var outstandingFee = tboOutstandingFeeAS.Text;
+            var outstandingFee = tboOutstandingFeeAS.Text.Replace(",","");
             var startClass = cboStartClassAS.SelectedValue;
             var startTerm = cboStartTermAS.SelectedValue;
             var presentClass = cboPresentClassAS.SelectedValue;
             var presentTerm = cboPresentTermAS.SelectedValue;
             var presentArm = cboPresentArmAS.SelectedValue;
 
-            if (!string.IsNullOrWhiteSpace(lastName) && !string.IsNullOrWhiteSpace(firstName) &&
-                !string.IsNullOrWhiteSpace(middleName) && (int) startClass != -1
-                && (int) startTerm != -1 && (int) presentClass != -1 && (int) presentTerm != -1
-                && (int) presentArm != -1)
+            if (!string.IsNullOrWhiteSpace(lastName) && !string.IsNullOrWhiteSpace(firstName) /*&&
+                !string.IsNullOrWhiteSpace(middleName)*/ /*&& (int) startClass != -1*/
+                /*&& (int) startTerm != -1*/ && (int) presentClass != -1 && (int) presentTerm != -1
+                /*&& (int) presentArm != -1*/)
             {
                 var student = new Student
                 {
@@ -611,14 +622,46 @@ namespace SchoolAccountant.Forms
                     MiddleName = middleName,
                     Active = true,
                     BirthDate = DateTime.Parse(birthDate),
-                    StartClass = (ClassEnum) startClass,
-                    StartTerm = (TermEnum) startTerm,
+//                    StartClass = (ClassEnum) startClass ,
+//                    StartTerm = (TermEnum) startTerm,
                     StartDate = DateTime.Parse(startDate),
                     OutstandingFee = Convert.ToDecimal(outstandingFee == "" ? "0" : outstandingFee),
                     PresentClass = (ClassEnum) presentClass,
                     PresentTerm = (TermEnum) presentTerm,
-                    PresentArm = (ArmEnum) presentArm
                 };
+
+                // If start term combo box is not selected
+
+                if ((int)startTerm == -1)
+                {
+                    student.StartTerm = TermEnum.First;
+                }
+                else
+                {
+                    student.StartTerm = (TermEnum)startTerm;
+                }
+
+                // If start class combo box is not selected, assume JSS1
+
+                if ((int)startClass == -1)
+                {
+                    student.StartClass = ClassEnum.JSS1;
+                }
+                else
+                {
+                    student.StartClass = (ClassEnum)startClass;
+                }
+
+                // If Present arm combo box is not selected, assume 'A'
+
+                if ((int)presentArm == -1)
+                {
+                    student.PresentArm = ArmEnum.A;
+                }
+                else
+                {
+                    student.PresentArm = (ArmEnum) presentArm;
+                }
 
                 var success = _studentRepository.Create(student);
 
@@ -627,10 +670,11 @@ namespace SchoolAccountant.Forms
                     MessageBox.Show($"Student \"{firstName} {lastName}\" has been registered", @"School Accountant");
                     ClearTextBoxesAS();
                     RefreshDgvMS();
+                    tboLastNameAS.Focus();
                 }
                 else
                 {
-                    MessageBox.Show(@"Something went wrong, please try again", @"School Accountant");
+                    MessageBox.Show(@"Something went wrong, please restart the program and try again", @"School Accountant");
                 }
             }
 
@@ -664,11 +708,11 @@ namespace SchoolAccountant.Forms
             tboMiddleNameAS.Clear();
             tboFirstNameAS.Clear();
             tboOutstandingFeeAS.Clear();
-            cboStartTermAS.SelectedIndex = -1;
-            cboStartClassAS.SelectedIndex = -1;
-            cboPresentArmAS.SelectedIndex = -1;
-            cboPresentClassAS.SelectedIndex = -1;
-            cboPresentTermAS.SelectedIndex = -1;
+//            cboStartTermAS.SelectedIndex = -1;
+//            cboStartClassAS.SelectedIndex = -1;
+//            cboPresentArmAS.SelectedIndex = -1;
+//            cboPresentClassAS.SelectedIndex = -1;
+//            cboPresentTermAS.SelectedIndex = -1;
 
             dtpStartDateAS.Value = DateTime.Now;
             dtpBirthDateAS.Value = DateTime.Now;
@@ -742,6 +786,9 @@ namespace SchoolAccountant.Forms
             _btnRepeating.Width = 80;
             dgvStudentsPS.Columns.Insert(4, _btnRepeating);
 
+            dgvStudentsPS.AllowUserToResizeRows = false;
+
+
         }
 
         /// <summary>
@@ -804,11 +851,18 @@ namespace SchoolAccountant.Forms
                     {
                         var success = _studentRepository.DeactivateStudent(row.Cells["Id"].Value.ToString());
 
-                        MessageBox.Show(success ? @"Student Deactivated" : @"Something went wrong, please try again");
+                        MessageBox.Show(success ? @"Student Deactivated" : @"Something went wrong, please restart the program and try again");
 
                         RefreshDgvMS();
                     }
                 }
+                    break;
+                case (int)ButtonColumnIndex.ChangeFees:
+                    {
+                        var row = dgvViewStudent.Rows[e.RowIndex];
+                        new ChangeFees(row).ShowDialog();
+                        RefreshDgvMS();
+                    }
                     break;
             }
         }
@@ -830,14 +884,14 @@ namespace SchoolAccountant.Forms
 
             var session = cboSessionANT.SelectedValue;
             var term = cboTermANT.SelectedValue;
-            var jss1 = tboJss1ANT.Text;
-            var jss2 = tboJss2ANT.Text;
-            var jss3 = tboJss3ANT.Text;
-            var sss1 = tboSss1ANT.Text;
-            var sss2 = tboSss2ANT.Text;
-            var sss3 = tboSss3ANT.Text;
-            var jss = tboJssANT.Text;
-            var sss = tboSssANT.Text;
+            var jss1 = tboJss1ANT.Text.Replace(",","");
+            var jss2 = tboJss2ANT.Text.Replace(",","");
+            var jss3 = tboJss3ANT.Text.Replace(",","");
+            var sss1 = tboSss1ANT.Text.Replace(",","");
+            var sss2 = tboSss2ANT.Text.Replace(",","");
+            var sss3 = tboSss3ANT.Text.Replace(",", "");
+            var jss = tboJssANT.Text.Replace(",","");
+            var sss = tboSssANT.Text.Replace(",", "");
 
             if (session != "" && term != "" && !string.IsNullOrWhiteSpace(jss1) && !string.IsNullOrWhiteSpace(jss2) &&
                 !string.IsNullOrWhiteSpace(jss3) && !string.IsNullOrWhiteSpace(sss1) && !string.IsNullOrWhiteSpace(sss2) &&
@@ -865,7 +919,7 @@ namespace SchoolAccountant.Forms
 
                             if (!success)
                             {
-                                MessageBox.Show(@"Something went wrong, Please try again", @"School Accountant");
+                                MessageBox.Show(@"Something went wrong, Please restart the program and try again", @"School Accountant");
                                 return;
                             }
                         }
@@ -910,7 +964,7 @@ namespace SchoolAccountant.Forms
 
                     if (_activatedAndDeactivatedId == null)
                     {
-                        MessageBox.Show(@"Something went wrong, Please try again", @"School Accountant");
+                        MessageBox.Show(@"Something went wrong, Please restart the program and try again", @"School Accountant");
                     }
 
                     // Enable the undo button
@@ -922,7 +976,7 @@ namespace SchoolAccountant.Forms
 
                     if (!updateSuccess)
                     {
-                        MessageBox.Show(@"Something went wrong, Please try again", @"School Accountant");
+                        MessageBox.Show(@"Something went wrong, Please restart the program and try again", @"School Accountant");
 
                     }
                     MessageBox.Show(@"Fees added, click the 'undo' button to delete", @"School Accountant");
@@ -952,7 +1006,7 @@ namespace SchoolAccountant.Forms
                     var success =
                         _classTermFeeRepository.DeleteCurrentFeesAndActivatePreviousFees(_activatedAndDeactivatedId,
                             _username);
-                    MessageBox.Show(success ? @"Fees deleted successfully" : @"Something went wrong, please try again");
+                    MessageBox.Show(success ? @"Fees deleted successfully" : @"Something went wrong, please restart the program and try again");
 
                     if (success)
                     {
@@ -963,12 +1017,12 @@ namespace SchoolAccountant.Forms
                     }
                     else
                     {
-                        tsslAddNewTerm.Text = @"Error! Try again";
+                        tsslAddNewTerm.Text = @"Error removing fees";
                     }
 
                 }
-                MessageBox.Show(@"Something went wrong, please try again", @"School Accountant");
-                tsslAddNewTerm.Text = @"Something went wrong, please try again";
+                MessageBox.Show(@"Something went wrong, please restart the program and try again", @"School Accountant");
+                tsslAddNewTerm.Text = @"Something went wrong, please restart the program and try again";
 
             }
             else
@@ -1176,7 +1230,7 @@ namespace SchoolAccountant.Forms
 
                 var success = _studentRepository.PromoteStudents(repeatingStudents);
 
-                MessageBox.Show(success ? @"Success" : @"Something went wrong, please try again");
+                MessageBox.Show(success ? @"Students submitted successfully" : @"Something went wrong, please restart the application and try again", @"School Accountant");
 
                 dgvRepeatingStudents.DataSource = new List<StudentView>();
                 dgvStudentsPS.DataSource = new List<StudentView>();
@@ -1187,5 +1241,23 @@ namespace SchoolAccountant.Forms
             }
         }
 
+        private static void CreateEmptyExcelAndOpen()
+        {
+            var excelPath = Utilities.GetExcelPath();
+            File.Create(excelPath).Dispose();
+            Process.Start(excelPath);
+        }
+
+        private void llOpenExcelToAddStudents_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+//                        CreateEmptyExcelAndOpen();
+
+        }
+
+        private void llAddStudentsWithExcel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+//                       var students =  ExcelHelper.ReadExcel();
+
+        }
     }
 }

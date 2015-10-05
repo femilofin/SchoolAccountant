@@ -5,6 +5,7 @@ namespace SchoolAccountant.Models
         PayFee = 4,
         ViewInfo = 5,
         FeeHistory = 6,
-        Deactivate = 7
+        Deactivate = 7,
+        ChangeFees = 8
     }
 }

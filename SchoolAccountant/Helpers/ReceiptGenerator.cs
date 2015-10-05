@@ -101,7 +101,7 @@ namespace SchoolAccountant.Helpers
             {
                 DateTime.Now.ToString(),
                 _feePayment.PaidBy,
-               $"{NumberText.NumberToWords((int)_feePayment.Amount)} Naira Only (Naira {_feePayment.Amount})",
+               $"{NumberText.NumberToWords((int)_feePayment.Amount)} Naira Only ({_feePayment.Amount} Naira)",
                $"{_student.FirstName} {_student.LastName}"
             };
 

@@ -9,6 +9,7 @@
         SSS2,
         SSS3,
         JSS,
-        SSS
+        SSS,
+        NULL
     }
 }

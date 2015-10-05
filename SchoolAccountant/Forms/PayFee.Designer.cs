@@ -31,6 +31,7 @@ namespace SchoolAccountant.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PayFee));
             this.lblFullName = new System.Windows.Forms.Label();
             this.lblClass = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,7 +63,7 @@ namespace SchoolAccountant.Forms
             // 
             this.lblFullName.AutoSize = true;
             this.lblFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullName.Location = new System.Drawing.Point(38, 35);
+            this.lblFullName.Location = new System.Drawing.Point(38, 16);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(34, 13);
             this.lblFullName.TabIndex = 20;
@@ -72,7 +73,7 @@ namespace SchoolAccountant.Forms
             // 
             this.lblClass.AutoSize = true;
             this.lblClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClass.Location = new System.Drawing.Point(107, 75);
+            this.lblClass.Location = new System.Drawing.Point(107, 48);
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(54, 13);
             this.lblClass.TabIndex = 21;
@@ -81,7 +82,7 @@ namespace SchoolAccountant.Forms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 120);
+            this.label3.Location = new System.Drawing.Point(38, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 23;
@@ -90,7 +91,7 @@ namespace SchoolAccountant.Forms
             // cboSession
             // 
             this.cboSession.FormattingEnabled = true;
-            this.cboSession.Location = new System.Drawing.Point(110, 117);
+            this.cboSession.Location = new System.Drawing.Point(110, 90);
             this.cboSession.Name = "cboSession";
             this.cboSession.Size = new System.Drawing.Size(100, 21);
             this.cboSession.TabIndex = 0;
@@ -98,7 +99,7 @@ namespace SchoolAccountant.Forms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(316, 120);
+            this.label4.Location = new System.Drawing.Point(316, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 27;
@@ -109,7 +110,7 @@ namespace SchoolAccountant.Forms
             this.cboTerm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTerm.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cboTerm.FormattingEnabled = true;
-            this.cboTerm.Location = new System.Drawing.Point(364, 117);
+            this.cboTerm.Location = new System.Drawing.Point(364, 90);
             this.cboTerm.Name = "cboTerm";
             this.cboTerm.Size = new System.Drawing.Size(100, 21);
             this.cboTerm.TabIndex = 1;
@@ -117,7 +118,7 @@ namespace SchoolAccountant.Forms
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(38, 161);
+            this.label5.Location = new System.Drawing.Point(38, 134);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 26);
             this.label5.TabIndex = 25;
@@ -133,7 +134,7 @@ namespace SchoolAccountant.Forms
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 488);
+            this.label6.Location = new System.Drawing.Point(38, 461);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 13);
             this.label6.TabIndex = 22;
@@ -142,7 +143,7 @@ namespace SchoolAccountant.Forms
             // chkPrintReceipt
             // 
             this.chkPrintReceipt.AutoSize = true;
-            this.chkPrintReceipt.Location = new System.Drawing.Point(319, 169);
+            this.chkPrintReceipt.Location = new System.Drawing.Point(319, 142);
             this.chkPrintReceipt.Name = "chkPrintReceipt";
             this.chkPrintReceipt.Size = new System.Drawing.Size(82, 17);
             this.chkPrintReceipt.TabIndex = 3;
@@ -152,7 +153,7 @@ namespace SchoolAccountant.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 75);
+            this.label1.Location = new System.Drawing.Point(38, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 24;
@@ -160,7 +161,7 @@ namespace SchoolAccountant.Forms
             // 
             // rtboComment
             // 
-            this.rtboComment.Location = new System.Drawing.Point(110, 485);
+            this.rtboComment.Location = new System.Drawing.Point(110, 458);
             this.rtboComment.Name = "rtboComment";
             this.rtboComment.Size = new System.Drawing.Size(355, 96);
             this.rtboComment.TabIndex = 10;
@@ -168,11 +169,11 @@ namespace SchoolAccountant.Forms
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(236, 617);
+            this.btnSubmit.Location = new System.Drawing.Point(233, 576);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 11;
-            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.Text = "&Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
@@ -191,7 +192,7 @@ namespace SchoolAccountant.Forms
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.tboReceiptNo);
             this.groupBox1.Controls.Add(this.tboBank);
-            this.groupBox1.Location = new System.Drawing.Point(41, 261);
+            this.groupBox1.Location = new System.Drawing.Point(41, 234);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(424, 100);
             this.groupBox1.TabIndex = 5;
@@ -216,7 +217,7 @@ namespace SchoolAccountant.Forms
             // 
             // tboAmount
             // 
-            this.tboAmount.Location = new System.Drawing.Point(110, 167);
+            this.tboAmount.Location = new System.Drawing.Point(110, 140);
             this.tboAmount.Name = "tboAmount";
             this.tboAmount.Size = new System.Drawing.Size(100, 20);
             this.tboAmount.TabIndex = 2;
@@ -225,7 +226,7 @@ namespace SchoolAccountant.Forms
             // 
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.tboChequeNo);
-            this.groupBox2.Location = new System.Drawing.Point(41, 383);
+            this.groupBox2.Location = new System.Drawing.Point(41, 356);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(424, 74);
             this.groupBox2.TabIndex = 9;
@@ -251,7 +252,7 @@ namespace SchoolAccountant.Forms
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(38, 214);
+            this.label8.Location = new System.Drawing.Point(38, 187);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 26;
@@ -259,7 +260,7 @@ namespace SchoolAccountant.Forms
             // 
             // tboPaidBy
             // 
-            this.tboPaidBy.Location = new System.Drawing.Point(110, 211);
+            this.tboPaidBy.Location = new System.Drawing.Point(110, 184);
             this.tboPaidBy.Name = "tboPaidBy";
             this.tboPaidBy.Size = new System.Drawing.Size(354, 20);
             this.tboPaidBy.TabIndex = 4;
@@ -268,7 +269,7 @@ namespace SchoolAccountant.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 702);
+            this.ClientSize = new System.Drawing.Size(502, 608);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tboPaidBy);
             this.Controls.Add(this.groupBox2);
@@ -286,6 +287,8 @@ namespace SchoolAccountant.Forms
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblClass);
             this.Controls.Add(this.lblFullName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "PayFee";
             this.Text = "Pay Fee";
             this.Load += new System.EventHandler(this.PayFee_Load);
